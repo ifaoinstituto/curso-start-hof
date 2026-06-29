@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso START HOF — IFAO Instituto de Formación en Armonización Orofacial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --nude: #F5EBE0;
+  --nude-dark: #EDD9C8;
+  --navy: #1B2A4A;
+  --navy-light: #2B3E6A;
+  --terra: #8B5A3C;
+  --terra-light: #A6714F;
+  --gold: #C4933F;
+  --gold-light: #D4A855;
+  --white: #FFFFFF;
+  --off-white: #FDF8F4;
+  --text-muted: #6B5A50;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+  --px: 22px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--nude);
+  color: var(--navy);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── ANNOUNCEMENT BAR ─── */
+.bar {
+  background: var(--navy);
+  color: var(--gold-light);
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+.bar b { color: var(--white); }
+
+/* ─── NAV ─── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245,235,224,0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(139,90,60,0.12);
+  padding: 14px var(--px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+.nav-logo em { color: var(--terra); font-style: italic; font-size: 11px; display: inline; letter-spacing: 0.04em; font-weight: 400; }
+.nav-cta {
+  background: var(--terra);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 11px 18px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 2px;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
+}
+
+/* ─── HERO ─── */
+.hero { padding: 36px var(--px) 0; position: relative; overflow: hidden; }
+.hero::before {
+  content: '';
+  position: absolute;
+  right: -60px; top: -60px;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  background: rgba(196,147,63,0.06);
+  pointer-events: none;
+}
+.hero-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terra);
+  border: 1px solid var(--terra);
+  padding: 5px 14px;
+  margin-bottom: 20px;
+}
+.hero-curso {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.hero-headline {
+  font-family: var(--serif);
+  font-size: clamp(64px, 18vw, 100px);
+  font-weight: 700;
+  line-height: 0.9;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-bottom: 2px;
+}
+.hero-hof {
+  font-family: var(--serif);
+  font-size: clamp(64px, 18vw, 100px);
+  font-weight: 300;
+  line-height: 0.9;
+  color: var(--terra);
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+.hero-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+.hero-subtitle strong { color: var(--navy); font-weight: 600; }
+.hero-date {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.hero-date b { color: var(--navy); }
+.hero-cta-group { display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
+.btn-primary {
+  background: var(--terra);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 17px 24px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  border-radius: 2px;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.2s;
+}
+.btn-primary:active { background: var(--terra-light); }
+.btn-secondary {
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  padding: 10px;
+  border: 1px solid rgba(27,42,74,0.25);
+  border-radius: 2px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* preventa badge */
+.preventa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(196,147,63,0.12);
+  border: 1px solid rgba(196,147,63,0.4);
+  padding: 8px 14px;
+  margin-bottom: 28px;
+  border-radius: 2px;
+}
+.preventa-badge span { font-size: 12px; color: var(--terra); font-weight: 600; }
+.preventa-badge em { font-size: 11px; color: var(--text-muted); font-style: normal; }
+
+/* Hero visual */
+.hero-visual { position: relative; margin: 0 calc(-1 * var(--px)); height: 320px; }
+.hero-img {
+  width: 100%; height: 100%;
+  background: var(--nude-dark);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.hero-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero-badge {
+  position: absolute;
+  bottom: 20px; left: 20px;
+  background: var(--navy);
+  color: var(--white);
+  padding: 12px 16px;
+}
+.hero-badge .num {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--gold-light);
+}
+.hero-badge .lbl { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-top: 3px; line-height: 1.3; }
+
+/* ─── COUNTDOWN ─── */
+.countdown {
+  background: var(--navy);
+  padding: 20px var(--px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.cd-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+.cd-units { display: flex; align-items: center; }
+.cd-unit { text-align: center; padding: 0 14px; }
+.cd-unit:not(:last-child) { border-right: 1px solid rgba(255,255,255,0.1); }
+.cd-num { font-family: var(--serif); font-size: 34px; font-weight: 300; color: var(--gold-light); line-height: 1; display: block; }
+.cd-name { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); display: block; margin-top: 2px; }
+
+/* ─── SECTION HELPERS ─── */
+.section-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
+.section-title { font-family: var(--serif); font-size: clamp(30px, 8vw, 50px); font-weight: 400; color: var(--navy); line-height: 1.08; margin-bottom: 12px; }
+.section-title em { font-style: italic; color: var(--terra); }
+.section-sub { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 36px; }
+
+/* ─── OBJETIVO ─── */
+.objetivo {
+  padding: 56px var(--px);
+  background: var(--navy);
+}
+.objetivo .section-tag { color: var(--gold-light); }
+.objetivo .section-title { color: var(--white); margin-bottom: 20px; }
+.objetivo-text {
+  font-family: var(--serif);
+  font-size: clamp(18px, 4.5vw, 24px);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.65;
+  border-left: 3px solid var(--gold);
+  padding-left: 20px;
+}
+
+/* ─── DATOS RÁPIDOS ─── */
+.datos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 36px;
+}
+.dato-card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px 18px;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.dato-icon { font-size: 22px; margin-bottom: 8px; }
+.dato-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
+.dato-value { font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--white); line-height: 1.2; }
+.dato-value small { font-family: var(--sans); font-size: 12px; color: rgba(255,255,255,0.45); display: block; margin-top: 2px; font-weight: 400; }
+
+/* ─── PROGRAMACIÓN ─── */
+.programacion { padding: 64px var(--px); background: var(--off-white); }
+.dias-list { display: flex; flex-direction: column; gap: 2px; margin-top: 36px; }
+.dia-card {
+  background: var(--white);
+  padding: 24px 20px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  border-left: 3px solid transparent;
+  transition: border-color 0.2s;
+}
+.dia-card:active { border-left-color: var(--terra); }
+.dia-num {
+  flex-shrink: 0;
+  width: 52px; height: 52px;
+  background: var(--navy);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.dia-num span { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); line-height: 1; }
+.dia-num strong { font-family: var(--serif); font-size: 22px; font-weight: 300; color: var(--gold-light); line-height: 1; }
+.dia-body {}
+.dia-title { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--navy); margin-bottom: 6px; line-height: 1.2; }
+.dia-items { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.dia-items li { font-size: 13px; color: var(--text-muted); padding-left: 14px; position: relative; line-height: 1.4; }
+.dia-items li::before { content: '·'; position: absolute; left: 2px; color: var(--gold); font-size: 16px; line-height: 1; }
+
+/* ─── FOTOS PRÁCTICA ─── */
+.fotos-practica {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  margin-top: 28px;
+}
+.foto-practica {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+.foto-practica img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.foto-practica:active img { transform: scale(1.04); }
+.foto-practica-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(27,42,74,0.75), transparent);
+  padding: 20px 12px 10px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+}
+
+/* ─── INSTRUCTOR ─── */
+.instructor { padding: 64px var(--px); background: var(--nude); }
+.instructor-img {
+  width: 100%; height: 300px;
+  position: relative; overflow: hidden; margin-bottom: 32px;
+}
+.instructor-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.instructor-img::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(27,42,74,0.65), transparent);
+}
+.instructor-img-label {
+  position: absolute; bottom: 16px; left: 18px;
+  z-index: 1; color: var(--white);
+  font-family: var(--serif); font-size: 18px; font-weight: 300; font-style: italic;
+}
+.instructor-img-label small { display: block; font-family: var(--sans); font-size: 10px; letter-spacing: 0.1em; font-style: normal; color: rgba(255,255,255,0.6); margin-bottom: 2px; }
+.instructor-name { font-family: var(--serif); font-size: clamp(26px, 7vw, 42px); font-weight: 400; line-height: 1.1; color: var(--navy); margin-bottom: 4px; }
+.instructor-reg { font-size: 11px; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 20px; }
+.instructor-bio { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 28px; }
+.credentials { display: flex; flex-direction: column; gap: 11px; margin-bottom: 32px; }
+.credential { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--navy); line-height: 1.4; }
+.credential::before { content: '—'; color: var(--gold); font-family: var(--serif); font-size: 16px; flex-shrink: 0; }
+.trayectoria-title { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; font-weight: 500; }
+.trayectoria-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.tray-item { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+.tray-item::before { content: '◦'; color: var(--gold); flex-shrink: 0; font-size: 14px; line-height: 1.2; }
+
+/* ─── CONTENIDO ─── */
+.contenido { padding: 64px var(--px); background: var(--navy); }
+.contenido .section-tag { color: var(--gold-light); }
+.contenido .section-title { color: var(--white); }
+.contenido .section-sub { color: rgba(255,255,255,0.45); }
+.modulos { display: flex; flex-direction: column; gap: 2px; }
+.modulo {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 24px 20px;
+}
+.modulo-header {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 16px;
+}
+.modulo-label {
+  font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold-light); background: rgba(196,147,63,0.12);
+  padding: 4px 10px; border: 1px solid rgba(196,147,63,0.25);
+  white-space: nowrap;
+}
+.modulo-title { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--white); line-height: 1.2; }
+.modulo-items { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.modulo-items li { font-size: 13px; color: rgba(255,255,255,0.55); padding-left: 14px; position: relative; line-height: 1.4; }
+.modulo-items li::before { content: '·'; position: absolute; left: 2px; color: var(--gold); font-size: 16px; line-height: 1; }
+.modulo-items li strong { color: rgba(255,255,255,0.8); font-weight: 500; }
+.modulo-items .sub { margin-left: 8px; }
+
+
+/* ─── INFO ─── */
+.info { padding: 64px var(--px); background: var(--nude); }
+.info-card {
+  background: var(--white);
+  border-top: 4px solid var(--terra);
+  padding: 32px 22px;
+  margin-bottom: 36px;
+}
+.info-card-title { font-family: var(--serif); font-size: 22px; font-weight: 500; color: var(--navy); margin-bottom: 24px; }
+.info-row { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid rgba(139,90,60,0.1); }
+.info-row:last-of-type { border-bottom: none; }
+.info-icon { width: 32px; height: 32px; background: var(--nude); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; }
+.info-data strong { display: block; font-size: 12px; font-weight: 600; color: var(--navy); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
+.info-data span { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+.cupos-alert { background: rgba(139,90,60,0.08); border-left: 3px solid var(--terra); padding: 14px 16px; margin-top: 20px; font-size: 13px; color: var(--terra); font-weight: 500; line-height: 1.5; }
+
+/* ─── INVERSIÓN ─── */
+.inversion { padding: 64px var(--px); background: var(--navy); text-align: center; }
+.inversion .section-tag { color: var(--gold-light); }
+.inversion .section-title { color: var(--white); }
+.inversion .section-sub { color: rgba(255,255,255,0.45); margin: 0 0 32px; }
+.precio-cards { display: flex; flex-direction: column; gap: 2px; margin-bottom: 28px; }
+.precio-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 28px 22px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.precio-card.featured {
+  background: rgba(196,147,63,0.1);
+  border-color: rgba(196,147,63,0.4);
+}
+.precio-tipo { }
+.precio-chip { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 4px; }
+.precio-nombre { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.4; }
+.precio-nombre strong { color: var(--white); font-weight: 600; display: block; }
+.precio-valor { font-family: var(--serif); font-size: 44px; font-weight: 300; color: var(--gold-light); line-height: 1; flex-shrink: 0; }
+.precio-valor.featured-val { font-size: 52px; }
+.preventa-note {
+  background: rgba(196,147,63,0.1);
+  border: 1px solid rgba(196,147,63,0.25);
+  padding: 14px 18px;
+  font-size: 13px;
+  color: var(--gold-light);
+  margin-bottom: 28px;
+  line-height: 1.5;
+  text-align: left;
+}
+.preventa-note strong { color: var(--white); }
+.btn-gold {
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 17px 24px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  border-radius: 2px;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.2s;
+  margin-bottom: 10px;
+}
+.btn-gold:active { background: var(--gold-light); }
+.btn-outline-gold {
+  color: var(--gold-light);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 14px 24px;
+  border: 1px solid rgba(196,147,63,0.4);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  border-radius: 2px;
+  -webkit-tap-highlight-color: transparent;
+}
+.precio-note { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 16px; line-height: 1.6; }
+
+/* ─── FAQ ─── */
+.faq { padding: 64px var(--px); background: var(--off-white); }
+.faq-item { border-bottom: 1px solid rgba(139,90,60,0.15); }
+.faq-btn {
+  width: 100%; background: none; border: none; text-align: left;
+  padding: 20px 0;
+  font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--navy);
+  cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; -webkit-tap-highlight-color: transparent; line-height: 1.3;
+}
+.faq-toggle { font-size: 22px; font-weight: 300; color: var(--terra); flex-shrink: 0; transition: transform 0.3s; line-height: 1; }
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.faq-item.open .faq-answer { max-height: 400px; }
+.faq-answer-inner { font-size: 14px; color: var(--text-muted); line-height: 1.8; padding-bottom: 20px; }
+
+/* ─── FINAL CTA ─── */
+.final-cta { padding: 72px var(--px); background: var(--terra); text-align: center; }
+.final-cta h2 { font-family: var(--serif); font-size: clamp(34px, 9vw, 58px); font-weight: 300; color: var(--white); line-height: 1.1; margin-bottom: 14px; }
+.final-cta h2 strong { font-weight: 700; }
+.final-cta p { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 32px; line-height: 1.6; }
+.btn-white {
+  background: var(--white);
+  color: var(--terra);
+  font-size: 13px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 17px 24px;
+  border: none; cursor: pointer; text-decoration: none;
+  display: block; text-align: center; border-radius: 2px;
+  -webkit-tap-highlight-color: transparent; margin-bottom: 12px;
+}
+.btn-ig {
+  color: rgba(255,255,255,0.7); font-size: 13px; text-decoration: none;
+  display: block; text-align: center; padding: 10px;
+  border: 1px solid rgba(255,255,255,0.25); border-radius: 2px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ─── FOOTER ─── */
+footer { background: var(--navy); padding: 48px var(--px) 28px; }
+.footer-brand { font-family: var(--serif); font-size: 20px; color: var(--white); margin-bottom: 4px; }
+.footer-brand em { font-style: italic; color: var(--gold-light); }
+.footer-sub { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 28px; }
+.footer-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 28px; }
+.footer-col-title { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 12px; }
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a, .footer-links span { font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; }
+.footer-links a:hover { color: var(--gold-light); }
+.footer-copy { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 18px; font-size: 11px; color: rgba(255,255,255,0.2); line-height: 1.6; }
+
+/* ─── WHATSAPP FLOAT ─── */
+.wa-float {
+  position: fixed; bottom: 24px; right: 20px; z-index: 999;
+  width: 56px; height: 56px; background: #25D366;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  text-decoration: none; box-shadow: 0 4px 16px rgba(37,211,102,0.45);
+  animation: wa-pulse 2.5s ease-in-out infinite;
+  -webkit-tap-highlight-color: transparent;
+}
+.wa-float svg { width: 28px; height: 28px; }
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 4px 16px rgba(37,211,102,0.45); }
+  50% { box-shadow: 0 4px 28px rgba(37,211,102,0.7); }
+}
+
+/* ─── SCROLL ANIMATIONS ─── */
+.fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.2s; }
+.d3 { transition-delay: 0.3s; }
+
+/* ─── DESKTOP ─── */
+@media (min-width: 768px) {
+  :root { --px: 52px; }
+  .hero { padding: 72px var(--px) 0; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; min-height: 88vh; }
+  .hero-cta-group { flex-direction: row; }
+  .btn-primary, .btn-secondary { display: inline-block; width: auto; padding: 15px 32px; }
+  .btn-secondary { border: none; border-bottom: 1px solid rgba(27,42,74,0.3); padding: 0 0 2px; border-radius: 0; }
+  .preventa-badge { margin-bottom: 28px; }
+  .hero-visual { margin: 0; height: 500px; }
+  .countdown { flex-direction: row; gap: 24px; padding: 28px var(--px); }
+  .dias-list { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+  .instructor { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .instructor-img { height: 460px; margin-bottom: 0; }
+  .foto-practica { height: 260px; }
+  .foto-practica:hover img { transform: scale(1.04); }
+  .trayectoria-grid { grid-template-columns: 1fr 1fr; }
+  .modulos { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .info { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: start; }
+  .info-card { margin-bottom: 0; }
+  .precio-cards { flex-direction: row; gap: 2px; }
+  .precio-card { flex: 1; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .precio-valor { font-size: 52px; }
+  .precio-valor.featured-val { font-size: 64px; }
+  .btn-gold, .btn-white { display: inline-block; width: auto; padding: 16px 44px; margin-bottom: 0; }
+  .btn-outline-gold, .btn-ig { display: inline-block; width: auto; padding: 14px 32px; margin-left: 12px; }
+  footer { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 40px; }
+  .footer-sub { margin-bottom: 0; }
+  .footer-cols { display: contents; }
+  .footer-copy { grid-column: 1 / -1; }
+}
+
+@media (min-width: 1100px) {
+  :root { --px: 80px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="bar">
+  ⚡ <b>Cupos limitados</b> — Preventa hasta el 15 de julio · 14, 15 y 16 de agosto
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">IFAO <em>Instituto</em></div>
+  <a href="#inversion" class="nav-cta">Reservar cupo</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-tag fade-up">Toxina Botulínica &amp; Rellenos Inyectables</div>
+    <p class="hero-curso fade-up">Curso</p>
+    <div class="hero-headline fade-up d1">START</div>
+    <div class="hero-hof fade-up d1">HOF</div>
+    <p class="hero-subtitle fade-up d2">Un enfoque <strong>Full Face</strong></p>
+    <p class="hero-date fade-up d2"><b>14, 15 y 16 de agosto</b> · Torre Millenium, Guayaquil</p>
+
+    <div class="preventa-badge fade-up d2">
+      <span>Preventa $1,450</span>
+      <em>· Hasta el 15 de julio</em>
+    </div>
+
+    <div class="hero-cta-group fade-up d3">
+      <a href="#inversion" class="btn-primary">Quiero mi cupo →</a>
+      <a href="#programa" class="btn-secondary">Ver programa</a>
+    </div>
+  </div>
+
+  <div class="hero-visual fade-up d2">
+    <div class="hero-img">
+      <img src="IFAO/Landing.png" alt="Dra. Priscila Corrêa Martins — Curso START HOF">
+    </div>
+    <div class="hero-badge">
+      <div class="num">24</div>
+      <div class="lbl">Horas<br>académicas</div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<div class="countdown">
+  <span class="cd-label">Inicio del curso en</span>
+  <div class="cd-units">
+    <div class="cd-unit"><span class="cd-num" id="cd-d">00</span><span class="cd-name">Días</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-h">00</span><span class="cd-name">Horas</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-m">00</span><span class="cd-name">Min</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-s">00</span><span class="cd-name">Seg</span></div>
+  </div>
+</div>
+
+<!-- OBJETIVO -->
+<section class="objetivo">
+  <div class="section-tag fade-up">Objetivo del Curso</div>
+  <h2 class="section-title fade-up d1">¿Para qué<br><em>es este curso?</em></h2>
+  <p class="objetivo-text fade-up d2">
+    Capacitar al profesional de la salud para utilizar la toxina botulínica y los rellenos dérmicos de manera segura y eficaz en el tratamiento de la hiperactividad muscular y los déficits volumétricos generados por el proceso de envejecimiento.
+  </p>
+  <div class="datos-grid fade-up d3">
+    <div class="dato-card">
+      <div class="dato-icon">⏱</div>
+      <div class="dato-label">Duración</div>
+      <div class="dato-value">24 horas<small>académicas</small></div>
+    </div>
+    <div class="dato-card">
+      <div class="dato-icon">🎓</div>
+      <div class="dato-label">Modalidad</div>
+      <div class="dato-value">Teórico/<small>Práctico con pacientes</small></div>
+    </div>
+    <div class="dato-card">
+      <div class="dato-icon">📅</div>
+      <div class="dato-label">Fecha</div>
+      <div class="dato-value">14, 15 y 16<small>de agosto</small></div>
+    </div>
+    <div class="dato-card">
+      <div class="dato-icon">📍</div>
+      <div class="dato-label">Lugar</div>
+      <div class="dato-value">Torre Millenium<small>Av. Francisco de Orellana</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMACIÓN -->
+<section class="programacion" id="programa">
+  <div class="section-tag fade-up">Programación</div>
+  <h2 class="section-title fade-up d1">Cómo son<br><em>los 3 días</em></h2>
+  <p class="section-sub fade-up d2">Horario: 8:30 a 18:30 cada día. Teórico-práctico con atención real a pacientes.</p>
+  <div class="dias-list">
+    <div class="dia-card fade-up">
+      <div class="dia-num"><span>Día</span><strong>01</strong></div>
+      <div class="dia-body">
+        <h3 class="dia-title">Formación Teórica</h3>
+        <ul class="dia-items">
+          <li>Clase teórica — mañana</li>
+          <li>Clase teórica — tarde</li>
+        </ul>
+      </div>
+    </div>
+    <div class="dia-card fade-up d1">
+      <div class="dia-num"><span>Día</span><strong>02</strong></div>
+      <div class="dia-body">
+        <h3 class="dia-title">Teoría + Práctica</h3>
+        <ul class="dia-items">
+          <li>Clase teórica — mañana</li>
+          <li>Atención de pacientes — tarde y noche</li>
+        </ul>
+      </div>
+    </div>
+    <div class="dia-card fade-up d2">
+      <div class="dia-num"><span>Día</span><strong>03</strong></div>
+      <div class="dia-body">
+        <h3 class="dia-title">Práctica Intensiva</h3>
+        <ul class="dia-items">
+          <li>Atención intensiva de pacientes</li>
+          <li>Mañana, tarde y noche</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="fotos-practica fade-up">
+    <div class="foto-practica">
+      <img src="IFAO/practicas.png" alt="Práctica clínica con pacientes reales">
+      <div class="foto-practica-label">Práctica clínica</div>
+    </div>
+    <div class="foto-practica">
+      <img src="IFAO/practicas 2.png" alt="Aplicación de rellenos inyectables">
+      <div class="foto-practica-label">Rellenos inyectables</div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCENTE -->
+<section class="instructor">
+  <div class="instructor-img fade-up">
+    <img src="IFAO/Dra Priscila.png" alt="Dra. Priscila Corrêa Martins en congreso internacional">
+    <div class="instructor-img-label">
+      <small>Docente</small>
+      Dra. Priscila Corrêa Martins
+    </div>
+  </div>
+  <div>
+    <div class="section-tag fade-up">Docente</div>
+    <h2 class="instructor-name fade-up d1">Dra. Priscila<br>Corrêa Martins</h2>
+    <p class="instructor-reg fade-up d1">CRO/PR 17802 — CRO/SC 21686</p>
+    <div class="credentials fade-up d2">
+      <div class="credential">Máster y especialista en Disfunción Temporomandibular y Dolor Orofacial</div>
+      <div class="credential">Especialista en Armonización Orofacial</div>
+      <div class="credential">Especialista en Ortodoncia</div>
+      <div class="credential">Coordinadora y docente de cursos de inmersión, perfeccionamiento, residencia y especialización</div>
+      <div class="credential">Profesora en la carrera de Odontología (UNIVALI/SC)</div>
+      <div class="credential">Docente internacional en cursos de armonización orofacial en Ecuador</div>
+    </div>
+    <div class="fade-up d3">
+      <div class="trayectoria-title">Trayectoria</div>
+      <div class="trayectoria-grid">
+        <div class="tray-item">Miembro de SBTI</div>
+        <div class="tray-item">Coautora de libros en armonización orofacial</div>
+        <div class="tray-item">Formación avanzada en estética facial (Miami, EE.UU.)</div>
+        <div class="tray-item">Conferencista en congresos nacionales e internacionales</div>
+        <div class="tray-item">Certificación MedBeauty HOF Academy</div>
+        <div class="tray-item">Speaker Pharmaesthetics</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENIDO -->
+<section class="contenido">
+  <div class="section-tag fade-up">Contenido del Curso</div>
+  <h2 class="section-title fade-up d1">Lo que<br><em>aprenderás</em></h2>
+  <p class="section-sub fade-up d2">Dos grandes bloques clínicos con un enfoque Full Face completo.</p>
+  <div class="modulos">
+    <div class="modulo fade-up">
+      <div class="modulo-header">
+        <div class="modulo-label">Módulo 1</div>
+        <h3 class="modulo-title">Toxina Botulínica — Full Face</h3>
+      </div>
+      <ul class="modulo-items">
+        <li>Uso de la toxina botulínica en armonización orofacial</li>
+        <li>Propiedades, indicaciones y contraindicaciones</li>
+        <li>Reconstitución y materiales</li>
+        <li>Anatomía muscular funcional</li>
+        <li>Técnicas, puntos y dosificación:
+          <ul class="modulo-items" style="margin-top:6px">
+            <li class="sub"><strong>Tercio superior:</strong> glabela, frontal, lifting de cejas, patas de gallo</li>
+            <li class="sub"><strong>Tercio medio:</strong> nariz y sonrisa gingival</li>
+            <li class="sub"><strong>Tercio inferior:</strong> región perioral, mentón y contorno mandibular</li>
+            <li class="sub"><strong>Tercio cervical:</strong> cuello</li>
+          </ul>
+        </li>
+        <li>Manejo de efectos adversos</li>
+        <li>Aplicación práctica en pacientes</li>
+      </ul>
+    </div>
+    <div class="modulo fade-up d1">
+      <div class="modulo-header">
+        <div class="modulo-label">Módulo 2</div>
+        <h3 class="modulo-title">Rellenos Inyectables</h3>
+      </div>
+      <ul class="modulo-items">
+        <li>Envejecimiento facial y déficits volumétricos</li>
+        <li>Análisis y proporciones faciales</li>
+        <li>Anatomía facial aplicada y zonas de riesgo</li>
+        <li>Propiedades del ácido hialurónico</li>
+        <li>Selección del producto adecuado</li>
+        <li>Técnicas de aplicación:
+          <ul class="modulo-items" style="margin-top:6px">
+            <li class="sub">Pómulos y arco cigomático</li>
+            <li class="sub">Surco nasolabial (bigote chino)</li>
+            <li class="sub">Labios (contorno y volumen)</li>
+            <li class="sub">Líneas de marioneta</li>
+            <li class="sub">Mentón y pre-jowl</li>
+            <li class="sub">Mandíbula</li>
+          </ul>
+        </li>
+        <li>Manejo de complicaciones</li>
+        <li>Práctica en pacientes</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- INFO GENERAL -->
+<section class="info">
+  <div>
+    <div class="section-tag fade-up">Información General</div>
+    <h2 class="section-title fade-up d1">Detalles del<br><em>evento</em></h2>
+    <p class="section-sub fade-up d2" style="margin-bottom:0">Todo lo que necesitas saber antes de reservar tu cupo.</p>
+  </div>
+  <div class="info-card fade-up d1">
+    <h3 class="info-card-title">Curso START HOF · IFAO</h3>
+    <div class="info-row">
+      <div class="info-icon">📅</div>
+      <div class="info-data"><strong>Fecha</strong><span>14, 15 y 16 de agosto de 2025</span></div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">⏰</div>
+      <div class="info-data"><strong>Horario</strong><span>8:30 a 18:30 — cada día</span></div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">⏱</div>
+      <div class="info-data"><strong>Duración</strong><span>24 horas académicas</span></div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">📍</div>
+      <div class="info-data"><strong>Lugar</strong><span>Torre Millenium Corporativo<br>Av. Francisco de Orellana, Guayaquil</span></div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">🎓</div>
+      <div class="info-data"><strong>Modalidad</strong><span>Teórico / Práctico<br>(atención a pacientes)</span></div>
+    </div>
+    <div class="cupos-alert">⚡ <strong>Cupos limitados</strong> — reserva con abono antes del 15 de julio y mantén el precio especial de preventa.</div>
+  </div>
+</section>
+
+<!-- INVERSIÓN -->
+<section class="inversion" id="inversion">
+  <div class="section-tag fade-up">Inversión</div>
+  <h2 class="section-title fade-up d1">Elige tu<br><em>tarifa</em></h2>
+  <p class="section-sub fade-up d2">Reserva antes del 15 de julio con abono y asegura el precio de preventa.</p>
+  <div class="precio-cards fade-up d2">
+    <div class="precio-card featured">
+      <div class="precio-tipo">
+        <div class="precio-chip">★ Preventa — hasta el 15 de julio</div>
+        <div class="precio-nombre"><strong>Precio Especial</strong>Reserva con abono antes del 15 jul.</div>
+      </div>
+      <div class="precio-valor featured-val">$1,450</div>
+    </div>
+    <div class="precio-card">
+      <div class="precio-tipo">
+        <div class="precio-chip">Tarifa regular</div>
+        <div class="precio-nombre"><strong>Precio Regular</strong>Disponible después del 15 jul.</div>
+      </div>
+      <div class="precio-valor">$1,600</div>
+    </div>
+  </div>
+  <div class="preventa-note fade-up d3">
+    💡 <strong>Reserva antes del 15 de julio</strong> con abono y mantén el precio especial de preventa aunque completes el pago después.
+  </div>
+  <div class="fade-up d3">
+    <a href="https://wa.me/593997544471?text=Hola%2C%20me%20interesa%20reservar%20mi%20cupo%20para%20el%20Curso%20START%20HOF%20del%2014%20al%2016%20de%20agosto." class="btn-gold" target="_blank">
+      Reservar por WhatsApp →
+    </a>
+    <a href="https://wa.me/593994949102?text=Hola%2C%20me%20interesa%20el%20Curso%20START%20HOF." class="btn-outline-gold" target="_blank">
+      Segundo contacto
+    </a>
+  </div>
+  <p class="precio-note">Consulta disponibilidad · Instagram: @IFAoInstituto</p>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-tag fade-up">Preguntas Frecuentes</div>
+  <h2 class="section-title fade-up d1" style="margin-bottom:36px">Resolvemos<br><em>tus dudas</em></h2>
+
+  <div class="faq-item open fade-up">
+    <button class="faq-btn">¿A quién está dirigido el curso?<span class="faq-toggle">+</span></button>
+    <div class="faq-answer"><div class="faq-answer-inner">El Curso START HOF está dirigido a profesionales de la salud — odontólogos y médicos — que deseen incorporar la toxina botulínica y los rellenos inyectables a su práctica clínica. No se requiere experiencia previa en armonización orofacial.</div></div>
+  </div>
+  <div class="faq-item fade-up">
+    <button class="faq-btn">¿Qué incluye la modalidad teórico-práctica?<span class="faq-toggle">+</span></button>
+    <div class="faq-answer"><div class="faq-answer-inner">El primer día es completamente teórico. El segundo día combina teoría en la mañana con práctica clínica en la tarde-noche. El tercer día es de práctica intensiva con atención a pacientes durante todo el día (mañana, tarde y noche).</div></div>
+  </div>
+  <div class="faq-item fade-up">
+    <button class="faq-btn">¿Cómo funciona la preventa y el abono?<span class="faq-toggle">+</span></button>
+    <div class="faq-answer"><div class="faq-answer-inner">Realizando un abono antes del 15 de julio aseguras el precio de preventa de $1,450 y tu cupo. Puedes completar el pago después, manteniendo ese precio especial. Luego del 15 de julio la tarifa sube a $1,600. Contáctanos por WhatsApp para confirmar la forma de pago.</div></div>
+  </div>
+  <div class="faq-item fade-up">
+    <button class="faq-btn">¿Dónde se realiza el curso exactamente?<span class="faq-toggle">+</span></button>
+    <div class="faq-answer"><div class="faq-answer-inner">El curso se realiza en Torre Millenium Corporativo, Av. Francisco de Orellana, Guayaquil, Ecuador. El horario es de 8:30 a 18:30 en los tres días.</div></div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2 class="fade-up">Reserva antes del<br><strong>15 de julio.</strong></h2>
+  <p class="fade-up d1">Asegura el precio de preventa de $1,450 con un abono. Cupos muy limitados.</p>
+  <a href="https://wa.me/593997544471?text=Hola%2C%20quiero%20reservar%20mi%20cupo%20para%20el%20Curso%20START%20HOF." class="btn-white fade-up d2" target="_blank">WhatsApp: 099 754 4471 →</a>
+  <a href="https://www.instagram.com/IFAoInstituto" class="btn-ig fade-up d3" target="_blank">📸 @IFAoInstituto</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">IFAO <em>Instituto</em></div>
+    <div class="footer-sub">Instituto de Formación en Armonización Orofacial</div>
+  </div>
+  <div class="footer-cols">
+    <div>
+      <div class="footer-col-title">Contacto</div>
+      <div class="footer-links">
+        <a href="https://wa.me/593997544471" target="_blank">099 754 4471</a>
+        <a href="https://wa.me/593994949102" target="_blank">099 949 9102</a>
+        <a href="https://www.instagram.com/IFAoInstituto" target="_blank">@IFAoInstituto</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Curso</div>
+      <div class="footer-links">
+        <a href="#programa">Programación</a>
+        <a href="#inversion">Inscripción</a>
+        <span>Guayaquil, Ecuador</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copy">© 2025 IFAO · Instituto de Formación en Armonización Orofacial</div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/593997544471?text=Hola%2C%20me%20interesa%20el%20Curso%20START%20HOF." class="wa-float" target="_blank" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+(function() {
+  var target = new Date('2026-08-14T08:30:00');
+  function pad(n) { return String(n).padStart(2,'0'); }
+  function tick() {
+    var diff = target - new Date();
+    if (diff <= 0) diff = 0;
+    document.getElementById('cd-d').textContent = pad(Math.floor(diff/86400000));
+    document.getElementById('cd-h').textContent = pad(Math.floor((diff%86400000)/3600000));
+    document.getElementById('cd-m').textContent = pad(Math.floor((diff%3600000)/60000));
+    document.getElementById('cd-s').textContent = pad(Math.floor((diff%60000)/1000));
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+document.querySelectorAll('.faq-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = this.closest('.faq-item');
+    var wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+var io = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(function(el) {
+  if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
+  else io.observe(el);
+});
+</script>
+</body>
+</html>
