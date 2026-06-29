@@ -578,37 +578,144 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
 
 /* ─── DESKTOP ─── */
 @media (min-width: 768px) {
-  :root { --px: 52px; }
-  .hero { padding: 72px var(--px) 0; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; min-height: 88vh; }
-  .hero-cta-group { flex-direction: row; }
-  .btn-primary, .btn-secondary { display: inline-block; width: auto; padding: 15px 32px; }
-  .btn-secondary { border: none; border-bottom: 1px solid rgba(27,42,74,0.3); padding: 0 0 2px; border-radius: 0; }
-  .preventa-badge { margin-bottom: 28px; }
-  .hero-visual { margin: 0; height: 500px; }
-  .countdown { flex-direction: row; gap: 24px; padding: 28px var(--px); }
-  .dias-list { display: grid; grid-template-columns: 1fr 1fr 1fr; }
-  .instructor { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-  .instructor-img { height: 460px; margin-bottom: 0; }
-  .foto-practica { height: 260px; }
+  :root { --px: 60px; }
+
+  /* Nav */
+  .nav-logo { font-size: 18px; }
+  .nav-cta { font-size: 12px; padding: 13px 24px; }
+
+  /* Hero */
+  .hero { padding: 80px var(--px) 0; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; min-height: 90vh; }
+  .hero-tag { font-size: 11px; margin-bottom: 24px; }
+  .hero-curso { font-size: 13px; margin-bottom: 8px; }
+  .hero-subtitle { font-size: 17px; margin-bottom: 8px; }
+  .hero-date { font-size: 13px; margin-bottom: 32px; }
+  .preventa-badge { margin-bottom: 32px; }
+  .preventa-badge span { font-size: 14px; }
+  .preventa-badge em { font-size: 13px; }
+  .hero-cta-group { flex-direction: row; align-items: center; margin-bottom: 0; }
+  .btn-primary { display: inline-block; width: auto; padding: 16px 36px; font-size: 13px; }
+  .btn-primary:hover { background: var(--terra-light); }
+  .btn-secondary { display: inline-block; width: auto; border: none; border-bottom: 1px solid rgba(27,42,74,0.3); padding: 0 0 2px; border-radius: 0; background: none; font-size: 14px; }
+  .hero-visual { margin: 0; height: 100%; min-height: 560px; }
+
+  /* Countdown */
+  .countdown { flex-direction: row; gap: 0; padding: 32px var(--px); justify-content: center; }
+  .cd-label { font-size: 11px; margin-bottom: 16px; }
+  .cd-unit { padding: 0 32px; }
+  .cd-num { font-size: 52px; }
+  .cd-name { font-size: 10px; margin-top: 4px; }
+
+  /* Sections general */
+  .section-tag { font-size: 11px; margin-bottom: 12px; }
+  .section-sub { font-size: 16px; margin-bottom: 44px; }
+
+  /* Objetivo */
+  .objetivo { padding: 88px var(--px); }
+  .objetivo-text { font-size: clamp(20px, 2.2vw, 26px); padding-left: 28px; border-left-width: 4px; }
+
+  /* Datos */
+  .datos-grid { grid-template-columns: repeat(4, 1fr); margin-top: 52px; }
+  .dato-card { padding: 28px 24px; }
+  .dato-icon { font-size: 26px; margin-bottom: 12px; }
+  .dato-label { font-size: 11px; margin-bottom: 6px; }
+  .dato-value { font-size: 22px; }
+  .dato-value small { font-size: 13px; }
+
+  /* Programación */
+  .programacion { padding: 88px var(--px); }
+  .dias-list { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; margin-top: 48px; }
+  .dia-card { padding: 32px 26px; flex-direction: column; gap: 20px; border-left: none; border-top: 3px solid transparent; transition: border-color 0.2s; }
+  .dia-card:hover { border-top-color: var(--terra); }
+  .dia-num { width: 60px; height: 60px; }
+  .dia-num strong { font-size: 26px; }
+  .dia-title { font-size: 22px; margin-bottom: 10px; }
+  .dia-items li { font-size: 14px; }
+  .foto-practica { height: 300px; }
   .foto-practica:hover img { transform: scale(1.04); }
-  .trayectoria-grid { grid-template-columns: 1fr 1fr; }
+  .foto-practica-label { font-size: 12px; padding: 24px 16px 12px; }
+
+  /* Instructor */
+  .instructor { padding: 88px var(--px); display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: start; }
+  .instructor-img { height: 540px; margin-bottom: 0; }
+  .instructor-img-label { font-size: 22px; bottom: 24px; left: 24px; }
+  .instructor-img-label small { font-size: 11px; }
+  .instructor-name { font-size: clamp(28px, 3vw, 44px); margin-bottom: 6px; }
+  .instructor-reg { font-size: 13px; margin-bottom: 28px; }
+  .instructor-bio { font-size: 16px; margin-bottom: 36px; }
+  .credentials { gap: 14px; margin-bottom: 40px; }
+  .credential { font-size: 15px; }
+  .trayectoria-title { font-size: 12px; margin-bottom: 20px; }
+  .trayectoria-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .tray-item { font-size: 13px; }
+
+  /* Contenido */
+  .contenido { padding: 88px var(--px); }
   .modulos { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-  .info { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: start; }
-  .info-card { margin-bottom: 0; }
-  .precio-cards { flex-direction: row; gap: 2px; }
-  .precio-card { flex: 1; flex-direction: column; align-items: flex-start; gap: 12px; }
-  .precio-valor { font-size: 52px; }
-  .precio-valor.featured-val { font-size: 64px; }
-  .btn-gold, .btn-white { display: inline-block; width: auto; padding: 16px 44px; margin-bottom: 0; }
-  .btn-outline-gold, .btn-ig { display: inline-block; width: auto; padding: 14px 32px; margin-left: 12px; }
-  footer { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 40px; }
+  .modulo { padding: 36px 28px; }
+  .modulo-label { font-size: 10px; padding: 5px 12px; }
+  .modulo-title { font-size: 24px; margin-bottom: 0; }
+  .modulo-items li { font-size: 14px; gap: 8px; }
+
+  /* Info */
+  .info { padding: 88px var(--px); display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .info-card { margin-bottom: 0; padding: 40px 28px; }
+  .info-card-title { font-size: 26px; margin-bottom: 28px; }
+  .info-row { padding: 18px 0; gap: 16px; }
+  .info-icon { width: 38px; height: 38px; font-size: 16px; }
+  .info-data strong { font-size: 13px; margin-bottom: 3px; }
+  .info-data span { font-size: 15px; }
+  .cupos-alert { font-size: 14px; padding: 16px 20px; margin-top: 28px; }
+
+  /* Inversión */
+  .inversion { padding: 88px var(--px); }
+  .precio-cards { flex-direction: row; gap: 2px; margin-bottom: 36px; }
+  .precio-card { flex: 1; flex-direction: column; align-items: flex-start; gap: 16px; padding: 36px 28px; }
+  .precio-chip { font-size: 10px; margin-bottom: 6px; }
+  .precio-nombre { font-size: 15px; }
+  .precio-valor { font-size: 60px; }
+  .precio-valor.featured-val { font-size: 72px; }
+  .preventa-note { font-size: 14px; padding: 16px 22px; margin-bottom: 36px; }
+  .btn-gold { display: inline-block; width: auto; padding: 18px 52px; margin-bottom: 0; font-size: 14px; }
+  .btn-gold:hover { background: var(--gold-light); }
+  .btn-outline-gold { display: inline-block; width: auto; padding: 16px 36px; margin-left: 16px; font-size: 14px; }
+  .btn-outline-gold:hover { border-color: rgba(196,147,63,0.7); }
+  .precio-note { font-size: 12px; margin-top: 24px; }
+
+  /* FAQ */
+  .faq { padding: 88px var(--px); }
+  .faq-btn { font-size: 20px; padding: 24px 0; }
+  .faq-btn:hover { color: var(--terra); }
+  .faq-answer-inner { font-size: 15px; padding-bottom: 28px; }
+
+  /* Final CTA */
+  .final-cta { padding: 100px var(--px); }
+  .final-cta p { font-size: 16px; margin-bottom: 40px; }
+  .btn-white { display: inline-block; width: auto; padding: 18px 52px; margin-bottom: 0; font-size: 14px; }
+  .btn-white:hover { background: var(--nude); }
+  .btn-ig { display: inline-block; width: auto; padding: 16px 36px; margin-left: 16px; font-size: 14px; }
+
+  /* Footer */
+  footer { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 56px; padding-bottom: 40px; }
+  .footer-brand { font-size: 24px; }
   .footer-sub { margin-bottom: 0; }
   .footer-cols { display: contents; }
   .footer-copy { grid-column: 1 / -1; }
+  .footer-links a, .footer-links span { font-size: 14px; }
+
+  /* Nav CTA hover */
+  .nav-cta:hover { background: var(--terra-light); }
 }
 
 @media (min-width: 1100px) {
-  :root { --px: 80px; }
+  :root { --px: 88px; }
+  .hero { gap: 88px; min-height: 92vh; }
+  .instructor { grid-template-columns: 1fr 1fr; }
+  .instructor-img { height: 600px; }
+}
+
+@media (min-width: 1500px) {
+  :root { --px: calc(50vw - 660px); }
 }
 </style>
 </head>
