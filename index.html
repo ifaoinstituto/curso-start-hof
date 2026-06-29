@@ -586,8 +586,8 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   .nav-cta { font-size: 12px; padding: 13px 24px; }
 
   /* Hero */
-  .hero { padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: start; overflow: visible; }
-  .hero > div:first-child { padding: 72px var(--px) 72px; display: flex; flex-direction: column; justify-content: flex-start; }
+  .hero { padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: center; min-height: calc(100vh - 85px); overflow: visible; }
+  .hero > div:first-child { padding: 60px 60px 60px 80px; display: flex; flex-direction: column; justify-content: center; }
   .hero-tag { font-size: 11px; margin-bottom: 24px; }
   .hero-curso { font-size: 13px; margin-bottom: 8px; }
   .hero-subtitle { font-size: 17px; margin-bottom: 8px; }
@@ -724,7 +724,7 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
 
 @media (min-width: 1500px) {
   :root { --px: calc(50vw - 660px); }
-  .hero > div:first-child { padding-left: min(var(--px), 120px); padding-right: 60px; }
+  .hero > div:first-child { padding: 60px 60px 60px 120px; }
 }
 </style>
 </head>
