@@ -1119,5 +1119,59 @@ document.querySelectorAll('.fade-up').forEach(function(el) {
   else io.observe(el);
 });
 </script>
+
+<!-- POPUP CUPOS -->
+<div id="cupos-overlay" style="
+  position:fixed;inset:0;background:rgba(27,42,74,0.72);z-index:9999;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .35s ease;pointer-events:none;
+  backdrop-filter:blur(4px);
+">
+  <div id="cupos-modal" style="
+    background:#F5EBE0;border-radius:12px;padding:40px 36px;max-width:420px;width:90%;
+    text-align:center;position:relative;
+    transform:translateY(24px);transition:transform .35s ease;
+    box-shadow:0 24px 60px rgba(27,42,74,0.25);
+  ">
+    <div style="font-size:42px;margin-bottom:8px;">⚠️</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.18em;color:#8B5A3C;text-transform:uppercase;margin-bottom:12px;">Aviso importante</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:36px;color:#1B2A4A;margin:0 0 10px;line-height:1.1;">Solo quedan<br><span style="color:#8B5A3C;">3 cupos</span> disponibles</h2>
+    <p style="font-family:'Lato',sans-serif;font-size:15px;color:#555;line-height:1.6;margin:0 0 28px;">
+      El Curso START HOF tiene capacidad limitada para garantizar atención personalizada.<br><strong style="color:#1B2A4A;">La preventa cierra el 15 de julio.</strong>
+    </p>
+    <a href="https://wa.me/593XXXXXXXXX?text=Hola,%20quiero%20reservar%20mi%20cupo%20para%20el%20Curso%20START%20HOF"
+       target="_blank"
+       style="display:inline-block;background:#1B2A4A;color:#fff;font-family:'Lato',sans-serif;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:14px 28px;border-radius:4px;text-decoration:none;margin-bottom:14px;">
+      Reservar mi cupo ahora →
+    </a>
+    <br>
+    <button onclick="closePopup()" style="
+      background:none;border:none;color:#999;font-family:'Lato',sans-serif;font-size:13px;
+      cursor:pointer;padding:6px;text-decoration:underline;
+    ">No, prefiero arriesgarme</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay = document.getElementById('cupos-overlay');
+  var modal = document.getElementById('cupos-modal');
+  setTimeout(function(){
+    overlay.style.pointerEvents = 'auto';
+    overlay.style.opacity = '1';
+    modal.style.transform = 'translateY(0)';
+  }, 1200);
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) closePopup();
+  });
+})();
+function closePopup(){
+  var overlay = document.getElementById('cupos-overlay');
+  var modal = document.getElementById('cupos-modal');
+  overlay.style.opacity = '0';
+  modal.style.transform = 'translateY(24px)';
+  setTimeout(function(){ overlay.style.pointerEvents = 'none'; }, 350);
+}
+</script>
 </body>
 </html>
