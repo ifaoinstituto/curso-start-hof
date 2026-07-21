@@ -389,6 +389,19 @@ nav {
 .tray-item { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: var(--text-muted); line-height: 1.4; }
 .tray-item::before { content: '◦'; color: var(--gold); flex-shrink: 0; font-size: 14px; line-height: 1.2; }
 
+/* ─── VIDEOS ─── */
+.videos-seccion { padding: 64px var(--px); background: var(--off-white); text-align: center; }
+.video-slider { position: relative; max-width: 340px; margin: 32px auto 0; display: flex; align-items: center; gap: 10px; }
+.vs-track { position: relative; width: 100%; aspect-ratio: 9 / 16; border-radius: 14px; overflow: hidden; background: var(--navy); box-shadow: 0 20px 50px rgba(27,42,74,0.22); }
+.vs-slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity .4s ease; }
+.vs-slide.active { opacity: 1; visibility: visible; }
+.vs-slide iframe { width: 100%; height: 100%; border: 0; display: block; }
+.vs-arrow { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--terra); background: var(--white); color: var(--terra); font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s ease, color .2s ease; }
+.vs-arrow:hover { background: var(--terra); color: var(--white); }
+.vs-dots { display: flex; justify-content: center; gap: 8px; margin-top: 18px; }
+.vs-dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: var(--nude-dark); cursor: pointer; padding: 0; }
+.vs-dot.active { background: var(--terra); width: 22px; border-radius: 4px; transition: width .2s ease; }
+
 /* ─── CONTENIDO ─── */
 .contenido { padding: 64px var(--px); background: var(--navy); }
 .contenido .section-tag { color: var(--gold-light); }
@@ -897,6 +910,31 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   </div>
 </section>
 
+<!-- VIDEOS -->
+<section class="videos-seccion">
+  <div class="section-tag fade-up">Míralo en acción</div>
+  <h2 class="section-title fade-up d1">Así se vive<br><em>el curso</em></h2>
+  <p class="section-sub fade-up d2">Recorre algunos momentos reales de formación y práctica clínica.</p>
+
+  <div class="video-slider fade-up d2">
+    <button class="vs-arrow vs-prev" aria-label="Anterior">&#8249;</button>
+
+    <div class="vs-track">
+      <div class="vs-slide active" data-id="04zeJx6xtYc"></div>
+      <div class="vs-slide" data-id="YOLTaWdWl64"></div>
+      <div class="vs-slide" data-id="60wu0h1-Wuc"></div>
+    </div>
+
+    <button class="vs-arrow vs-next" aria-label="Siguiente">&#8250;</button>
+  </div>
+
+  <div class="vs-dots">
+    <button class="vs-dot active" data-index="0"></button>
+    <button class="vs-dot" data-index="1"></button>
+    <button class="vs-dot" data-index="2"></button>
+  </div>
+</section>
+
 <!-- CONTENIDO -->
 <section class="contenido">
   <div class="section-tag fade-up">Contenido del Curso</div>
@@ -1118,6 +1156,50 @@ document.querySelectorAll('.fade-up').forEach(function(el) {
   if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
   else io.observe(el);
 });
+</script>
+
+<script>
+(function(){
+  var slides = document.querySelectorAll('.vs-slide');
+  var dots = document.querySelectorAll('.vs-dot');
+  var prevBtn = document.querySelector('.vs-prev');
+  var nextBtn = document.querySelector('.vs-next');
+  var current = 0;
+
+  function loadVideo(slide) {
+    if (slide.querySelector('iframe')) return;
+    var id = slide.getAttribute('data-id');
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&mute=1&playsinline=1&rel=0';
+    iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+    iframe.setAttribute('allowfullscreen', '');
+    slide.appendChild(iframe);
+  }
+
+  function unloadOthers(activeSlide) {
+    slides.forEach(function(s){ if (s !== activeSlide) s.innerHTML = ''; });
+  }
+
+  function goTo(index) {
+    current = (index + slides.length) % slides.length;
+    slides.forEach(function(s, i){ s.classList.toggle('active', i === current); });
+    dots.forEach(function(d, i){ d.classList.toggle('active', i === current); });
+    var activeSlide = slides[current];
+    loadVideo(activeSlide);
+    unloadOthers(activeSlide);
+  }
+
+  if (slides.length) {
+    var io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) { loadVideo(slides[current]); } });
+    }, { threshold: 0.4 });
+    io2.observe(document.querySelector('.video-slider'));
+
+    prevBtn.addEventListener('click', function(){ goTo(current - 1); });
+    nextBtn.addEventListener('click', function(){ goTo(current + 1); });
+    dots.forEach(function(d){ d.addEventListener('click', function(){ goTo(parseInt(d.getAttribute('data-index'), 10)); }); });
+  }
+})();
 </script>
 
 <!-- POPUP CUPOS -->
