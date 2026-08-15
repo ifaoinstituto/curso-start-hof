@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resultados · Encuesta START HOF</title>
+<style>
+  :root { --nude:#F5EBE0; --navy:#1B2A4A; --terra:#8B5A3C; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, sans-serif; background: var(--nude); color: var(--navy); padding: 24px; margin: 0; }
+  h1 { font-size: 22px; margin-bottom: 16px; }
+  #login { max-width: 320px; margin: 80px auto; text-align: center; }
+  #login input { width: 100%; padding: 10px; margin: 12px 0; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; }
+  #login button, #export-btn { background: var(--navy); color: #fff; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; font-size: 13px; }
+  th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #eee; vertical-align: top; }
+  th { background: var(--navy); color: #fff; position: sticky; top: 0; }
+  #app { display: none; }
+  .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px; }
+  .table-wrap { overflow-x: auto; }
+  .avg { font-size: 13px; color: var(--terra); margin-bottom: 12px; }
+</style>
+</head>
+<body>
+
+<div id="login">
+  <h1>Resultados — Encuesta START HOF</h1>
+  <input type="password" id="pass" placeholder="Contraseña">
+  <button onclick="load()">Ver resultados</button>
+  <p id="login-error" style="color:#B3423E;font-size:13px;"></p>
+</div>
+
+<div id="app">
+  <div class="topbar">
+    <h1>Resultados — Encuesta Día 1</h1>
+    <button id="export-btn" onclick="exportCSV()">Exportar CSV</button>
+  </div>
+  <p class="avg" id="avg"></p>
+  <div class="table-wrap">
+    <table id="tbl">
+      <thead><tr>
+        <th>Fecha</th><th>Nombre</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>Comentario</th>
+      </tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  var rows = [];
+  function load() {
+    var pass = document.getElementById('pass').value;
+    fetch('/api/encuesta-list?pass=' + encodeURIComponent(pass))
+      .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+      .then(function (data) {
+        rows = data;
+        renderTable();
+        document.getElementById('login').style.display = 'none';
+        document.getElementById('app').style.display = 'block';
+      })
+      .catch(function () {
+        document.getElementById('login-error').textContent = 'Contraseña incorrecta.';
+      });
+  }
+
+  function renderTable() {
+    var tbody = document.getElementById('tbody');
+    tbody.innerHTML = rows.map(function (r) {
+      return '<tr><td>' + new Date(r.fecha).toLocaleString('es-EC') + '</td><td>' + esc(r.nombre) + '</td>' +
+        '<td>' + r.p1 + '</td><td>' + r.p2 + '</td><td>' + r.p3 + '</td><td>' + r.p4 + '</td><td>' + r.p5 + '</td>' +
+        '<td>' + esc(r.comentario) + '</td></tr>';
+    }).join('');
+
+    if (rows.length) {
+      var sum = 0, count = 0;
+      rows.forEach(function (r) { ['p1','p2','p3','p4','p5'].forEach(function (k) { sum += Number(r[k]); count++; }); });
+      document.getElementById('avg').textContent = rows.length + ' respuestas — promedio general: ' + (sum / count).toFixed(2) + ' / 5';
+    } else {
+      document.getElementById('avg').textContent = 'Sin respuestas todavía.';
+    }
+  }
+
+  function esc(s) {
+    var d = document.createElement('div');
+    d.textContent = s || '';
+    return d.innerHTML;
+  }
+
+  function exportCSV() {
+    var header = ['fecha','nombre','p1','p2','p3','p4','p5','comentario'];
+    var lines = [header.join(',')];
+    rows.forEach(function (r) {
+      lines.push(header.map(function (h) { return '"' + String(r[h] || '').replace(/"/g, '""') + '"'; }).join(','));
+    });
+    var blob = new Blob([lines.join('\n')], { type: 'text/csv' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'encuesta-start-hof.csv';
+    a.click();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encuesta · Día 1 · Curso START HOF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --nude: #F5EBE0; --navy: #1B2A4A; --terra: #8B5A3C;
+    --gold: #C4933F; --white: #FFFFFF; --text-muted: #6B5A50;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--nude); font-family: 'DM Sans', sans-serif; color: var(--navy); padding: 32px 20px 80px; }
+  .wrap { max-width: 560px; margin: 0 auto; }
+  h1 { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 600; line-height: 1.15; margin-bottom: 6px; }
+  h1 em { color: var(--terra); font-style: italic; }
+  .sub { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; }
+  .card { background: var(--white); border-radius: 12px; padding: 22px 20px; margin-bottom: 16px; box-shadow: 0 8px 24px rgba(27,42,74,0.06); }
+  label.field-label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 10px; }
+  input[type="text"] { width: 100%; padding: 12px 14px; border: 1px solid #E4D6C8; border-radius: 8px; font-size: 15px; font-family: inherit; }
+  textarea { width: 100%; padding: 12px 14px; border: 1px solid #E4D6C8; border-radius: 8px; font-size: 15px; font-family: inherit; min-height: 90px; resize: vertical; }
+  .scale { display: flex; justify-content: space-between; gap: 6px; }
+  .scale label { flex: 1; text-align: center; cursor: pointer; }
+  .scale input { display: none; }
+  .scale span {
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+    padding: 10px 4px; border-radius: 8px; border: 1px solid #E4D6C8; transition: all .15s ease;
+  }
+  .scale input:checked + span { background: var(--navy); border-color: var(--navy); color: var(--white); }
+  .scale .num { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; }
+  .scale .txt { font-size: 9px; text-transform: uppercase; letter-spacing: .03em; text-align: center; line-height: 1.2; }
+  .submit-btn {
+    width: 100%; background: var(--terra); color: var(--white); border: none; padding: 16px;
+    border-radius: 8px; font-size: 14px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    cursor: pointer; margin-top: 8px;
+  }
+  .submit-btn:disabled { opacity: .6; cursor: not-allowed; }
+  .msg { display: none; text-align: center; padding: 40px 20px; }
+  .msg.show { display: block; }
+  .msg h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; margin-bottom: 10px; }
+  .error { color: #B3423E; font-size: 13px; margin-top: 8px; display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div id="form-view">
+    <h1>Encuesta <em>Día 1</em></h1>
+    <p class="sub">Curso START HOF — tu opinión nos ayuda a mejorar el día 2.</p>
+
+    <form id="encuesta-form">
+      <div class="card">
+        <label class="field-label">Nombre completo *</label>
+        <input type="text" id="nombre" required>
+      </div>
+
+      <div class="card">
+        <label class="field-label">El contenido desarrollado durante el primer día cumplió con mis expectativas.</label>
+        <div class="scale" data-q="p1"></div>
+      </div>
+
+      <div class="card">
+        <label class="field-label">La docente explicó los temas de forma clara y comprensible.</label>
+        <div class="scale" data-q="p2"></div>
+      </div>
+
+      <div class="card">
+        <label class="field-label">La organización del primer día (puntualidad, logística y materiales) fue satisfactoria.</label>
+        <div class="scale" data-q="p3"></div>
+      </div>
+
+      <div class="card">
+        <label class="field-label">El tiempo destinado para resolver preguntas e interactuar con la docente fue suficiente.</label>
+        <div class="scale" data-q="p4"></div>
+      </div>
+
+      <div class="card">
+        <label class="field-label">Me siento satisfecho(a) con la experiencia del primer día y motivado(a) para continuar el curso.</label>
+        <div class="scale" data-q="p5"></div>
+      </div>
+
+      <div class="card">
+        <label class="field-label">¿Qué podríamos mejorar para que la experiencia del segundo día sea aún mejor?</label>
+        <textarea id="comentario" placeholder="Escribe aquí tu respuesta (opcional)"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submit-btn">Enviar respuesta</button>
+      <p class="error" id="error-msg">Por favor completa tu nombre y todas las escalas de evaluación.</p>
+    </form>
+  </div>
+
+  <div class="msg" id="thanks-view">
+    <h2>¡Gracias! 🙏</h2>
+    <p class="sub">Tu respuesta fue enviada correctamente.</p>
+  </div>
+
+</div>
+
+<script>
+  var LABELS = ['Muy insat.', 'Insatisfecho', 'Neutral', 'Satisfecho', 'Muy satisf.'];
+  document.querySelectorAll('.scale').forEach(function (el) {
+    var q = el.getAttribute('data-q');
+    var html = '';
+    for (var i = 1; i <= 5; i++) {
+      html += '<label><input type="radio" name="' + q + '" value="' + i + '" required>' +
+        '<span><span class="num">' + i + '</span><span class="txt">' + LABELS[i - 1] + '</span></span></label>';
+    }
+    el.innerHTML = html;
+  });
+
+  var form = document.getElementById('encuesta-form');
+  var errorMsg = document.getElementById('error-msg');
+  var btn = document.getElementById('submit-btn');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    errorMsg.style.display = 'none';
+
+    var data = {
+      nombre: document.getElementById('nombre').value.trim(),
+      comentario: document.getElementById('comentario').value.trim()
+    };
+    ['p1', 'p2', 'p3', 'p4', 'p5'].forEach(function (q) {
+      var checked = form.querySelector('input[name="' + q + '"]:checked');
+      data[q] = checked ? checked.value : null;
+    });
+
+    if (!data.nombre || !data.p1 || !data.p2 || !data.p3 || !data.p4 || !data.p5) {
+      errorMsg.style.display = 'block';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+
+    fetch('/api/encuesta', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function (r) {
+      if (!r.ok) throw new Error('fail');
+      document.getElementById('form-view').style.display = 'none';
+      document.getElementById('thanks-view').classList.add('show');
+    }).catch(function () {
+      errorMsg.textContent = 'Hubo un problema al enviar. Intenta de nuevo.';
+      errorMsg.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Enviar respuesta';
+    });
+  });
+</script>
+</body>
+</html>
