@@ -39,7 +39,7 @@
   <div class="table-wrap">
     <table id="tbl">
       <thead><tr>
-        <th>Fecha</th><th>Nombre</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>Comentario</th>
+        <th>Fecha</th><th>Nombre</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>Qué le aportó valor</th><th>Comentario</th>
       </tr></thead>
       <tbody id="tbody"></tbody>
     </table>
@@ -68,12 +68,13 @@
     tbody.innerHTML = rows.map(function (r) {
       return '<tr><td>' + new Date(r.fecha).toLocaleString('es-EC') + '</td><td>' + esc(r.nombre) + '</td>' +
         '<td>' + r.p1 + '</td><td>' + r.p2 + '</td><td>' + r.p3 + '</td><td>' + r.p4 + '</td><td>' + r.p5 + '</td>' +
-        '<td>' + esc(r.comentario) + '</td></tr>';
+        '<td>' + r.p6 + '</td><td>' + r.p7 + '</td>' +
+        '<td>' + esc(r.valor) + '</td><td>' + esc(r.comentario) + '</td></tr>';
     }).join('');
 
     if (rows.length) {
       var sum = 0, count = 0;
-      rows.forEach(function (r) { ['p1','p2','p3','p4','p5'].forEach(function (k) { sum += Number(r[k]); count++; }); });
+      rows.forEach(function (r) { ['p1','p2','p3','p4','p5','p6','p7'].forEach(function (k) { sum += Number(r[k]); count++; }); });
       document.getElementById('avg').textContent = rows.length + ' respuestas — promedio general: ' + (sum / count).toFixed(2) + ' / 5';
     } else {
       document.getElementById('avg').textContent = 'Sin respuestas todavía.';
@@ -87,7 +88,7 @@
   }
 
   function exportCSV() {
-    var header = ['fecha','nombre','p1','p2','p3','p4','p5','comentario'];
+    var header = ['fecha','nombre','p1','p2','p3','p4','p5','p6','p7','valor','comentario'];
     var lines = [header.join(',')];
     rows.forEach(function (r) {
       lines.push(header.map(function (h) { return '"' + String(r[h] || '').replace(/"/g, '""') + '"'; }).join(','));

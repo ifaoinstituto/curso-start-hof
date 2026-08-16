@@ -82,6 +82,21 @@
       </div>
 
       <div class="card">
+        <label class="field-label">Considero que puedo aplicar lo aprendido en mi consulta desde ahora.</label>
+        <div class="scale" data-q="p6"></div>
+      </div>
+
+      <div class="card">
+        <label class="field-label">¿Qué tan probable es que recomiendes este curso a un colega?</label>
+        <div class="scale" data-q="p7"></div>
+      </div>
+
+      <div class="card">
+        <label class="field-label">¿Qué fue lo que más valor te aportó del curso?</label>
+        <textarea id="valor" placeholder="Escribe aquí tu respuesta (opcional)"></textarea>
+      </div>
+
+      <div class="card">
         <label class="field-label">¿Qué podríamos mejorar para futuras ediciones del curso?</label>
         <textarea id="comentario" placeholder="Escribe aquí tu respuesta (opcional)"></textarea>
       </div>
@@ -120,14 +135,15 @@
 
     var data = {
       nombre: document.getElementById('nombre').value.trim(),
+      valor: document.getElementById('valor').value.trim(),
       comentario: document.getElementById('comentario').value.trim()
     };
-    ['p1', 'p2', 'p3', 'p4', 'p5'].forEach(function (q) {
+    ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7'].forEach(function (q) {
       var checked = form.querySelector('input[name="' + q + '"]:checked');
       data[q] = checked ? checked.value : null;
     });
 
-    if (!data.nombre || !data.p1 || !data.p2 || !data.p3 || !data.p4 || !data.p5) {
+    if (!data.nombre || !data.p1 || !data.p2 || !data.p3 || !data.p4 || !data.p5 || !data.p6 || !data.p7) {
       errorMsg.style.display = 'block';
       return;
     }
