@@ -1,4 +1,4 @@
-import { kv } from '@vercel/kv';
+import { getRedis } from './_redis.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
@@ -15,6 +15,7 @@ export default async function handler(req, res) {
     fecha: new Date().toISOString()
   };
 
-  await kv.rpush('encuesta_start_hof', JSON.stringify(entry));
+  const redis = await getRedis();
+  await redis.rPush('encuesta_start_hof', JSON.stringify(entry));
   res.status(200).json({ ok: true });
 }
