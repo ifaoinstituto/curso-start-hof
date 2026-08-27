@@ -112,8 +112,14 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(245,235,224,0.96)
 
 /* ─── 06 DOCENTE ─── */
 .instructor { padding: 60px var(--px); background: var(--nude); }
-.instructor-img { width: 100%; height: 320px; position: relative; overflow: hidden; margin-bottom: 30px; border-radius: 0 0 24px 0; box-shadow: 0 20px 44px rgba(27,42,74,0.16); }
-.instructor-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.instructor-duo { position: relative; display: grid; grid-template-columns: 1.6fr 1fr; gap: 12px; margin-bottom: 56px; }
+.instructor-duo-main, .instructor-duo-secondary { overflow: hidden; box-shadow: 0 16px 34px rgba(27,42,74,0.16); }
+.instructor-duo-main { border-radius: 0 0 28px 0; aspect-ratio: 3 / 4; }
+.instructor-duo-secondary { border-radius: 0 0 20px 0; aspect-ratio: 3 / 4; margin-top: 18%; }
+.instructor-duo-main img, .instructor-duo-secondary img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.instructor-stat-card { position: absolute; left: 0; bottom: -40px; background: var(--white); border-radius: 0 0 16px 0; padding: 16px 20px; box-shadow: 0 16px 34px rgba(27,42,74,0.2); display: flex; align-items: center; gap: 12px; z-index: 3; }
+.instructor-stat-num { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--navy); line-height: 1; }
+.instructor-stat-label { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); line-height: 1.3; max-width: 100px; }
 .instructor-name { font-family: var(--serif); font-size: clamp(26px, 7vw, 40px); font-weight: 400; line-height: 1.1; color: var(--navy); margin-bottom: 6px; }
 .instructor-flag { font-size: 20px; }
 .instructor-reg { font-size: 11px; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 24px; }
@@ -204,7 +210,10 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   .dia-desc { font-size: 15px; }
 
   .instructor { padding: 88px var(--px); display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: start; }
-  .instructor-img { height: 560px; margin-bottom: 0; }
+  .instructor-duo { margin-bottom: 0; }
+  .instructor-stat-card { padding: 20px 26px; bottom: -32px; gap: 16px; }
+  .instructor-stat-num { font-size: 42px; }
+  .instructor-stat-label { font-size: 12px; max-width: 110px; }
   .instructor-name { font-size: clamp(28px, 3vw, 44px); }
   .credential { font-size: 16px; }
   .instructor-extra { font-size: 15px; }
@@ -229,7 +238,6 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
 @media (min-width: 1100px) {
   :root { --px: 88px; }
   .instructor { grid-template-columns: 1fr 1fr; }
-  .instructor-img { height: 620px; }
 }
 @media (min-width: 1500px) {
   :root { --px: calc(50vw - 660px); }
@@ -375,8 +383,17 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
 
 <!-- 06 DOCENTE -->
 <section class="instructor">
-  <div class="instructor-img fade-up">
-    <img src="/IFAO/Dra Priscila.png" alt="Dra. Priscila Corrêa Martins en congreso internacional">
+  <div class="instructor-duo fade-up">
+    <div class="instructor-duo-main">
+      <img src="/IFAO/Dra Priscila.png" alt="Dra. Priscila Corrêa Martins en congreso internacional">
+    </div>
+    <div class="instructor-duo-secondary">
+      <img src="/IFAO/practicas 2.png" alt="Dra. Priscila Corrêa Martins en práctica clínica">
+    </div>
+    <div class="instructor-stat-card">
+      <div class="instructor-stat-num">4</div>
+      <div class="instructor-stat-label">Credenciales destacadas</div>
+    </div>
   </div>
   <div>
     <div class="section-tag fade-up">Aprende con</div>

@@ -357,28 +357,14 @@ nav {
 
 /* ─── INSTRUCTOR ─── */
 .instructor { padding: 64px var(--px); background: var(--nude); }
-.instructor-img {
-  width: 100%; height: 300px;
-  position: relative; overflow: hidden; margin-bottom: 32px;
-}
-.instructor-img img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-}
-.instructor-img::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 40%;
-  background: linear-gradient(to top, rgba(27,42,74,0.65), transparent);
-}
-.instructor-img-label {
-  position: absolute; bottom: 16px; left: 18px;
-  z-index: 1; color: var(--white);
-  font-family: var(--serif); font-size: 18px; font-weight: 300; font-style: italic;
-}
-.instructor-img-label small { display: block; font-family: var(--sans); font-size: 10px; letter-spacing: 0.1em; font-style: normal; color: rgba(255,255,255,0.6); margin-bottom: 2px; }
+.instructor-duo { position: relative; display: grid; grid-template-columns: 1.6fr 1fr; gap: 12px; margin-bottom: 56px; }
+.instructor-duo-main, .instructor-duo-secondary { overflow: hidden; box-shadow: 0 16px 34px rgba(27,42,74,0.16); }
+.instructor-duo-main { border-radius: 0 0 28px 0; aspect-ratio: 3 / 4; }
+.instructor-duo-secondary { border-radius: 0 0 20px 0; aspect-ratio: 3 / 4; margin-top: 18%; }
+.instructor-duo-main img, .instructor-duo-secondary img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.instructor-stat-card { position: absolute; left: 0; bottom: -40px; background: var(--white); border-radius: 0 0 16px 0; padding: 16px 20px; box-shadow: 0 16px 34px rgba(27,42,74,0.2); display: flex; align-items: center; gap: 12px; z-index: 3; }
+.instructor-stat-num { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--navy); line-height: 1; }
+.instructor-stat-label { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); line-height: 1.3; max-width: 100px; }
 .instructor-name { font-family: var(--serif); font-size: clamp(26px, 7vw, 42px); font-weight: 400; line-height: 1.1; color: var(--navy); margin-bottom: 4px; }
 .instructor-reg { font-size: 11px; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 20px; }
 .instructor-bio { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 28px; }
@@ -657,9 +643,10 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
 
   /* Instructor */
   .instructor { padding: 88px var(--px); display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: start; }
-  .instructor-img { height: 540px; margin-bottom: 0; }
-  .instructor-img-label { font-size: 22px; bottom: 24px; left: 24px; }
-  .instructor-img-label small { font-size: 11px; }
+  .instructor-duo { margin-bottom: 0; }
+  .instructor-stat-card { padding: 20px 26px; bottom: -32px; gap: 16px; }
+  .instructor-stat-num { font-size: 42px; }
+  .instructor-stat-label { font-size: 12px; max-width: 110px; }
   .instructor-name { font-size: clamp(28px, 3vw, 44px); margin-bottom: 6px; }
   .instructor-reg { font-size: 13px; margin-bottom: 28px; }
   .instructor-bio { font-size: 16px; margin-bottom: 36px; }
@@ -731,7 +718,6 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   :root { --px: 88px; }
   .hero { gap: 88px; min-height: 92vh; }
   .instructor { grid-template-columns: 1fr 1fr; }
-  .instructor-img { height: 600px; }
 }
 
 @media (min-width: 1500px) {
@@ -867,11 +853,16 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
 
 <!-- DOCENTE -->
 <section class="instructor">
-  <div class="instructor-img fade-up">
-    <img src="/IFAO/Dra Priscila.png" alt="Dra. Priscila Corrêa Martins en congreso internacional">
-    <div class="instructor-img-label">
-      <small>Docente</small>
-      Dra. Priscila Corrêa Martins
+  <div class="instructor-duo fade-up">
+    <div class="instructor-duo-main">
+      <img src="/IFAO/Dra Priscila.png" alt="Dra. Priscila Corrêa Martins en congreso internacional">
+    </div>
+    <div class="instructor-duo-secondary">
+      <img src="/IFAO/practicas.png" alt="Dra. Priscila Corrêa Martins enseñando">
+    </div>
+    <div class="instructor-stat-card">
+      <div class="instructor-stat-num">6</div>
+      <div class="instructor-stat-label">Reconocimientos y trayectoria</div>
     </div>
   </div>
   <div>
