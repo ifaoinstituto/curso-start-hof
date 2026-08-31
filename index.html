@@ -91,7 +91,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 
 .datos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 36px; }
 .dato-card { background: rgba(255,255,255,0.05); padding: 20px 18px; border: 1px solid rgba(255,255,255,0.07); }
-.dato-icon { width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 10px; }
+.dato-icon { width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.08); color: var(--gold-light); display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 10px; }
 .dato-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
 .dato-value { font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--white); line-height: 1.2; }
 .dato-value small { font-family: var(--sans); font-size: 12px; color: rgba(255,255,255,0.45); display: block; margin-top: 2px; font-weight: 400; }
@@ -101,7 +101,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .beneficios-grid { display: flex; flex-direction: column; gap: 2px; margin-top: 36px; }
 .beneficio-card { background: var(--white); padding: 28px 22px; border-top: 3px solid transparent; transition: border-color 0.2s; }
 .beneficio-card:active, .beneficio-card:hover { border-top-color: var(--terra); }
-.beneficio-icon { width: 46px; height: 46px; border-radius: 13px; background: rgba(139,90,60,0.1); display: flex; align-items: center; justify-content: center; font-size: 21px; margin-bottom: 14px; }
+.beneficio-icon { width: 46px; height: 46px; border-radius: 13px; background: rgba(139,90,60,0.1); color: var(--terra); display: flex; align-items: center; justify-content: center; font-size: 21px; margin-bottom: 14px; }
 .beneficio-title { font-family: var(--serif); font-size: 19px; font-weight: 500; color: var(--navy); margin-bottom: 8px; line-height: 1.2; }
 .beneficio-text { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
@@ -356,22 +356,22 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   </p>
   <div class="datos-grid fade-up d3">
     <div class="dato-card">
-      <div class="dato-icon">🌎</div>
+      <div class="dato-icon"><svg style="width:20px;height:20px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 2.5 4.3 5.6 4.3 9s-1.5 6.5-4.3 9c-2.8-2.5-4.3-5.6-4.3-9s1.5-6.5 4.3-9z"/></svg></div>
       <div class="dato-label">Docencia</div>
       <div class="dato-value">Internacional<small>Brasil · EE.UU. · Ecuador</small></div>
     </div>
     <div class="dato-card">
-      <div class="dato-icon">🩺</div>
+      <div class="dato-icon"><svg style="width:20px;height:20px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a4 4 0 0 0 8 0V3"/><path d="M6 3H4.5M14 3h1.5"/><path d="M10 13v2.5a5.5 5.5 0 0 0 11 0V13.8"/><circle cx="20.5" cy="12" r="1.7"/></svg></div>
       <div class="dato-label">Metodología</div>
       <div class="dato-value">Teórico/<small>Práctica con pacientes</small></div>
     </div>
     <div class="dato-card">
-      <div class="dato-icon">📜</div>
+      <div class="dato-icon"><svg style="width:20px;height:20px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.7 7 5.2-2.8 5.2 2.8-1.7-7"/></svg></div>
       <div class="dato-label">Al finalizar</div>
       <div class="dato-value">Certificación<small>de formación</small></div>
     </div>
     <div class="dato-card">
-      <div class="dato-icon">📍</div>
+      <div class="dato-icon"><svg style="width:20px;height:20px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></div>
       <div class="dato-label">Ubicación</div>
       <div class="dato-value">Guayaquil<small>Ecuador</small></div>
     </div>
@@ -385,32 +385,32 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   <p class="section-sub fade-up d2">Un enfoque clínico integral, pensado para profesionales que buscan resultados reales.</p>
   <div class="beneficios-grid">
     <div class="beneficio-card fade-up">
-      <div class="beneficio-icon">🩺</div>
+      <div class="beneficio-icon"><svg style="width:24px;height:24px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a4 4 0 0 0 8 0V3"/><path d="M6 3H4.5M14 3h1.5"/><path d="M10 13v2.5a5.5 5.5 0 0 0 11 0V13.8"/><circle cx="20.5" cy="12" r="1.7"/></svg></div>
       <h3 class="beneficio-title">Práctica clínica real</h3>
       <p class="beneficio-text">Nuestros cursos incluyen atención real a pacientes, bajo supervisión directa de la docente.</p>
     </div>
     <div class="beneficio-card fade-up d1">
-      <div class="beneficio-icon">🌎</div>
+      <div class="beneficio-icon"><svg style="width:24px;height:24px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 2.5 4.3 5.6 4.3 9s-1.5 6.5-4.3 9c-2.8-2.5-4.3-5.6-4.3-9s1.5-6.5 4.3-9z"/></svg></div>
       <h3 class="beneficio-title">Docencia internacional</h3>
       <p class="beneficio-text">Formadora con trayectoria en Brasil, EE.UU. y Ecuador, coautora de libros de referencia en HOF.</p>
     </div>
     <div class="beneficio-card fade-up d2">
-      <div class="beneficio-icon">📜</div>
+      <div class="beneficio-icon"><svg style="width:24px;height:24px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.7 7 5.2-2.8 5.2 2.8-1.7-7"/></svg></div>
       <h3 class="beneficio-title">Certificación</h3>
       <p class="beneficio-text">Egresa con una certificación que respalda tu formación en armonización orofacial.</p>
     </div>
     <div class="beneficio-card fade-up">
-      <div class="beneficio-icon">👥</div>
+      <div class="beneficio-icon"><svg style="width:24px;height:24px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17.2" cy="8.6" r="2.6"/><path d="M15.5 13.6c2.6.4 4.5 2.3 4.5 5.4"/></svg></div>
       <h3 class="beneficio-title">Grupos reducidos</h3>
       <p class="beneficio-text">Atención personalizada en cada módulo teórico y práctico.</p>
     </div>
     <div class="beneficio-card fade-up d1">
-      <div class="beneficio-icon">🧬</div>
+      <div class="beneficio-icon"><svg style="width:24px;height:24px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2c0 4 10 4 10 8s-10 4-10 8"/><path d="M17 2c0 4-10 4-10 8s10 4 10 8"/><path d="M8.5 6.5h7M8.5 17.5h7"/></svg></div>
       <h3 class="beneficio-title">Enfoque Full Face</h3>
       <p class="beneficio-text">Metodología integral que combina distintas técnicas y tecnologías para resultados armónicos.</p>
     </div>
     <div class="beneficio-card fade-up d2">
-      <div class="beneficio-icon">📍</div>
+      <div class="beneficio-icon"><svg style="width:24px;height:24px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></div>
       <h3 class="beneficio-title">Guayaquil, Ecuador</h3>
       <p class="beneficio-text">Instalaciones propias, de fácil acceso para profesionales de toda la región.</p>
     </div>

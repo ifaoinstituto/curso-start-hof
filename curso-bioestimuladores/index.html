@@ -73,7 +73,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .logros-img { margin-top: 28px; height: 220px; overflow: hidden; border-radius: 0 0 20px 0; box-shadow: 0 16px 34px rgba(27,42,74,0.14); }
 .logros-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-.dif-icon { width: 46px; height: 46px; border-radius: 13px; background: rgba(196,147,63,0.12); border: 1px solid rgba(196,147,63,0.25); display: flex; align-items: center; justify-content: center; font-size: 21px; margin-bottom: 14px; }
+.dif-icon { width: 46px; height: 46px; border-radius: 13px; background: rgba(196,147,63,0.12); border: 1px solid rgba(196,147,63,0.25); color: var(--gold-light); display: flex; align-items: center; justify-content: center; font-size: 21px; margin-bottom: 14px; }
 
 .quote-block { padding: 56px var(--px); background: var(--navy); }
 .quote-block .section-tag { color: var(--gold-light); }
@@ -123,7 +123,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .instructor-stat-num { font-family: var(--sans); font-size: 34px; font-weight: 600; color: var(--navy); line-height: 1; }
 .instructor-stat-label { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); line-height: 1.3; max-width: 100px; }
 .instructor-name { font-family: var(--serif); font-size: clamp(26px, 7vw, 40px); font-weight: 400; line-height: 1.1; color: var(--navy); margin-bottom: 6px; }
-.instructor-flag { font-size: 20px; }
+.instructor-flag { display: inline-flex; vertical-align: middle; margin-bottom: 6px; box-shadow: 0 0 0 1px rgba(27,42,74,0.1); }
 .instructor-reg { font-size: 11px; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 24px; }
 .credentials { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
 .credential { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: var(--navy); line-height: 1.4; font-weight: 500; }
@@ -135,7 +135,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .info-date-big { font-family: var(--sans); font-size: clamp(56px, 17vw, 88px); font-weight: 600; letter-spacing: -0.02em; color: var(--navy); line-height: 0.9; }
 .info-date-month { font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--terra); margin-bottom: 28px; }
 .info-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 28px; }
-.info-tag { background: var(--white); border: 1px solid rgba(139,90,60,0.2); padding: 10px 16px; font-size: 13px; font-weight: 600; color: var(--navy); }
+.info-tag { background: var(--white); border: 1px solid rgba(139,90,60,0.2); padding: 10px 16px; font-size: 13px; font-weight: 600; color: var(--navy); display: inline-flex; align-items: center; gap: 6px; }
 .info-note { font-size: 12px; color: var(--text-muted); font-style: italic; margin-top: 22px; line-height: 1.6; }
 
 /* ─── INVERSIÓN ─── */
@@ -284,7 +284,7 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
 
 <!-- ANNOUNCEMENT BAR -->
 <div class="bar">
-  ⚡ <b>Inmersión IFAO</b> — 20 y 21 de noviembre de 2026 · Guayaquil
+  <svg style="width:13px;height:13px;vertical-align:-2px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m11 2-8 11h6l-1 9 9-12h-6z"/></svg> <b>Inmersión IFAO</b> — 20 y 21 de noviembre de 2026 · Guayaquil
 </div>
 
 <!-- NAV -->
@@ -348,7 +348,7 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   <p class="section-sub fade-up d2">Programa oficial de la inmersión, respaldado por el contenido de cada bloque.</p>
   <div class="modulos">
     <div class="modulo fade-up">
-      <div class="dif-icon">💉</div>
+      <div class="dif-icon"><svg style="width:22px;height:22px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 15 9"/><path d="m13 7 4 4"/><path d="m15.5 4.5 4 4"/><path d="m17 3 4 4"/><path d="m11 11 2 2"/></svg></div>
       <div class="modulo-header">
         <div class="modulo-label">Bloque 1</div>
         <h3 class="modulo-title">Bioestimuladores</h3>
@@ -362,7 +362,7 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
       </ul>
     </div>
     <div class="modulo fade-up d1">
-      <div class="dif-icon">🧵</div>
+      <div class="dif-icon"><svg style="width:22px;height:22px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c3-4 6 4 9 0s6-4 9 0"/><circle cx="19.5" cy="6" r="1.6"/><path d="M19.5 7.6V9"/></svg></div>
       <div class="modulo-header">
         <div class="modulo-label">Bloque 2</div>
         <h3 class="modulo-title">Hilos Faciales</h3>
@@ -430,7 +430,7 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   </div>
   <div>
     <div class="section-tag fade-up">Aprende con</div>
-    <h2 class="instructor-name fade-up d1">Dra. Priscila Corrêa Martins <span class="instructor-flag">🇧🇷</span></h2>
+    <h2 class="instructor-name fade-up d1">Dra. Priscila Corrêa Martins <span class="instructor-flag"><svg viewBox="0 0 20 14" style="width:24px;height:17px;border-radius:2px"><rect width="20" height="14" fill="#009739"/><path d="M10 1.5 18.5 7 10 12.5 1.5 7z" fill="#FEDD00"/><circle cx="10" cy="7" r="3.4" fill="#012169"/></svg></span></h2>
     <p class="instructor-reg fade-up d1">CRO/PR 17802 — CRO/SC 21686</p>
     <div class="credentials fade-up d2">
       <div class="credential">Especialista en Armonización Orofacial</div>
@@ -448,10 +448,10 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   <div class="info-date-big fade-up d1">20+21</div>
   <div class="info-date-month fade-up d1">Noviembre 2026</div>
   <div class="info-tags fade-up d2">
-    <div class="info-tag">🕐 09:00 — 18:30</div>
-    <div class="info-tag">⏱ 16 horas de formación</div>
-    <div class="info-tag">🎓 Teórico-práctica</div>
-    <div class="info-tag">📍 IFAO Ecuador</div>
+    <div class="info-tag"><svg style="width:15px;height:15px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> 09:00 — 18:30</div>
+    <div class="info-tag"><svg style="width:15px;height:15px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> 16 horas de formación</div>
+    <div class="info-tag"><svg style="width:15px;height:15px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5 12 4l10 4.5-10 4.5-10-4.5z"/><path d="M6 10.7v4.3c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.3"/><path d="M22 8.5v6"/></svg> Teórico-práctica</div>
+    <div class="info-tag"><svg style="width:15px;height:15px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg> IFAO Ecuador</div>
   </div>
   <a href="https://wa.me/593997544471?text=Hola%2C%20quiero%20reservar%20mi%20cupo%20para%20el%20curso%20de%20Bioestimuladores%20%2B%20Hilos%20Faciales%20del%2020%20y%2021%20de%20noviembre." class="btn-primary fade-up d3" target="_blank">Reservar mi cupo →</a>
   <p class="info-note fade-up d3">La fecha, horario, modalidad y carga horaria corresponden al programa oficial.</p>
