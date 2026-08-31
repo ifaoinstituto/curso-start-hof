@@ -34,7 +34,8 @@ body { font-family: var(--sans); background: var(--nude); color: var(--navy); ov
 .bar { background: var(--navy); color: var(--gold-light); text-align: center; padding: 10px 16px; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.5; }
 .bar b { color: var(--white); }
 
-nav { position: sticky; top: 0; z-index: 100; background: rgba(245,235,224,0.96); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(139,90,60,0.12); padding: 14px var(--px); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+nav { position: sticky; top: 10px; z-index: 100; background: rgba(245,235,224,0.96); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(139,90,60,0.12); padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 12px; border-radius: 999px; box-shadow: 0 2px 10px rgba(27,42,74,0.05); transition: box-shadow 0.3s ease, background 0.3s ease; }
+nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245,235,224,0.98); }
 .nav-logo { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--navy); letter-spacing: 0.04em; line-height: 1.2; text-decoration: none; }
 .nav-logo em { color: var(--terra); font-style: italic; font-size: 11px; display: inline; letter-spacing: 0.04em; font-weight: 400; }
 .nav-cta { background: var(--terra); color: var(--white); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 18px; border: none; cursor: pointer; text-decoration: none; display: inline-block; border-radius: 2px; white-space: nowrap; -webkit-tap-highlight-color: transparent; flex-shrink: 0; }
@@ -63,7 +64,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(245,235,224,0.96)
 .logros { padding: 60px var(--px); background: var(--off-white); }
 .logro-list { display: flex; flex-direction: column; gap: 2px; margin-top: 8px; }
 .logro-item { display: flex; align-items: flex-start; gap: 14px; background: var(--white); padding: 18px 18px; }
-.logro-check { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--navy); color: var(--gold-light); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
+.logro-check { flex-shrink: 0; width: 28px; height: 28px; border-radius: 9px; background: var(--navy); color: var(--gold-light); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
 .logro-item p { font-size: 15px; color: var(--navy); font-weight: 500; line-height: 1.5; padding-top: 3px; }
 .logros-img { margin-top: 28px; height: 220px; overflow: hidden; border-radius: 0 0 20px 0; box-shadow: 0 16px 34px rgba(27,42,74,0.14); }
 .logros-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -72,6 +73,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(245,235,224,0.96)
 .diferencial { padding: 60px var(--px); background: var(--nude); }
 .dif-cards { display: flex; flex-direction: column; gap: 2px; margin-top: 8px; }
 .dif-card { background: var(--white); padding: 26px 22px; border-top: 3px solid var(--terra); }
+.dif-icon { width: 46px; height: 46px; border-radius: 13px; background: rgba(139,90,60,0.1); display: flex; align-items: center; justify-content: center; font-size: 21px; margin-bottom: 14px; }
 .dif-card h3 { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
 .dif-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 .split-images { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 28px; }
@@ -103,6 +105,13 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(245,235,224,0.96)
 
 /* ─── 05 EXPERIENCIA ─── */
 .experiencia { padding: 60px var(--px); background: var(--off-white); }
+.galeria { padding: 60px 0; background: var(--nude); text-align: center; overflow: hidden; }
+.galeria .section-tag, .galeria .section-title, .galeria .section-sub { padding: 0 var(--px); }
+.marquee-wrap { margin-top: 32px; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); }
+.marquee-track { display: flex; gap: 12px; width: max-content; animation: marquee-scroll 46s linear infinite; }
+.marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+.marquee-track img { height: 200px; width: auto; border-radius: 0 0 16px 0; object-fit: cover; display: block; flex-shrink: 0; box-shadow: 0 10px 24px rgba(27,42,74,0.14); }
+@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .exp-tag { display: inline-block; font-family: var(--serif); font-size: 15px; font-style: italic; color: var(--terra); border: 1px solid rgba(139,90,60,0.35); padding: 6px 16px; margin-bottom: 18px; }
 .dias-list { display: flex; flex-direction: column; gap: 2px; margin-top: 8px; }
 .dia-card { background: var(--white); padding: 26px 22px; border-top: 3px solid var(--terra); }
@@ -168,6 +177,7 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
 /* ─── DESKTOP ─── */
 @media (min-width: 768px) {
   :root { --px: 60px; }
+  nav { max-width: 900px; margin: 0 auto; padding: 14px 28px; top: 16px; }
   .nav-logo { font-size: 28px; }
   .nav-logo em { font-size: 16px; }
   .nav-cta { font-size: 12px; padding: 13px 24px; }
@@ -297,10 +307,12 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   <h2 class="section-title fade-up d1">Dos herramientas.<br><em>Un enfoque estratégico.</em></h2>
   <div class="dif-cards fade-up d2">
     <div class="dif-card">
+      <div class="dif-icon">💉</div>
       <h3>Bioestimuladores</h3>
       <p>Comprende el mecanismo, selecciona el producto y aprende estrategias de aplicación.</p>
     </div>
     <div class="dif-card">
+      <div class="dif-icon">🧵</div>
       <h3>Hilos Faciales</h3>
       <p>Conoce planos, vectores y técnicas para un reposicionamiento estratégico.</p>
     </div>
@@ -378,6 +390,16 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
       <h3 class="dia-title">Atención intensiva de pacientes</h3>
       <p class="dia-desc">Práctica clínica real, con supervisión directa de la docente.</p>
     </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="galeria">
+  <div class="section-tag fade-up">Galería</div>
+  <h2 class="section-title fade-up d1">Así se vive<br><em>la formación en IFAO</em></h2>
+  <p class="section-sub fade-up d2">Clases, práctica clínica y certificación de nuestras inmersiones.</p>
+  <div class="marquee-wrap fade-up d3">
+    <div class="marquee-track" id="marquee-track"></div>
   </div>
 </section>
 
@@ -486,6 +508,29 @@ document.querySelectorAll('.fade-up').forEach(function(el) {
   if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
   else io.observe(el);
 });
+
+(function() {
+  var track = document.getElementById('marquee-track');
+  if (!track) return;
+  var total = 11;
+  var html = '';
+  for (var pass = 0; pass < 2; pass++) {
+    for (var i = 1; i <= total; i++) {
+      var num = i < 10 ? '0' + i : '' + i;
+      html += '<img src="/IFAO/marquee/curso-' + num + '.jpg" alt="Momento del curso IFAO" loading="lazy">';
+    }
+  }
+  track.innerHTML = html;
+})();
+
+(function() {
+  var nav = document.querySelector('nav');
+  if (!nav) return;
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 30) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  }, { passive: true });
+})();
 </script>
 
 </body>
