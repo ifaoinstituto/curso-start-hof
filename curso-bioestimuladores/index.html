@@ -46,9 +46,12 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .hero-kicker { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); border: 1px solid var(--terra); padding: 5px 14px; margin-bottom: 22px; }
 .hero-title { font-family: var(--serif); font-size: clamp(32px, 7.5vw, 54px); font-weight: 600; line-height: 1.08; color: var(--navy); letter-spacing: -0.01em; margin-bottom: 14px; }
 .hero-title em { font-style: italic; color: var(--terra); font-weight: 500; }
-.hero-sub { font-family: var(--serif); font-size: clamp(17px, 3.6vw, 21px); font-style: italic; font-weight: 400; color: var(--text-muted); line-height: 1.5; margin-bottom: 34px; max-width: 46ch; }
+.hero-action { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--terra); margin-bottom: 18px; }
+.hero-sub { font-family: var(--serif); font-size: clamp(17px, 3.6vw, 21px); font-style: italic; font-weight: 400; color: var(--text-muted); line-height: 1.5; margin-bottom: 30px; max-width: 46ch; }
 .btn-primary { background: var(--terra); color: var(--white); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 17px 28px; border: none; cursor: pointer; text-decoration: none; display: inline-block; text-align: center; border-radius: 2px; -webkit-tap-highlight-color: transparent; transition: background 0.2s; }
 .btn-primary:active, .btn-primary:hover { background: var(--terra-light); }
+.hero-date-line { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-top: 18px; }
+.hero-date-line b { color: var(--navy); }
 
 .hero-visual { position: relative; margin: 32px calc(-1 * var(--px)) 0; height: 340px; }
 .hero-img { width: 100%; height: 100%; overflow: hidden; box-shadow: 0 20px 44px rgba(27,42,74,0.16); }
@@ -138,12 +141,12 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .instructor-extra { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
 
 /* ─── 07 FECHA + INFO ─── */
-.info-final { padding: 60px var(--px); background: var(--off-white); }
-.datos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 8px; }
-.dato-card { background: var(--white); padding: 22px 18px; border-top: 3px solid var(--terra); }
-.dato-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
-.dato-value { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--navy); line-height: 1.2; }
-.dato-value small { font-family: var(--sans); font-size: 12px; color: var(--text-muted); display: block; margin-top: 2px; font-weight: 400; }
+.info-final { padding: 60px var(--px); background: var(--off-white); text-align: center; }
+.info-date-big { font-family: var(--serif); font-size: clamp(64px, 20vw, 100px); font-weight: 700; color: var(--navy); line-height: 0.9; }
+.info-date-month { font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--terra); margin-bottom: 28px; }
+.info-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 28px; }
+.info-tag { background: var(--white); border: 1px solid rgba(139,90,60,0.2); padding: 10px 16px; font-size: 13px; font-weight: 600; color: var(--navy); }
+.info-note { font-size: 12px; color: var(--text-muted); font-style: italic; margin-top: 22px; line-height: 1.6; }
 
 /* ─── 08 FINAL CTA ─── */
 .final-cta { padding: 68px var(--px); background: var(--terra); text-align: center; }
@@ -184,6 +187,7 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
 
   .hero { padding: 20px var(--px) 0; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; min-height: 88vh; }
   .hero-sub { font-size: 22px; }
+  .hero-action { font-size: 17px; }
   .hero-visual { margin: 0; height: auto; align-self: center; aspect-ratio: 4/5; }
   .hero-img { height: 100%; }
 
@@ -228,10 +232,8 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   .credential { font-size: 16px; }
   .instructor-extra { font-size: 15px; }
 
-  .info-final { padding: 88px var(--px); }
-  .datos-grid { grid-template-columns: repeat(5, 1fr); margin-top: 12px; }
-  .dato-card { padding: 28px 20px; }
-  .dato-value { font-size: 22px; }
+  .info-final { padding: 100px var(--px); }
+  .info-tag { font-size: 14px; padding: 12px 20px; }
 
   .final-cta { padding: 110px var(--px); }
   .final-cta p { font-size: 18px; margin-bottom: 36px; }
@@ -272,8 +274,10 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   <div>
     <div class="hero-kicker fade-up">Bioestimulación + Reposicionamiento Estratégico Full Face</div>
     <h1 class="hero-title fade-up d1">Bioestimuladores Inyectables <em>+</em> Actualización en Hilos Faciales</h1>
+    <p class="hero-action fade-up d1">Evaluar · Planificar · Combinar</p>
     <p class="hero-sub fade-up d2">De la evaluación clínica a estrategias de tratamiento más naturales, armónicas y previsibles.</p>
     <a href="#cta" class="btn-primary fade-up d3">Quiero formar parte</a>
+    <p class="hero-date-line fade-up d3"><b>20 y 21 de noviembre de 2026</b> · IFAO Ecuador</p>
   </div>
   <div class="hero-visual fade-up d2">
     <div class="hero-img">
@@ -434,29 +438,16 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
 <!-- 07 FECHA + INFORMACIÓN -->
 <section class="info-final">
   <div class="section-tag fade-up">Fecha + Información</div>
-  <h2 class="section-title fade-up d1">Todo lo que<br><em>necesitas saber</em></h2>
-  <div class="datos-grid fade-up d2">
-    <div class="dato-card">
-      <div class="dato-label">Fecha</div>
-      <div class="dato-value">20 + 21<small>Noviembre 2026</small></div>
-    </div>
-    <div class="dato-card">
-      <div class="dato-label">Horario</div>
-      <div class="dato-value">09:00<small>— 18:30</small></div>
-    </div>
-    <div class="dato-card">
-      <div class="dato-label">Lugar</div>
-      <div class="dato-value">IFAO<small>Ecuador</small></div>
-    </div>
-    <div class="dato-card">
-      <div class="dato-label">Duración</div>
-      <div class="dato-value">16h<small>/aula</small></div>
-    </div>
-    <div class="dato-card">
-      <div class="dato-label">Modalidad</div>
-      <div class="dato-value">Teórico<small>-práctica</small></div>
-    </div>
+  <div class="info-date-big fade-up d1">20+21</div>
+  <div class="info-date-month fade-up d1">Noviembre 2026</div>
+  <div class="info-tags fade-up d2">
+    <div class="info-tag">🕐 09:00 — 18:30</div>
+    <div class="info-tag">⏱ 16 horas de formación</div>
+    <div class="info-tag">🎓 Teórico-práctica</div>
+    <div class="info-tag">📍 IFAO Ecuador</div>
   </div>
+  <a href="https://wa.me/593997544471?text=Hola%2C%20quiero%20reservar%20mi%20cupo%20para%20el%20curso%20de%20Bioestimuladores%20%2B%20Hilos%20Faciales%20del%2020%20y%2021%20de%20noviembre." class="btn-primary fade-up d3" target="_blank">Reservar mi cupo →</a>
+  <p class="info-note fade-up d3">La fecha, horario, modalidad y carga horaria corresponden al programa oficial.</p>
 </section>
 
 <!-- 08 CTA FINAL -->
