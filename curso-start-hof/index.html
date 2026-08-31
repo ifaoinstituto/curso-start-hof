@@ -548,10 +548,11 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 }
 .btn-ig {
   color: rgba(255,255,255,0.7); font-size: 13px; text-decoration: none;
-  display: block; text-align: center; padding: 10px;
+  display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px;
   border: 1px solid rgba(255,255,255,0.25); border-radius: 2px;
   -webkit-tap-highlight-color: transparent;
 }
+.btn-ig svg { width: 16px; height: 16px; flex-shrink: 0; }
 
 /* ─── FOOTER ─── */
 footer { background: var(--navy); padding: 48px var(--px) 28px; }
@@ -712,7 +713,7 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   .final-cta p { font-size: 16px; margin-bottom: 40px; }
   .btn-white { display: inline-block; width: auto; padding: 18px 52px; margin-bottom: 0; font-size: 14px; }
   .btn-white:hover { background: var(--nude); }
-  .btn-ig { display: inline-block; width: auto; padding: 16px 36px; margin-left: 16px; font-size: 14px; }
+  .btn-ig { display: inline-flex; width: auto; padding: 16px 36px; margin-left: 16px; font-size: 14px; }
 
   /* Footer */
   footer { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 56px; padding-bottom: 40px; }
@@ -1066,7 +1067,10 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   <h2 class="fade-up">¿Quieres ser parte<br><strong>de la próxima edición?</strong></h2>
   <p class="fade-up d1">Escríbenos y te avisamos apenas se confirme la fecha.</p>
   <a href="https://wa.me/593997544471?text=Hola%2C%20quiero%20que%20me%20avisen%20de%20la%20pr%C3%B3xima%20edici%C3%B3n%20del%20Curso%20START%20HOF." class="btn-white fade-up d2" target="_blank">WhatsApp: 099 754 4471 →</a>
-  <a href="https://www.instagram.com/IFAoInstituto" class="btn-ig fade-up d3" target="_blank">📸 @IFAoInstituto</a>
+  <a href="https://www.instagram.com/IFAoInstituto" class="btn-ig fade-up d3" target="_blank">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+    @IFAoInstituto
+  </a>
 </section>
 
 <!-- FOOTER -->
