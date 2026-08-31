@@ -162,17 +162,25 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .marquee-track img { height: 210px; width: auto; border-radius: 0 0 16px 0; object-fit: cover; display: block; flex-shrink: 0; box-shadow: 0 10px 24px rgba(27,42,74,0.14); }
 @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-.videos-seccion { padding: 64px var(--px); background: var(--off-white); text-align: center; }
-.video-slider { position: relative; max-width: 340px; margin: 32px auto 0; display: flex; align-items: center; gap: 10px; }
-.vs-track { position: relative; width: 100%; aspect-ratio: 9 / 16; border-radius: 14px; overflow: hidden; background: var(--navy); box-shadow: 0 20px 50px rgba(27,42,74,0.22); }
+.videos-seccion { padding: 64px var(--px); background: var(--off-white); }
+.videos-grid { display: flex; flex-direction: column; gap: 36px; margin-top: 8px; align-items: center; }
+.video-slider { position: relative; width: 100%; max-width: 320px; }
+.vs-track { position: relative; width: 100%; aspect-ratio: 9 / 16; border-radius: 0 0 24px 0; overflow: hidden; background: var(--navy); box-shadow: 0 20px 50px rgba(27,42,74,0.22); }
 .vs-slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity .4s ease; }
 .vs-slide.active { opacity: 1; visibility: visible; }
 .vs-slide iframe { width: 100%; height: 100%; border: 0; display: block; }
-.vs-arrow { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--terra); background: var(--white); color: var(--terra); font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s ease, color .2s ease; }
-.vs-arrow:hover { background: var(--terra); color: var(--white); }
-.vs-dots { display: flex; justify-content: center; gap: 8px; margin-top: 18px; }
+.vs-track::after { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 30%, transparent 75%, rgba(0,0,0,0.35) 100%); }
+.vs-pause { position: absolute; top: 14px; right: 14px; z-index: 4; width: 34px; height: 34px; border-radius: 50%; background: rgba(0,0,0,0.4); border: none; color: var(--white); font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; -webkit-tap-highlight-color: transparent; }
+.vs-caption { position: absolute; left: 18px; bottom: 18px; z-index: 4; color: var(--white); }
+.vs-caption strong { display: block; font-family: var(--serif); font-size: 20px; font-weight: 500; line-height: 1.2; margin-bottom: 10px; }
+.vs-caption span { display: inline-block; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); padding: 6px 12px; border-radius: 999px; }
+.vs-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
 .vs-dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: var(--nude-dark); cursor: pointer; padding: 0; }
 .vs-dot.active { background: var(--terra); width: 22px; border-radius: 4px; transition: width .2s ease; }
+.videos-text { text-align: left; max-width: 460px; }
+.videos-summary { font-size: 15px; color: var(--text-muted); line-height: 1.8; }
+.videos-summary p { margin-bottom: 16px; }
+.videos-summary p:last-child { margin-bottom: 0; }
 
 /* ─── FAQ ─── */
 .faq { padding: 64px var(--px); background: var(--off-white); }
@@ -271,6 +279,12 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   .trayectoria-title { font-size: 12px; margin-bottom: 20px; }
   .trayectoria-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
   .tray-item { font-size: 13px; }
+  .videos-seccion { padding: 88px var(--px); }
+  .videos-grid { flex-direction: row; align-items: center; justify-content: center; gap: 72px; }
+  .video-slider { max-width: 300px; flex-shrink: 0; }
+  .vs-caption strong { font-size: 22px; }
+  .videos-text { max-width: 480px; }
+  .videos-summary { font-size: 16px; }
   .faq { padding: 88px var(--px); }
   .faq-btn { font-size: 20px; padding: 24px 0; }
   .faq-btn:hover { color: var(--terra); }
@@ -474,24 +488,33 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
 
 <!-- VIDEOS -->
 <section class="videos-seccion">
-  <div class="section-tag fade-up">Míralo en acción</div>
-  <h2 class="section-title fade-up d1">Así se vive<br><em>IFAO</em></h2>
-  <p class="section-sub fade-up d2">Recorre algunos momentos reales de formación y práctica clínica.</p>
-
-  <div class="video-slider fade-up d2">
-    <button class="vs-arrow vs-prev" aria-label="Anterior">&#8249;</button>
-    <div class="vs-track">
-      <div class="vs-slide active" data-id="04zeJx6xtYc"></div>
-      <div class="vs-slide" data-id="YOLTaWdWl64"></div>
-      <div class="vs-slide" data-id="60wu0h1-Wuc"></div>
+  <div class="videos-grid">
+    <div class="video-slider fade-up">
+      <div class="vs-track">
+        <div class="vs-slide active" data-id="04zeJx6xtYc"></div>
+        <div class="vs-slide" data-id="YOLTaWdWl64"></div>
+        <div class="vs-slide" data-id="60wu0h1-Wuc"></div>
+        <button class="vs-pause" aria-label="Pausar video">❚❚</button>
+        <div class="vs-caption">
+          <strong>Así se vive IFAO</strong>
+          <span>Curso START HOF</span>
+        </div>
+      </div>
+      <div class="vs-dots">
+        <button class="vs-dot active" data-index="0"></button>
+        <button class="vs-dot" data-index="1"></button>
+        <button class="vs-dot" data-index="2"></button>
+      </div>
     </div>
-    <button class="vs-arrow vs-next" aria-label="Siguiente">&#8250;</button>
-  </div>
 
-  <div class="vs-dots">
-    <button class="vs-dot active" data-index="0"></button>
-    <button class="vs-dot" data-index="1"></button>
-    <button class="vs-dot" data-index="2"></button>
+    <div class="videos-text fade-up d1">
+      <div class="section-tag">Míralo en acción</div>
+      <h2 class="section-title">Así fue<br><em>la primera cohorte</em></h2>
+      <div class="videos-summary">
+        <p>Los profesionales que pasaron por STARTHOF coinciden en algo: el día de atención intensiva de pacientes fue el que más marcó la diferencia. Después de la teoría y la pre-clínica, aplicar toxina botulínica y ácido hialurónico en pacientes reales — con la Dra. Priscila supervisando cada procedimiento — fue lo que convirtió la técnica en criterio clínico real.</p>
+        <p>El ambiente cercano, los grupos reducidos y la posibilidad de resolver dudas en el momento dejaron una experiencia muy distinta a un curso teórico tradicional. Por eso IFAO repite esta misma metodología en cada nueva inmersión.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -620,12 +643,12 @@ document.querySelectorAll('.fade-up').forEach(function(el) {
 (function(){
   var slides = document.querySelectorAll('.vs-slide');
   var dots = document.querySelectorAll('.vs-dot');
-  var prevBtn = document.querySelector('.vs-prev');
-  var nextBtn = document.querySelector('.vs-next');
+  var pauseBtn = document.querySelector('.vs-pause');
   var current = 0;
+  var paused = false;
 
   function loadVideo(slide) {
-    if (slide.querySelector('iframe')) return;
+    if (paused || slide.querySelector('iframe')) return;
     var id = slide.getAttribute('data-id');
     var iframe = document.createElement('iframe');
     iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&mute=1&playsinline=1&rel=0';
@@ -653,9 +676,16 @@ document.querySelectorAll('.fade-up').forEach(function(el) {
     }, { threshold: 0.4 });
     io2.observe(document.querySelector('.video-slider'));
 
-    prevBtn.addEventListener('click', function(){ goTo(current - 1); });
-    nextBtn.addEventListener('click', function(){ goTo(current + 1); });
-    dots.forEach(function(d){ d.addEventListener('click', function(){ goTo(parseInt(d.getAttribute('data-index'), 10)); }); });
+    dots.forEach(function(d){ d.addEventListener('click', function(){ paused = false; if (pauseBtn) pauseBtn.textContent = '❚❚'; goTo(parseInt(d.getAttribute('data-index'), 10)); }); });
+
+    if (pauseBtn) {
+      pauseBtn.addEventListener('click', function(){
+        paused = !paused;
+        pauseBtn.textContent = paused ? '▶' : '❚❚';
+        if (paused) { slides[current].innerHTML = ''; }
+        else { loadVideo(slides[current]); }
+      });
+    }
   }
 })();
 </script>
