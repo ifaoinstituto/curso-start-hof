@@ -362,11 +362,9 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 
 /* ─── INSTRUCTOR ─── */
 .instructor { padding: 64px var(--px); background: var(--nude); }
-.instructor-duo { position: relative; display: grid; grid-template-columns: 1.6fr 1fr; gap: 12px; margin-bottom: 56px; }
-.instructor-duo-main, .instructor-duo-secondary { overflow: hidden; box-shadow: 0 16px 34px rgba(27,42,74,0.16); }
-.instructor-duo-main { border-radius: 0 0 28px 0; aspect-ratio: 3 / 4; }
-.instructor-duo-secondary { border-radius: 0 0 20px 0; aspect-ratio: 3 / 4; margin-top: 18%; }
-.instructor-duo-main img, .instructor-duo-secondary img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.instructor-duo { position: relative; margin-bottom: 56px; }
+.instructor-duo-main { overflow: hidden; box-shadow: 0 16px 34px rgba(27,42,74,0.16); border-radius: 0 0 28px 0; aspect-ratio: 3 / 4; }
+.instructor-duo-main img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 .instructor-stat-card { position: absolute; left: 0; bottom: -40px; background: var(--white); border-radius: 0 0 16px 0; padding: 16px 20px; box-shadow: 0 16px 34px rgba(27,42,74,0.2); display: flex; align-items: center; gap: 12px; z-index: 3; }
 .instructor-stat-num { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--navy); line-height: 1; }
 .instructor-stat-label { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); line-height: 1.3; max-width: 100px; }
@@ -869,10 +867,7 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
 <section class="instructor">
   <div class="instructor-duo fade-up">
     <div class="instructor-duo-main">
-      <img src="/IFAO/Dra Priscila.png" alt="Dra. Priscila Corrêa Martins en congreso internacional">
-    </div>
-    <div class="instructor-duo-secondary">
-      <img src="/IFAO/practicas.png" alt="Dra. Priscila Corrêa Martins enseñando">
+      <img src="/IFAO/Dra Priscila foto.jpg" alt="Dra. Priscila Corrêa Martins">
     </div>
     <div class="instructor-stat-card">
       <div class="instructor-stat-num">6</div>
