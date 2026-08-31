@@ -73,16 +73,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .logros-img { margin-top: 28px; height: 220px; overflow: hidden; border-radius: 0 0 20px 0; box-shadow: 0 16px 34px rgba(27,42,74,0.14); }
 .logros-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* ─── 03 DIFERENCIAL ─── */
-.diferencial { padding: 60px var(--px); background: var(--nude); }
-.dif-cards { display: flex; flex-direction: column; gap: 2px; margin-top: 8px; }
-.dif-card { background: var(--white); padding: 26px 22px; border-top: 3px solid var(--terra); }
-.dif-icon { width: 46px; height: 46px; border-radius: 13px; background: rgba(139,90,60,0.1); display: flex; align-items: center; justify-content: center; font-size: 21px; margin-bottom: 14px; }
-.dif-card h3 { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
-.dif-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
-.split-images { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 28px; }
-.split-img { height: 180px; overflow: hidden; border-radius: 0 0 15px 0; box-shadow: 0 12px 26px rgba(27,42,74,0.14); }
-.split-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.dif-icon { width: 46px; height: 46px; border-radius: 13px; background: rgba(196,147,63,0.12); border: 1px solid rgba(196,147,63,0.25); display: flex; align-items: center; justify-content: center; font-size: 21px; margin-bottom: 14px; }
 
 .quote-block { padding: 56px var(--px); background: var(--navy); }
 .quote-block .section-tag { color: var(--gold-light); }
@@ -233,13 +224,6 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   .logro-item p { font-size: 16px; }
   .logros-img { margin-top: 0; height: 100%; min-height: 420px; }
 
-  .diferencial { padding: 88px var(--px); }
-  .dif-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-  .dif-card { padding: 34px 30px; }
-  .dif-card h3 { font-size: 26px; }
-  .dif-card p { font-size: 15px; }
-  .split-images { grid-template-columns: 1fr 1fr; }
-  .split-img { height: 280px; }
   .quote-block { padding: 88px var(--px); }
   .quote-text { font-size: clamp(28px, 3.4vw, 40px); padding-left: 28px; border-left-width: 4px; }
   .quote-support { font-size: 16px; padding-left: 31px; max-width: 62ch; }
@@ -351,41 +335,20 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   </div>
 </section>
 
-<!-- 03 EL DIFERENCIAL -->
-<section class="diferencial">
-  <div class="section-tag fade-up">El Diferencial</div>
-  <h2 class="section-title fade-up d1">Dos herramientas.<br><em>Un enfoque estratégico.</em></h2>
-  <div class="dif-cards fade-up d2">
-    <div class="dif-card">
-      <div class="dif-icon">💉</div>
-      <h3>Bioestimuladores</h3>
-      <p>Comprende el mecanismo, selecciona el producto y aprende estrategias de aplicación.</p>
-    </div>
-    <div class="dif-card">
-      <div class="dif-icon">🧵</div>
-      <h3>Hilos Faciales</h3>
-      <p>Conoce planos, vectores y técnicas para un reposicionamiento estratégico.</p>
-    </div>
-  </div>
-  <div class="split-images fade-up d3">
-    <div class="split-img"><img src="/IFAO/practicas.png" alt="Bioestimulador inyectable"></div>
-    <div class="split-img"><img src="/IFAO/practicas 2.png" alt="Práctica con hilos faciales"></div>
-  </div>
-</section>
-
 <div class="quote-block">
   <div class="section-tag fade-up">Full Face</div>
   <p class="quote-text fade-up d1">La combinación correcta puede transformar tu planificación Full Face.</p>
   <p class="quote-support fade-up d2">El programa incluye CaHA y PLLA, técnicas de aplicación y diluciones, además de diferentes estrategias con hilos PDO, PLA/CL y protocolos integrados.</p>
 </div>
 
-<!-- 04 QUÉ VAS A APRENDER -->
+<!-- 03 CONTENIDO DEL CURSO -->
 <section class="contenido" id="contenido">
   <div class="section-tag fade-up">Contenido del Curso</div>
-  <h2 class="section-title fade-up d1">¿Qué vas<br><em>a aprender?</em></h2>
-  <p class="section-sub fade-up d2">Respaldado por el programa oficial de la inmersión.</p>
+  <h2 class="section-title fade-up d1">Dos herramientas.<br><em>Un enfoque estratégico.</em></h2>
+  <p class="section-sub fade-up d2">Programa oficial de la inmersión, respaldado por el contenido de cada bloque.</p>
   <div class="modulos">
     <div class="modulo fade-up">
+      <div class="dif-icon">💉</div>
       <div class="modulo-header">
         <div class="modulo-label">Bloque 1</div>
         <h3 class="modulo-title">Bioestimuladores</h3>
@@ -399,6 +362,7 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
       </ul>
     </div>
     <div class="modulo fade-up d1">
+      <div class="dif-icon">🧵</div>
       <div class="modulo-header">
         <div class="modulo-label">Bloque 2</div>
         <h3 class="modulo-title">Hilos Faciales</h3>
