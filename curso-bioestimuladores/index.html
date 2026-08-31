@@ -148,6 +148,39 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .info-tag { background: var(--white); border: 1px solid rgba(139,90,60,0.2); padding: 10px 16px; font-size: 13px; font-weight: 600; color: var(--navy); }
 .info-note { font-size: 12px; color: var(--text-muted); font-style: italic; margin-top: 22px; line-height: 1.6; }
 
+/* ─── INVERSIÓN ─── */
+.inversion { padding: 60px var(--px); background: var(--off-white); text-align: center; }
+.precio-card { max-width: 420px; margin: 32px auto 0; background: var(--white); border-top: 4px solid var(--terra); padding: 32px 26px; text-align: left; box-shadow: 0 16px 34px rgba(27,42,74,0.1); }
+.precio-chip { display: inline-block; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--terra); border: 1px solid var(--terra); padding: 5px 12px; margin-bottom: 18px; }
+.precio-row { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+.precio-old { font-family: var(--serif); font-size: 20px; color: var(--text-muted); text-decoration: line-through; }
+.precio-new { font-family: var(--serif); font-size: 46px; font-weight: 700; color: var(--navy); line-height: 1; }
+.precio-caption { font-size: 12px; color: var(--terra); font-weight: 600; margin-bottom: 26px; }
+.incluye-title { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 14px; font-weight: 700; }
+.incluye-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.incluye-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--navy); font-weight: 500; }
+.incluye-item::before { content: '✓'; color: var(--terra); font-weight: 700; flex-shrink: 0; }
+.precio-cta { display: block; width: 100%; text-align: center; box-sizing: border-box; }
+.precio-footnote { text-align: center; font-size: 12px; color: var(--text-muted); font-style: italic; margin-top: 18px; }
+
+/* ─── COMBO ─── */
+.combo-block { padding: 60px var(--px); background: var(--navy); text-align: center; }
+.combo-block .section-tag { color: var(--gold-light); }
+.combo-block .section-title { color: var(--white); }
+.combo-block .section-sub { color: rgba(255,255,255,0.5); }
+.combo-items { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 28px 0; flex-wrap: wrap; }
+.combo-item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); padding: 14px 20px; font-size: 13px; font-weight: 600; color: var(--white); }
+.combo-plus { font-family: var(--serif); font-size: 22px; color: var(--gold-light); }
+.combo-compare { display: flex; justify-content: center; align-items: center; gap: 28px; margin: 24px 0; flex-wrap: wrap; }
+.combo-old-block, .combo-new-block { text-align: center; }
+.combo-old-label, .combo-new-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.combo-old-label { color: rgba(255,255,255,0.4); }
+.combo-new-label { color: var(--gold-light); font-weight: 700; }
+.combo-old-price { font-family: var(--serif); font-size: 24px; color: rgba(255,255,255,0.5); text-decoration: line-through; }
+.combo-new-price { font-family: var(--serif); font-size: 42px; font-weight: 700; color: var(--white); line-height: 1; }
+.combo-save { display: inline-block; margin-top: 4px; background: rgba(196,147,63,0.15); border: 1px solid rgba(196,147,63,0.4); color: var(--gold-light); font-size: 12px; font-weight: 700; padding: 8px 16px; }
+.combo-cta { margin-top: 28px; }
+
 /* ─── 08 FINAL CTA ─── */
 .final-cta { padding: 68px var(--px); background: var(--terra); text-align: center; }
 .final-cta h2 { font-family: var(--serif); font-size: clamp(30px, 8vw, 50px); font-weight: 300; color: var(--white); line-height: 1.15; margin-bottom: 8px; }
@@ -235,6 +268,11 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   .info-final { padding: 100px var(--px); }
   .info-tag { font-size: 14px; padding: 12px 20px; }
 
+  .inversion { padding: 88px var(--px); }
+  .precio-card { padding: 40px 36px; }
+  .precio-new { font-size: 54px; }
+  .combo-block { padding: 88px var(--px); }
+  .combo-new-price { font-size: 52px; }
   .final-cta { padding: 110px var(--px); }
   .final-cta p { font-size: 18px; margin-bottom: 36px; }
   .btn-white:hover { background: var(--nude); }
@@ -266,7 +304,7 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
 <!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">IFAO <em>Instituto</em></a>
-  <a href="#cta" class="nav-cta">Quiero formar parte</a>
+  <a href="#inversion" class="nav-cta">Quiero formar parte</a>
 </nav>
 
 <!-- 01 HERO -->
@@ -276,7 +314,7 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
     <h1 class="hero-title fade-up d1">Bioestimuladores Inyectables <em>+</em> Actualización en Hilos Faciales</h1>
     <p class="hero-action fade-up d1">Evaluar · Planificar · Combinar</p>
     <p class="hero-sub fade-up d2">De la evaluación clínica a estrategias de tratamiento más naturales, armónicas y previsibles.</p>
-    <a href="#cta" class="btn-primary fade-up d3">Quiero formar parte</a>
+    <a href="#inversion" class="btn-primary fade-up d3">Quiero formar parte</a>
     <p class="hero-date-line fade-up d3"><b>20 y 21 de noviembre de 2026</b> · IFAO Ecuador</p>
   </div>
   <div class="hero-visual fade-up d2">
@@ -449,6 +487,56 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   <a href="https://wa.me/593997544471?text=Hola%2C%20quiero%20reservar%20mi%20cupo%20para%20el%20curso%20de%20Bioestimuladores%20%2B%20Hilos%20Faciales%20del%2020%20y%2021%20de%20noviembre." class="btn-primary fade-up d3" target="_blank">Reservar mi cupo →</a>
   <p class="info-note fade-up d3">La fecha, horario, modalidad y carga horaria corresponden al programa oficial.</p>
 </section>
+
+<!-- INVERSIÓN -->
+<section class="inversion" id="inversion">
+  <div class="section-tag fade-up">Inversión</div>
+  <h2 class="section-title fade-up d1">Una formación para<br><em>llevar a tu práctica</em></h2>
+  <p class="section-sub fade-up d2">Reserva tu cupo</p>
+  <div class="precio-card fade-up d2">
+    <div class="precio-chip">Preventa</div>
+    <div class="precio-row">
+      <span class="precio-old">$1.200</span>
+      <span class="precio-new">$1.050</span>
+    </div>
+    <div class="precio-caption">Precio especial de inscripción anticipada — por tiempo limitado</div>
+    <div class="incluye-title">Incluye</div>
+    <div class="incluye-list">
+      <div class="incluye-item">Formación teórica</div>
+      <div class="incluye-item">Jornada práctica con pacientes</div>
+      <div class="incluye-item">Bioestimuladores inyectables</div>
+      <div class="incluye-item">Técnicas con hilos faciales</div>
+      <div class="incluye-item">Certificación IFAO</div>
+      <div class="incluye-item">Material de apoyo</div>
+    </div>
+    <a href="https://wa.me/593997544471?text=Hola%2C%20quiero%20inscribirme%20al%20curso%20de%20Bioestimuladores%20%2B%20Hilos%20Faciales%20del%2020%20y%2021%20de%20noviembre." class="btn-primary precio-cta" target="_blank">Quiero inscribirme →</a>
+  </div>
+  <p class="precio-footnote fade-up d3">Máximo 12 participantes para la jornada práctica.</p>
+</section>
+
+<!-- COMBO -->
+<div class="combo-block">
+  <div class="section-tag fade-up">¿Por Qué Elegir Solo Uno?</div>
+  <h2 class="section-title fade-up d1">Lleva las<br><em>dos formaciones</em></h2>
+  <p class="section-sub fade-up d2">Amplía tu formación y aprovecha el precio especial del combo.</p>
+  <div class="combo-items fade-up d2">
+    <div class="combo-item">Bioestimuladores + Hilos</div>
+    <div class="combo-plus">+</div>
+    <div class="combo-item">Complicaciones en Rellenos</div>
+  </div>
+  <div class="combo-compare fade-up d3">
+    <div class="combo-old-block">
+      <div class="combo-old-label">Por separado</div>
+      <div class="combo-old-price">$1.470</div>
+    </div>
+    <div class="combo-new-block">
+      <div class="combo-new-label">Combo Preventa</div>
+      <div class="combo-new-price">$1.350</div>
+      <div class="combo-save">Ahorra $120</div>
+    </div>
+  </div>
+  <a href="https://wa.me/593997544471?text=Hola%2C%20quiero%20el%20combo%20de%20Bioestimuladores%20%2B%20Hilos%20y%20Complicaciones%20en%20Rellenos." class="btn-white combo-cta fade-up d3" target="_blank">Quiero el combo →</a>
+</div>
 
 <!-- 08 CTA FINAL -->
 <section class="final-cta" id="cta">
