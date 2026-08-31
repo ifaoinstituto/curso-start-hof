@@ -60,49 +60,20 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
   z-index: -1;
   pointer-events: none;
 }
-.hero-tag { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); border: 1px solid var(--terra); padding: 5px 14px; margin-bottom: 20px; }
-.hero-curso { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
-.hero-headline { font-family: var(--serif); font-size: clamp(38px, 10.5vw, 80px); font-weight: 700; line-height: 0.95; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 2px; }
-.hero-hof { font-family: var(--serif); font-size: clamp(38px, 10.5vw, 80px); font-weight: 300; line-height: 0.95; color: var(--terra); letter-spacing: -0.02em; margin-bottom: 18px; }
-.hero-subtitle { font-size: 14px; font-weight: 400; color: var(--text-muted); line-height: 1.5; margin-bottom: 6px; }
+.hero { text-align: center; }
+.hero-tag { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); border: 1px solid var(--terra); padding: 5px 14px; margin-bottom: 24px; }
+.hero-headline { font-family: var(--serif); font-size: clamp(34px, 9.5vw, 64px); font-weight: 400; line-height: 1.18; color: var(--navy); letter-spacing: -0.01em; max-width: 15ch; margin: 0 auto 20px; }
+.hero-headline em { font-style: italic; color: var(--terra); }
+.hero-subtitle { font-size: 15px; font-weight: 400; color: var(--text-muted); line-height: 1.6; max-width: 42ch; margin: 0 auto 32px; }
 .hero-subtitle strong { color: var(--navy); font-weight: 600; }
-.hero-date { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 28px; }
-.hero-date b { color: var(--navy); }
-.hero-cta-group { display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
-.btn-primary { background: var(--terra); color: var(--white); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 17px 24px; border: none; cursor: pointer; text-decoration: none; display: block; text-align: center; border-radius: 2px; -webkit-tap-highlight-color: transparent; transition: background 0.2s; }
+.hero-cta-group { display: flex; flex-direction: column; gap: 12px; margin-bottom: 48px; align-items: center; }
+.btn-primary { background: var(--terra); color: var(--white); font-size: 13px; font-weight: 700; letter-spacing: 0.04em; padding: 15px 26px; border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; -webkit-tap-highlight-color: transparent; transition: background 0.2s; }
 .btn-primary:active { background: var(--terra-light); }
-.btn-secondary { color: var(--navy); font-size: 13px; font-weight: 500; text-decoration: none; text-align: center; display: block; padding: 10px; border: 1px solid rgba(27,42,74,0.25); border-radius: 2px; -webkit-tap-highlight-color: transparent; }
+.btn-secondary { color: var(--navy); font-size: 13px; font-weight: 600; text-decoration: none; text-align: center; display: inline-flex; align-items: center; justify-content: center; padding: 15px 26px; background: rgba(27,42,74,0.06); border-radius: 999px; -webkit-tap-highlight-color: transparent; }
 
-.preventa-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(196,147,63,0.12); border: 1px solid rgba(196,147,63,0.4); padding: 8px 14px; margin-bottom: 28px; border-radius: 2px; }
-.preventa-badge span { font-size: 12px; color: var(--terra); font-weight: 600; }
-.preventa-badge em { font-size: 11px; color: var(--text-muted); font-style: normal; }
-
-.hero-visual { position: relative; padding: 20px 20px 0; }
-.hero-duo { position: relative; aspect-ratio: 4 / 5; max-width: 420px; margin: 0 auto; }
-.hero-img-main {
-  position: absolute; top: 0; right: 0; width: 100%; height: 100%;
-  border-radius: 0 0 60px 0; overflow: hidden; box-shadow: 0 24px 50px rgba(27,42,74,0.18);
-}
-.hero-img-main img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hero-badge-duo {
-  position: absolute; top: -14px; left: -10px; z-index: 3;
-  background: var(--navy); border-radius: 16px;
-  padding: 16px 22px; display: flex; align-items: center; gap: 14px; white-space: nowrap;
-  box-shadow: 0 14px 30px rgba(27,42,74,0.32);
-}
-.hero-badge-duo .num { font-family: var(--serif); font-size: 30px; font-weight: 700; line-height: 1; color: var(--gold-light); }
-.hero-badge-duo .lbl { font-size: 11px; letter-spacing: 0.03em; text-transform: uppercase; color: rgba(255,255,255,0.85); line-height: 1.4; font-weight: 600; }
-
-.hero-float-card {
-  position: absolute; right: 6%; bottom: 8%; z-index: 4;
-  background: var(--white); border-radius: 0 0 14px 0;
-  padding: 10px 16px 10px 10px; display: flex; align-items: center; gap: 10px;
-  box-shadow: 0 14px 30px rgba(27,42,74,0.24); max-width: 190px;
-}
-.hero-float-thumb { flex-shrink: 0; width: 46px; height: 46px; border-radius: 0 0 10px 0; overflow: hidden; }
-.hero-float-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hero-float-title { font-size: 12px; font-weight: 700; color: var(--navy); line-height: 1.25; }
-.hero-float-sub { font-size: 10px; color: var(--text-muted); margin-top: 2px; font-weight: 600; letter-spacing: 0.02em; }
+.hero-images { display: flex; gap: 10px; overflow-x: auto; padding: 0 var(--px) 8px; margin: 0 calc(-1 * var(--px)); scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.hero-images::-webkit-scrollbar { display: none; }
+.hero-images img { flex: 0 0 auto; width: 62vw; max-width: 220px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 0 0 20px 0; box-shadow: 0 14px 30px rgba(27,42,74,0.16); scroll-snap-align: start; }
 
 .section-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
 .section-title { font-family: var(--serif); font-size: clamp(30px, 8vw, 50px); font-weight: 400; color: var(--navy); line-height: 1.08; margin-bottom: 12px; }
@@ -250,23 +221,17 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   .nav-logo { font-size: 28px; }
   .nav-logo em { font-size: 16px; }
   .nav-cta { font-size: 12px; padding: 13px 24px; }
-  .hero { padding: 15px var(--px) 0; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; min-height: 90vh; }
-  .hero-tag { font-size: 11px; margin-bottom: 24px; }
-  .hero-curso { font-size: 13px; margin-bottom: 8px; }
-  .hero-subtitle { font-size: 17px; margin-bottom: 8px; }
-  .hero-date { font-size: 13px; margin-bottom: 32px; }
-  .preventa-badge { margin-bottom: 32px; }
-  .preventa-badge span { font-size: 14px; }
-  .preventa-badge em { font-size: 13px; }
-  .hero-cta-group { flex-direction: row; align-items: center; margin-bottom: 0; }
-  .btn-primary { display: inline-block; width: auto; padding: 16px 36px; font-size: 13px; }
+  .hero { padding: 64px var(--px) 0; }
+  .hero-tag { font-size: 11px; margin-bottom: 28px; }
+  .hero-headline { font-size: clamp(44px, 5.2vw, 68px); margin-bottom: 24px; }
+  .hero-subtitle { font-size: 18px; margin-bottom: 40px; }
+  .hero-cta-group { flex-direction: row; align-items: center; margin-bottom: 56px; }
+  .btn-primary { padding: 17px 32px; font-size: 13px; }
   .btn-primary:hover { background: var(--terra-light); }
-  .btn-secondary { display: inline-block; width: auto; border: none; border-bottom: 1px solid rgba(27,42,74,0.3); padding: 0 0 2px; border-radius: 0; background: none; font-size: 14px; }
-  .hero-visual { align-self: center; padding: 0; }
-  .hero-duo { max-width: 100%; }
-  .hero-badge-duo { top: -20px; left: -20px; padding: 22px 28px; gap: 16px; }
-  .hero-badge-duo .num { font-size: 42px; }
-  .hero-badge-duo .lbl { font-size: 13px; }
+  .btn-secondary { padding: 17px 32px; font-size: 14px; }
+  .btn-secondary:hover { background: rgba(27,42,74,0.1); }
+  .hero-images { justify-content: center; overflow-x: visible; padding: 0 var(--px); }
+  .hero-images img { width: 100%; max-width: 200px; }
   .section-tag { font-size: 11px; margin-bottom: 12px; }
   .section-sub { font-size: 16px; margin-bottom: 44px; }
   .objetivo { padding: 88px var(--px); }
@@ -323,7 +288,6 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
 }
 @media (min-width: 1100px) {
   :root { --px: 88px; }
-  .hero { gap: 88px; min-height: 92vh; }
   .instructor { grid-template-columns: 1fr 1fr; }
 }
 @media (min-width: 1500px) {
@@ -346,44 +310,19 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
 
 <!-- HERO -->
 <section class="hero">
-  <div>
-    <div class="hero-tag fade-up">Instituto de Formación</div>
-    <p class="hero-curso fade-up">Bienvenido a la</p>
-    <div class="hero-headline fade-up d1">ARMONIZACIÓN</div>
-    <div class="hero-hof fade-up d1">OROFACIAL</div>
-    <p class="hero-subtitle fade-up d2">Formación de excelencia para odontólogos y médicos en <strong>Armonización Orofacial</strong></p>
-    <p class="hero-date fade-up d2">Guayaquil, Ecuador · Docencia internacional</p>
-
-    <div class="preventa-badge fade-up d2">
-      <span>Cursos teórico-prácticos</span>
-      <em>· Cupos limitados</em>
-    </div>
-
-    <div class="hero-cta-group fade-up d3">
-      <a href="#cursos" class="btn-primary">Ver nuestros cursos →</a>
-      <a href="#quienes-somos" class="btn-secondary">Conócenos</a>
-    </div>
+  <div class="hero-tag fade-up">Instituto de Formación</div>
+  <h1 class="hero-headline fade-up d1">La formación que <em>transformará</em> tu práctica clínica.</h1>
+  <p class="hero-subtitle fade-up d2">Formación de excelencia para odontólogos y médicos en Armonización Orofacial — Guayaquil, Ecuador.</p>
+  <div class="hero-cta-group fade-up d3">
+    <a href="#cursos" class="btn-primary">Ver nuestros cursos →</a>
+    <a href="#quienes-somos" class="btn-secondary">Conócenos</a>
   </div>
-
-  <div class="hero-visual fade-up d2">
-    <div class="hero-duo">
-      <div class="hero-badge-duo">
-        <div class="num">3</div>
-        <div class="lbl">Cursos<br>especializados</div>
-      </div>
-      <div class="hero-img-main">
-        <img src="/IFAO/Hero curso foto.webp" alt="IFAO Instituto — Formación en Armonización Orofacial">
-      </div>
-      <div class="hero-float-card">
-        <div class="hero-float-thumb">
-          <img src="/IFAO/practicas 2.png" alt="Bioestimuladores + Hilos Faciales">
-        </div>
-        <div>
-          <div class="hero-float-title">Bioestimuladores + Fios</div>
-          <div class="hero-float-sub">20-21 Nov · 16h</div>
-        </div>
-      </div>
-    </div>
+  <div class="hero-images fade-up d3">
+    <img src="/IFAO/marquee/curso-01.jpg" alt="Clase en IFAO Instituto">
+    <img src="/IFAO/marquee/curso-04.jpg" alt="Práctica clínica en IFAO">
+    <img src="/IFAO/marquee/curso-06.jpg" alt="Docente supervisando práctica en IFAO">
+    <img src="/IFAO/marquee/curso-07.jpg" alt="Procedimiento clínico en IFAO">
+    <img src="/IFAO/marquee/curso-10.jpg" alt="Certificación de curso en IFAO">
   </div>
 </section>
 
