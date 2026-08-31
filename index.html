@@ -135,14 +135,28 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(245,235,224,0.96)
 .cursos-seccion .section-tag { color: var(--gold-light); }
 .cursos-seccion .section-title { color: var(--white); }
 .cursos-seccion .section-sub { color: rgba(255,255,255,0.45); }
-.cursos-grid { display: flex; flex-direction: column; gap: 2px; }
-.curso-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 28px 22px; display: flex; flex-direction: column; gap: 12px; }
-.curso-chip { align-self: flex-start; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 10px; border: 1px solid rgba(196,147,63,0.35); color: var(--gold-light); background: rgba(196,147,63,0.1); }
-.curso-chip.done { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.04); }
-.curso-title { font-family: var(--serif); font-size: 24px; font-weight: 500; color: var(--white); line-height: 1.2; }
-.curso-meta { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; }
-.curso-cta { margin-top: 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-light); text-decoration: none; }
-.curso-cta:hover { color: var(--white); }
+.cursos-grid { display: flex; flex-direction: column; gap: 14px; }
+.curso-card {
+  position: relative; display: block; aspect-ratio: 3 / 4; overflow: hidden;
+  border-radius: 0 0 20px 0; text-decoration: none;
+  box-shadow: 0 16px 34px rgba(0,0,0,0.28);
+}
+.curso-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.curso-card:hover img { transform: scale(1.04); }
+.curso-card::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 42%, rgba(0,0,0,0) 68%);
+}
+.curso-chip { position: absolute; top: 18px; left: 18px; z-index: 2; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 11px; border: 1px solid rgba(255,255,255,0.4); color: var(--white); background: rgba(0,0,0,0.25); }
+.curso-chip.done { border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.7); }
+.curso-card-bottom { position: absolute; left: 18px; right: 60px; bottom: 20px; z-index: 2; }
+.curso-title { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--white); line-height: 1.18; margin-bottom: 6px; }
+.curso-meta { font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+.curso-arrow {
+  position: absolute; right: 16px; bottom: 16px; z-index: 2;
+  width: 34px; height: 34px; border-radius: 50%; background: var(--white); color: var(--navy);
+  display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700;
+}
 
 /* ─── INSTRUCTOR ─── */
 .instructor { padding: 64px var(--px); background: var(--nude); }
@@ -260,9 +274,13 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   .beneficio-title { font-size: 21px; }
   .beneficio-text { font-size: 14px; }
   .cursos-seccion { padding: 88px var(--px); }
-  .cursos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-  .curso-card { padding: 36px 28px; }
-  .curso-title { font-size: 26px; }
+  .cursos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .curso-card { border-radius: 0 0 28px 0; }
+  .curso-chip { top: 22px; left: 22px; font-size: 10px; padding: 6px 13px; }
+  .curso-card-bottom { left: 22px; right: 66px; bottom: 24px; }
+  .curso-title { font-size: 23px; }
+  .curso-meta { font-size: 13px; }
+  .curso-arrow { width: 38px; height: 38px; right: 20px; bottom: 20px; font-size: 18px; }
   .instructor { padding: 88px var(--px); display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: start; }
   .instructor-duo { margin-bottom: 0; }
   .instructor-stat-card { padding: 20px 26px; bottom: -32px; gap: 16px; }
@@ -432,27 +450,36 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
 <!-- NUESTROS CURSOS -->
 <section class="cursos-seccion" id="cursos">
   <div class="section-tag fade-up">Programa Académico</div>
-  <h2 class="section-title fade-up d1">Nuestros<br><em>cursos</em></h2>
+  <h2 class="section-title fade-up d1">Nuestros<br><em>próximos cursos</em></h2>
   <p class="section-sub fade-up d2">Formación especializada, teórico-práctica, con cupos limitados.</p>
   <div class="cursos-grid">
-    <div class="curso-card fade-up">
+    <a href="/curso-bioestimuladores" class="curso-card fade-up">
+      <img src="/IFAO/Hero curso foto.webp" alt="Bioestimuladores + Hilos Faciales">
       <div class="curso-chip">Inscripciones abiertas</div>
-      <h3 class="curso-title">Bioestimuladores + Hilos Faciales</h3>
-      <p class="curso-meta">20 y 21 de noviembre de 2026 · 16 horas académicas<br>Teórico/Práctico con pacientes</p>
-      <a href="/curso-bioestimuladores" class="curso-cta">Ver detalles →</a>
-    </div>
-    <div class="curso-card fade-up d1">
+      <div class="curso-card-bottom">
+        <h3 class="curso-title">Bioestimuladores + Hilos Faciales</h3>
+        <p class="curso-meta">20 y 21 de noviembre de 2026 · 16h</p>
+      </div>
+      <div class="curso-arrow">→</div>
+    </a>
+    <a href="/curso-complicaciones" class="curso-card fade-up d1">
+      <img src="/IFAO/practicas.png" alt="Complicaciones en Rellenos Faciales">
       <div class="curso-chip">Inscripciones abiertas</div>
-      <h3 class="curso-title">Complicaciones en Rellenos Faciales</h3>
-      <p class="curso-meta">19 de noviembre de 2026 · 8 horas académicas<br>Teórico/Demostrativo</p>
-      <a href="/curso-complicaciones" class="curso-cta">Ver detalles →</a>
-    </div>
-    <div class="curso-card fade-up d2">
+      <div class="curso-card-bottom">
+        <h3 class="curso-title">Complicaciones en Rellenos Faciales</h3>
+        <p class="curso-meta">19 de noviembre de 2026 · 8h</p>
+      </div>
+      <div class="curso-arrow">→</div>
+    </a>
+    <a href="/curso-start-hof" class="curso-card fade-up d2">
+      <img src="/IFAO/Dra Priscila.png" alt="START HOF — Toxina Botulínica &amp; Rellenos Inyectables">
       <div class="curso-chip done">Cohorte realizada</div>
-      <h3 class="curso-title">START HOF</h3>
-      <p class="curso-meta">Toxina Botulínica &amp; Rellenos Inyectables<br>Próxima edición por confirmar</p>
-      <a href="/curso-start-hof" class="curso-cta">Ver curso →</a>
-    </div>
+      <div class="curso-card-bottom">
+        <h3 class="curso-title">START HOF</h3>
+        <p class="curso-meta">Próxima edición por confirmar</p>
+      </div>
+      <div class="curso-arrow">→</div>
+    </a>
   </div>
 </section>
 
