@@ -41,7 +41,8 @@ body {
 .bar { background: var(--navy); color: var(--gold-light); text-align: center; padding: 10px 16px; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.5; }
 .bar b { color: var(--white); }
 
-nav { position: sticky; top: 0; z-index: 100; background: rgba(245,235,224,0.96); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(139,90,60,0.12); padding: 14px var(--px); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+nav { position: sticky; top: 10px; z-index: 100; background: rgba(245,235,224,0.96); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(139,90,60,0.12); padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 12px; border-radius: 999px; box-shadow: 0 2px 10px rgba(27,42,74,0.05); transition: box-shadow 0.3s ease, background 0.3s ease; }
+nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245,235,224,0.98); }
 .nav-logo { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--navy); letter-spacing: 0.04em; line-height: 1.2; text-decoration: none; }
 .nav-logo em { color: var(--terra); font-style: italic; font-size: 11px; display: inline; letter-spacing: 0.04em; font-weight: 400; }
 .nav-cta { background: var(--terra); color: var(--white); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 18px; border: none; cursor: pointer; text-decoration: none; display: inline-block; border-radius: 2px; white-space: nowrap; -webkit-tap-highlight-color: transparent; flex-shrink: 0; }
@@ -116,7 +117,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(245,235,224,0.96)
 
 .datos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 36px; }
 .dato-card { background: rgba(255,255,255,0.05); padding: 20px 18px; border: 1px solid rgba(255,255,255,0.07); }
-.dato-icon { font-size: 22px; margin-bottom: 8px; }
+.dato-icon { width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 10px; }
 .dato-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
 .dato-value { font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--white); line-height: 1.2; }
 .dato-value small { font-family: var(--sans); font-size: 12px; color: rgba(255,255,255,0.45); display: block; margin-top: 2px; font-weight: 400; }
@@ -126,7 +127,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(245,235,224,0.96)
 .beneficios-grid { display: flex; flex-direction: column; gap: 2px; margin-top: 36px; }
 .beneficio-card { background: var(--white); padding: 28px 22px; border-top: 3px solid transparent; transition: border-color 0.2s; }
 .beneficio-card:active, .beneficio-card:hover { border-top-color: var(--terra); }
-.beneficio-icon { font-size: 24px; margin-bottom: 12px; }
+.beneficio-icon { width: 46px; height: 46px; border-radius: 13px; background: rgba(139,90,60,0.1); display: flex; align-items: center; justify-content: center; font-size: 21px; margin-bottom: 14px; }
 .beneficio-title { font-family: var(--serif); font-size: 19px; font-weight: 500; color: var(--navy); margin-bottom: 8px; line-height: 1.2; }
 .beneficio-text { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
@@ -180,6 +181,14 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(245,235,224,0.96)
 .tray-item::before { content: '◦'; color: var(--gold); flex-shrink: 0; font-size: 14px; line-height: 1.2; }
 
 /* ─── VIDEOS ─── */
+.galeria { padding: 64px 0; background: var(--nude); text-align: center; overflow: hidden; }
+.galeria .section-tag, .galeria .section-title, .galeria .section-sub { padding: 0 var(--px); }
+.marquee-wrap { margin-top: 36px; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); }
+.marquee-track { display: flex; gap: 12px; width: max-content; animation: marquee-scroll 46s linear infinite; }
+.marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+.marquee-track img { height: 210px; width: auto; border-radius: 0 0 16px 0; object-fit: cover; display: block; flex-shrink: 0; box-shadow: 0 10px 24px rgba(27,42,74,0.14); }
+@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
 .videos-seccion { padding: 64px var(--px); background: var(--off-white); text-align: center; }
 .video-slider { position: relative; max-width: 340px; margin: 32px auto 0; display: flex; align-items: center; gap: 10px; }
 .vs-track { position: relative; width: 100%; aspect-ratio: 9 / 16; border-radius: 14px; overflow: hidden; background: var(--navy); box-shadow: 0 20px 50px rgba(27,42,74,0.22); }
@@ -237,6 +246,7 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
 /* ─── DESKTOP ─── */
 @media (min-width: 768px) {
   :root { --px: 60px; }
+  nav { max-width: 900px; margin: 0 auto; padding: 14px 28px; top: 16px; }
   .nav-logo { font-size: 28px; }
   .nav-logo em { font-size: 16px; }
   .nav-cta { font-size: 12px; padding: 13px 24px; }
@@ -263,14 +273,14 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   .objetivo-text { font-size: clamp(20px, 2.2vw, 26px); padding-left: 28px; border-left-width: 4px; }
   .datos-grid { grid-template-columns: repeat(4, 1fr); margin-top: 52px; }
   .dato-card { padding: 28px 24px; }
-  .dato-icon { font-size: 26px; margin-bottom: 12px; }
+  .dato-icon { width: 46px; height: 46px; border-radius: 13px; font-size: 20px; margin-bottom: 14px; }
   .dato-label { font-size: 11px; margin-bottom: 6px; }
   .dato-value { font-size: 22px; }
   .dato-value small { font-size: 13px; }
   .beneficios { padding: 88px var(--px); }
   .beneficios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; }
   .beneficio-card { padding: 32px 26px; }
-  .beneficio-icon { font-size: 28px; margin-bottom: 14px; }
+  .beneficio-icon { width: 52px; height: 52px; border-radius: 15px; font-size: 24px; margin-bottom: 16px; }
   .beneficio-title { font-size: 21px; }
   .beneficio-text { font-size: 14px; }
   .cursos-seccion { padding: 88px var(--px); }
@@ -483,6 +493,16 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   </div>
 </section>
 
+<!-- GALERÍA -->
+<section class="galeria">
+  <div class="section-tag fade-up">Galería</div>
+  <h2 class="section-title fade-up d1">Momentos de<br><em>nuestros cursos</em></h2>
+  <p class="section-sub fade-up d2">Así se vive la formación en IFAO — clases, práctica clínica y certificaciones.</p>
+  <div class="marquee-wrap fade-up d3">
+    <div class="marquee-track" id="marquee-track"></div>
+  </div>
+</section>
+
 <!-- DOCENTE -->
 <section class="instructor">
   <div class="instructor-duo fade-up">
@@ -629,6 +649,29 @@ document.querySelectorAll('.fade-up').forEach(function(el) {
   if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
   else io.observe(el);
 });
+
+(function() {
+  var track = document.getElementById('marquee-track');
+  if (!track) return;
+  var total = 11;
+  var html = '';
+  for (var pass = 0; pass < 2; pass++) {
+    for (var i = 1; i <= total; i++) {
+      var num = i < 10 ? '0' + i : '' + i;
+      html += '<img src="/IFAO/marquee/curso-' + num + '.jpg" alt="Momento del curso IFAO" loading="lazy">';
+    }
+  }
+  track.innerHTML = html;
+})();
+
+(function() {
+  var nav = document.querySelector('nav');
+  if (!nav) return;
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 30) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  }, { passive: true });
+})();
 </script>
 
 <script>
