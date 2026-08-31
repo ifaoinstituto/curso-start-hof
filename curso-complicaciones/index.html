@@ -38,7 +38,8 @@ nav { position: sticky; top: 10px; z-index: 100; background: rgba(245,235,224,0.
 nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245,235,224,0.98); }
 .nav-logo { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--navy); letter-spacing: 0.04em; line-height: 1.2; text-decoration: none; }
 .nav-logo em { color: var(--terra); font-style: italic; font-size: 11px; display: inline; letter-spacing: 0.04em; font-weight: 400; }
-.nav-cta { background: var(--terra); color: var(--white); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 18px; border: none; cursor: pointer; text-decoration: none; display: inline-block; border-radius: 2px; white-space: nowrap; -webkit-tap-highlight-color: transparent; flex-shrink: 0; }
+.nav-cta { background: var(--terra); color: var(--white); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 18px; border: none; cursor: pointer; text-decoration: none; display: inline-block; border-radius: 999px; white-space: nowrap; -webkit-tap-highlight-color: transparent; flex-shrink: 0; }
+.nav-links { display: none; }
 
 /* ─── HERO ─── */
 .hero { padding: 36px var(--px) 0; position: relative; overflow: hidden; }
@@ -53,7 +54,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .hero-date-line b { color: var(--navy); }
 
 .hero-visual { position: relative; margin: 32px calc(-1 * var(--px)) 0; height: 340px; }
-.hero-img { width: 100%; height: 100%; overflow: hidden; box-shadow: 0 20px 44px rgba(27,42,74,0.16); }
+.hero-img { width: 100%; height: 100%; overflow: hidden; box-shadow: 0 20px 44px rgba(27,42,74,0.16); border-radius: 0 0 0 32px; }
 .hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 
 /* ─── SECTION HELPERS ─── */
@@ -218,6 +219,9 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; border-top: 1px 
   .nav-logo { font-size: 28px; }
   .nav-logo em { font-size: 16px; }
   .nav-cta { font-size: 12px; padding: 13px 24px; }
+  .nav-links { display: flex; align-items: center; gap: 26px; }
+  .nav-links a { font-size: 13px; font-weight: 600; color: var(--navy); text-decoration: none; letter-spacing: 0.02em; }
+  .nav-links a:hover { color: var(--terra); }
 
   .hero { padding: 20px var(--px) 0; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; min-height: 88vh; }
   .hero-sub { font-size: 22px; }
@@ -301,6 +305,12 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; border-top: 1px 
 <!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">IFAO <em>Instituto</em></a>
+  <div class="nav-links">
+    <a href="/">Inicio</a>
+    <a href="#eje">El Eje</a>
+    <a href="#docente">Docente</a>
+    <a href="#inversion">Inversión</a>
+  </div>
   <a href="#inversion" class="nav-cta">Quiero inscribirme</a>
 </nav>
 
@@ -336,7 +346,7 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; border-top: 1px 
 </section>
 
 <!-- 03 EL EJE PRINCIPAL -->
-<section class="eje">
+<section class="eje" id="eje">
   <div>
     <div class="section-tag fade-up">El Eje Principal</div>
     <div class="eje-word fade-up d1">Hialuronidasa</div>
@@ -404,7 +414,7 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; border-top: 1px 
 </div>
 
 <!-- 07 DOCENTE -->
-<section class="instructor">
+<section class="instructor" id="docente">
   <div class="instructor-duo fade-up">
     <div class="instructor-duo-main">
       <img src="/IFAO/Dra Priscila foto.jpg" alt="Dra. Priscila Corrêa Martins">
