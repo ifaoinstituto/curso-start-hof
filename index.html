@@ -66,14 +66,16 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .hero-headline em { font-style: italic; color: var(--terra); }
 .hero-subtitle { font-size: 15px; font-weight: 400; color: var(--text-muted); line-height: 1.6; max-width: 42ch; margin: 0 auto 32px; }
 .hero-subtitle strong { color: var(--navy); font-weight: 600; }
-.hero-cta-group { display: flex; flex-direction: column; gap: 12px; margin-bottom: 48px; align-items: center; }
+.hero-cta-group { display: flex; flex-direction: column; gap: 12px; margin-bottom: 48px; align-items: center; justify-content: center; }
 .btn-primary { background: var(--terra); color: var(--white); font-size: 13px; font-weight: 700; letter-spacing: 0.04em; padding: 15px 26px; border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; -webkit-tap-highlight-color: transparent; transition: background 0.2s; }
 .btn-primary:active { background: var(--terra-light); }
 .btn-secondary { color: var(--navy); font-size: 13px; font-weight: 600; text-decoration: none; text-align: center; display: inline-flex; align-items: center; justify-content: center; padding: 15px 26px; background: rgba(27,42,74,0.06); border-radius: 999px; -webkit-tap-highlight-color: transparent; }
 
-.hero-images { display: flex; gap: 10px; overflow-x: auto; padding: 0 var(--px) 8px; margin: 0 calc(-1 * var(--px)); scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-.hero-images::-webkit-scrollbar { display: none; }
-.hero-images img { flex: 0 0 auto; width: 62vw; max-width: 220px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 0 0 20px 0; box-shadow: 0 14px 30px rgba(27,42,74,0.16); scroll-snap-align: start; }
+.hero-images-wrap { overflow: hidden; margin: 0 calc(-1 * var(--px)); -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); }
+.hero-images { display: flex; gap: 10px; width: max-content; animation: marquee-scroll 32s linear infinite; }
+.hero-images-wrap:hover .hero-images { animation-play-state: paused; }
+.hero-images img { flex: 0 0 auto; width: 62vw; max-width: 220px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 0 0 20px 0; box-shadow: 0 14px 30px rgba(27,42,74,0.16); }
+@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 .section-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
 .section-title { font-family: var(--serif); font-size: clamp(30px, 8vw, 50px); font-weight: 400; color: var(--navy); line-height: 1.08; margin-bottom: 12px; }
@@ -230,8 +232,7 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   .btn-primary:hover { background: var(--terra-light); }
   .btn-secondary { padding: 17px 32px; font-size: 14px; }
   .btn-secondary:hover { background: rgba(27,42,74,0.1); }
-  .hero-images { justify-content: center; overflow-x: visible; padding: 0 var(--px); }
-  .hero-images img { width: 100%; max-width: 200px; }
+  .hero-images img { width: 240px; max-width: none; }
   .section-tag { font-size: 11px; margin-bottom: 12px; }
   .section-sub { font-size: 16px; margin-bottom: 44px; }
   .objetivo { padding: 88px var(--px); }
@@ -317,12 +318,8 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
     <a href="#cursos" class="btn-primary">Ver nuestros cursos →</a>
     <a href="#quienes-somos" class="btn-secondary">Conócenos</a>
   </div>
-  <div class="hero-images fade-up d3">
-    <img src="/IFAO/marquee/curso-01.jpg" alt="Clase en IFAO Instituto">
-    <img src="/IFAO/marquee/curso-04.jpg" alt="Práctica clínica en IFAO">
-    <img src="/IFAO/marquee/curso-06.jpg" alt="Docente supervisando práctica en IFAO">
-    <img src="/IFAO/marquee/curso-07.jpg" alt="Procedimiento clínico en IFAO">
-    <img src="/IFAO/marquee/curso-10.jpg" alt="Certificación de curso en IFAO">
+  <div class="hero-images-wrap fade-up d3">
+    <div class="hero-images" id="hero-images-track"></div>
   </div>
 </section>
 
@@ -588,6 +585,20 @@ document.querySelectorAll('.fade-up').forEach(function(el) {
   if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
   else io.observe(el);
 });
+
+(function() {
+  var heroTrack = document.getElementById('hero-images-track');
+  if (heroTrack) {
+    var heroHtml = '';
+    for (var p = 0; p < 2; p++) {
+      for (var j = 1; j <= 10; j++) {
+        var n = j < 10 ? '0' + j : '' + j;
+        heroHtml += '<img src="/IFAO/marquee/curso-' + n + '.jpg" alt="Momento del curso IFAO" loading="lazy">';
+      }
+    }
+    heroTrack.innerHTML = heroHtml;
+  }
+})();
 
 (function() {
   var track = document.getElementById('marquee-track');
