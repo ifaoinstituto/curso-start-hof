@@ -361,7 +361,9 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
 .welcome-courses { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
 .welcome-course { display: flex; align-items: center; gap: 13px; background: var(--white); border: 1px solid rgba(139,90,60,0.15); border-radius: 0 0 14px 0; padding: 13px 14px; text-decoration: none; transition: border-color 0.2s, transform 0.2s; }
 .welcome-course:hover { border-color: var(--terra); transform: translateX(2px); }
-.welcome-course-date { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 56px; font-family: var(--sans); color: var(--white); background: var(--navy); padding: 8px 6px; text-align: center; line-height: 1.2; }
+.welcome-course-thumb { flex-shrink: 0; width: 44px; height: 44px; border-radius: 0 0 10px 0; overflow: hidden; }
+.welcome-course-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.welcome-course-date { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 50px; font-family: var(--sans); color: var(--white); background: var(--navy); padding: 8px 5px; text-align: center; line-height: 1.2; }
 .welcome-course-date .wcd-num { font-size: 15px; font-weight: 700; }
 .welcome-course-date .wcd-mo { font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.75; margin-top: 2px; }
 .welcome-course-info { flex: 1; min-width: 0; }
@@ -384,6 +386,7 @@ body.modal-open { overflow: hidden; }
     <h2 class="welcome-title">Dos nuevas formaciones<br><em>llegan a IFAO</em></h2>
     <div class="welcome-courses">
       <a href="/curso-complicaciones" class="welcome-course" id="welcome-link-1">
+        <div class="welcome-course-thumb"><img src="/IFAO/Landing.png" alt="Complicaciones en Rellenos Faciales"></div>
         <div class="welcome-course-date"><span class="wcd-num">19</span><span class="wcd-mo">Nov</span></div>
         <div class="welcome-course-info">
           <h3>Complicaciones en Rellenos Faciales</h3>
@@ -392,6 +395,7 @@ body.modal-open { overflow: hidden; }
         <div class="welcome-course-arrow">→</div>
       </a>
       <a href="/curso-bioestimuladores" class="welcome-course" id="welcome-link-2">
+        <div class="welcome-course-thumb"><img src="/IFAO/Portada Hilos.jpg" alt="Bioestimuladores + Hilos Faciales"></div>
         <div class="welcome-course-date"><span class="wcd-num">20-21</span><span class="wcd-mo">Nov</span></div>
         <div class="welcome-course-info">
           <h3>Bioestimuladores + Hilos Faciales</h3>
