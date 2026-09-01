@@ -54,7 +54,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .hero-date-line { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-top: 18px; }
 .hero-date-line b { color: var(--navy); }
 
-.hero-visual { position: relative; margin: 32px calc(-1 * var(--px)) 0; height: 340px; }
+.hero-visual { position: relative; margin: 32px calc(-1 * var(--px)) 0; aspect-ratio: 3 / 4; }
 .hero-img { width: 100%; height: 100%; overflow: hidden; box-shadow: 0 20px 44px rgba(27,42,74,0.16); border-radius: 0 0 0 32px; }
 .hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 
@@ -70,7 +70,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .logro-item { display: flex; align-items: flex-start; gap: 14px; background: var(--white); padding: 18px 18px; }
 .logro-check { flex-shrink: 0; width: 28px; height: 28px; border-radius: 9px; background: var(--navy); color: var(--gold-light); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
 .logro-item p { font-size: 15px; color: var(--navy); font-weight: 500; line-height: 1.5; padding-top: 3px; }
-.logros-img { margin-top: 28px; height: 220px; overflow: hidden; border-radius: 0 0 20px 0; box-shadow: 0 16px 34px rgba(27,42,74,0.14); }
+.logros-img { margin-top: 28px; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 0 0 20px 0; box-shadow: 0 16px 34px rgba(27,42,74,0.14); }
 .logros-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .dif-icon { width: 46px; height: 46px; border-radius: 13px; background: rgba(196,147,63,0.12); border: 1px solid rgba(196,147,63,0.25); color: var(--gold-light); display: flex; align-items: center; justify-content: center; font-size: 21px; margin-bottom: 14px; }
@@ -94,7 +94,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .modulo-items li { font-size: 14px; color: rgba(255,255,255,0.6); padding-left: 16px; position: relative; line-height: 1.4; }
 .modulo-items li::before { content: '·'; position: absolute; left: 2px; color: var(--gold); font-size: 18px; line-height: 1; }
 .fotos-practica { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 28px; }
-.foto-practica { height: 190px; overflow: hidden; position: relative; border-radius: 0 0 18px 0; }
+.foto-practica { aspect-ratio: 3 / 4; overflow: hidden; position: relative; border-radius: 0 0 18px 0; }
 .foto-practica img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .foto-practica-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(27,42,74,0.8), transparent); padding: 20px 12px 10px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.85); font-weight: 500; }
 
@@ -214,15 +214,15 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   .hero { padding: 20px var(--px) 0; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; min-height: 88vh; }
   .hero-sub { font-size: 22px; }
   .hero-action { font-size: 17px; }
-  .hero-visual { margin: 0; height: auto; align-self: center; aspect-ratio: 4/5; }
+  .hero-visual { margin: 0; height: auto; align-self: center; aspect-ratio: 3 / 4; }
   .hero-img { height: 100%; }
 
   .section-sub { font-size: 16px; margin-bottom: 40px; }
-  .logros { padding: 88px var(--px); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: stretch; }
+  .logros { padding: 88px var(--px); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
   .logros > div:first-child .section-sub { margin-bottom: 8px; }
   .logro-item { padding: 22px 24px; }
   .logro-item p { font-size: 16px; }
-  .logros-img { margin-top: 0; height: 100%; min-height: 420px; }
+  .logros-img { margin-top: 0; }
 
   .quote-block { padding: 88px var(--px); }
   .quote-text { font-size: clamp(28px, 3.4vw, 40px); padding-left: 28px; border-left-width: 4px; }
@@ -233,7 +233,6 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   .modulo { padding: 36px 28px; }
   .modulo-title { font-size: 24px; }
   .modulo-items li { font-size: 15px; }
-  .foto-practica { height: 320px; }
   .foto-practica-label { font-size: 12px; padding: 24px 16px 12px; }
 
   .experiencia { padding: 88px var(--px); }

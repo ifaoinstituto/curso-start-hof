@@ -212,7 +212,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .preventa-badge em { font-size: 11px; color: var(--text-muted); font-style: normal; }
 
 /* Hero visual */
-.hero-visual { position: relative; margin: 0 calc(-1 * var(--px)); height: 320px; }
+.hero-visual { position: relative; margin: 0 calc(-1 * var(--px)); aspect-ratio: 3 / 4; }
 .hero-img {
   width: 100%; height: 100%;
   background: var(--nude-dark);
@@ -337,7 +337,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
   margin-top: 28px;
 }
 .foto-practica {
-  height: 200px;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
   position: relative;
 }
@@ -611,9 +611,8 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   .btn-primary { display: inline-block; width: auto; padding: 16px 36px; font-size: 13px; }
   .btn-primary:hover { background: var(--terra-light); }
   .btn-secondary { display: inline-block; width: auto; border: none; border-bottom: 1px solid rgba(27,42,74,0.3); padding: 0 0 2px; border-radius: 0; background: none; font-size: 14px; }
-  .hero-visual { margin: 0; height: auto; align-self: center; }
-  .hero-img { height: auto; background: transparent; }
-  .hero-img img { height: auto; object-fit: unset; }
+  .hero-visual { margin: 0; align-self: center; aspect-ratio: 3 / 4; }
+  .hero-img { height: 100%; }
   .hero-badge { bottom: 28px; left: 28px; padding: 18px 22px; }
   .hero-badge .num { font-size: 48px; }
   .hero-badge .lbl { font-size: 12px; margin-top: 6px; letter-spacing: 0.1em; }
@@ -650,7 +649,6 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   .dia-num strong { font-size: 26px; }
   .dia-title { font-size: 22px; margin-bottom: 10px; }
   .dia-items li { font-size: 14px; }
-  .foto-practica { height: 380px; }
   .foto-practica:hover img { transform: scale(1.04); }
   .foto-practica-label { font-size: 12px; padding: 24px 16px 12px; }
 

@@ -53,7 +53,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .hero-date-line { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-top: 18px; }
 .hero-date-line b { color: var(--navy); }
 
-.hero-visual { position: relative; margin: 32px calc(-1 * var(--px)) 0; height: 340px; }
+.hero-visual { position: relative; margin: 32px calc(-1 * var(--px)) 0; aspect-ratio: 3 / 4; }
 .hero-img { width: 100%; height: 100%; overflow: hidden; box-shadow: 0 20px 44px rgba(27,42,74,0.16); border-radius: 0 0 0 32px; }
 .hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 
@@ -70,7 +70,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .gancho-lead { font-size: 17px; font-weight: 700; color: var(--gold-light); line-height: 1.5; margin-bottom: 10px; }
 .gancho-lead2 { font-size: 17px; font-weight: 500; color: rgba(255,255,255,0.85); line-height: 1.5; margin-bottom: 20px; }
 .gancho-support { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.75; margin-bottom: 28px; }
-.gancho-img { height: 220px; overflow: hidden; border-radius: 0 0 20px 0; box-shadow: 0 16px 34px rgba(0,0,0,0.3); }
+.gancho-img { aspect-ratio: 3 / 4; overflow: hidden; border-radius: 0 0 20px 0; box-shadow: 0 16px 34px rgba(0,0,0,0.3); }
 .gancho-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ─── 03 EJE HIALURONIDASA ─── */
@@ -83,7 +83,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .step-num { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: var(--navy); color: var(--gold-light); font-family: var(--serif); font-size: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
 .step-label { font-size: 16px; font-weight: 600; color: var(--navy); }
 .eje-support { font-size: 14px; color: var(--text-muted); line-height: 1.75; margin-bottom: 28px; }
-.eje-img { height: 200px; overflow: hidden; border-radius: 0 0 18px 0; box-shadow: 0 14px 30px rgba(27,42,74,0.14); }
+.eje-img { aspect-ratio: 3 / 4; overflow: hidden; border-radius: 0 0 18px 0; box-shadow: 0 14px 30px rgba(27,42,74,0.14); }
 .eje-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ─── 04 ABORDAJE (herramientas) ─── */
@@ -227,7 +227,7 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; border-top: 1px 
   .hero { padding: 20px var(--px) 0; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; min-height: 88vh; }
   .hero-sub { font-size: 22px; }
   .hero-action { font-size: 17px; }
-  .hero-visual { margin: 0; height: auto; align-self: center; aspect-ratio: 4/5; }
+  .hero-visual { margin: 0; height: auto; align-self: center; aspect-ratio: 3 / 4; }
   .hero-img { height: 100%; }
 
   .section-sub { font-size: 16px; margin-bottom: 40px; }
@@ -236,14 +236,12 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; border-top: 1px 
   .gancho-q { font-size: clamp(32px, 3.6vw, 48px); }
   .gancho-lead, .gancho-lead2 { font-size: 19px; }
   .gancho-support { font-size: 15px; }
-  .gancho-img { height: 420px; }
 
-  .eje { padding: 88px var(--px); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: stretch; }
+  .eje { padding: 88px var(--px); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
   .stepper { flex-direction: row; gap: 4px; }
   .step { flex-direction: column; text-align: center; gap: 10px; padding: 0 8px; border-bottom: none; border-right: 1px solid rgba(139,90,60,0.15); }
   .step:last-child { border-right: none; }
   .step-label { font-size: 13px; }
-  .eje-img { height: 100%; min-height: 420px; }
 
   .abordaje { padding: 88px var(--px); }
   .tool-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
