@@ -401,7 +401,7 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
     <div class="curso-card-wrap fade-up d1">
       <div class="curso-date-tag"><span class="cdt-date">20 + 21 Noviembre</span><span class="cdt-format">· 2 días · Teoría + práctica</span></div>
       <a href="/curso-bioestimuladores" class="curso-card">
-        <img src="/IFAO/Senora hilos.jpg" alt="Bioestimuladores + Hilos Faciales">
+        <img src="/IFAO/Portada Hilos.jpg" alt="Bioestimuladores + Hilos Faciales">
         <div class="curso-chip">Inscripciones abiertas<span>12 cupos para práctica</span></div>
         <div class="curso-card-bottom">
           <h3 class="curso-title">Bioestimuladores + Hilos Faciales</h3>
@@ -579,7 +579,7 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
 
     <div class="videos-text fade-up d1">
       <div class="section-tag">Míralo en acción</div>
-      <h2 class="section-title">Así fue<br><em>la primera cohorte</em></h2>
+      <h2 class="section-title">Así fue<br><em>la primera generación</em></h2>
       <div class="videos-summary">
         <p>Los profesionales que pasaron por STARTHOF coinciden en algo: el día de atención intensiva de pacientes fue el que más marcó la diferencia. Después de la teoría y la pre-clínica, aplicar toxina botulínica y ácido hialurónico en pacientes reales — con la Dra. Priscila supervisando cada procedimiento — fue lo que convirtió la técnica en criterio clínico real.</p>
         <p>El ambiente cercano, los grupos reducidos y la posibilidad de resolver dudas en el momento dejaron una experiencia muy distinta a un curso teórico tradicional. Por eso IFAO repite esta misma metodología en cada nueva inmersión.</p>
@@ -716,6 +716,7 @@ document.querySelectorAll('.fade-up').forEach(function(el) {
 })();
 </script>
 
+<script src="https://player.vimeo.com/api/player.js"></script>
 <script>
 (function(){
   var slides = document.querySelectorAll('.vs-slide');
@@ -732,6 +733,11 @@ document.querySelectorAll('.fade-up').forEach(function(el) {
     iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
     iframe.setAttribute('allowfullscreen', '');
     slide.appendChild(iframe);
+    if (window.Vimeo) {
+      new Vimeo.Player(iframe).on('ended', function() {
+        if (!paused) goTo(current + 1);
+      });
+    }
   }
 
   function unloadOthers(activeSlide) {
