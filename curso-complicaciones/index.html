@@ -227,17 +227,19 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; border-top: 1px 
   .hero { padding: 20px var(--px) 0; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; min-height: 88vh; }
   .hero-sub { font-size: 22px; }
   .hero-action { font-size: 17px; }
-  .hero-visual { margin: 0; height: auto; align-self: center; aspect-ratio: 3 / 4; }
+  .hero-visual { margin: 0; height: auto; align-self: center; aspect-ratio: 3 / 4; max-width: 440px; justify-self: end; }
   .hero-img { height: 100%; }
 
   .section-sub { font-size: 16px; margin-bottom: 40px; }
 
   .gancho { padding: 88px var(--px); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .gancho-img { max-width: 440px; justify-self: end; }
   .gancho-q { font-size: clamp(32px, 3.6vw, 48px); }
   .gancho-lead, .gancho-lead2 { font-size: 19px; }
   .gancho-support { font-size: 15px; }
 
   .eje { padding: 88px var(--px); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .eje-img { max-width: 440px; justify-self: end; }
   .stepper { flex-direction: row; gap: 4px; }
   .step { flex-direction: column; text-align: center; gap: 10px; padding: 0 8px; border-bottom: none; border-right: 1px solid rgba(139,90,60,0.15); }
   .step:last-child { border-right: none; }
