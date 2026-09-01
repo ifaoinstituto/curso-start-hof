@@ -347,9 +347,62 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
 @media (min-width: 1500px) {
   :root { --px: calc(50vw - 660px); }
 }
+
+/* ─── WELCOME MODAL ─── */
+.welcome-modal { position: fixed; inset: 0; z-index: 300; display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; visibility: hidden; transition: opacity 0.35s ease, visibility 0.35s ease; }
+.welcome-modal.open { opacity: 1; visibility: visible; }
+.welcome-modal-backdrop { position: absolute; inset: 0; background: rgba(27,42,74,0.6); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
+.welcome-modal-card { position: relative; z-index: 2; width: 100%; max-width: 440px; max-height: 88vh; overflow-y: auto; background: var(--nude); border-radius: 22px; padding: 32px 24px 26px; box-shadow: 0 30px 70px rgba(27,42,74,0.35); transform: translateY(16px) scale(0.98); transition: transform 0.35s ease; }
+.welcome-modal.open .welcome-modal-card { transform: translateY(0) scale(1); }
+.welcome-close { position: absolute; top: 14px; right: 14px; width: 32px; height: 32px; border-radius: 50%; border: none; background: rgba(27,42,74,0.07); color: var(--navy); font-size: 18px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; -webkit-tap-highlight-color: transparent; }
+.welcome-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--terra); border: 1px solid var(--terra); display: inline-block; padding: 5px 12px; margin-bottom: 16px; }
+.welcome-title { font-family: var(--serif); font-size: clamp(23px, 6vw, 29px); font-weight: 400; color: var(--navy); line-height: 1.22; margin-bottom: 22px; }
+.welcome-title em { font-style: italic; color: var(--terra); }
+.welcome-courses { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.welcome-course { display: flex; align-items: center; gap: 13px; background: var(--white); border: 1px solid rgba(139,90,60,0.15); border-radius: 0 0 14px 0; padding: 13px 14px; text-decoration: none; transition: border-color 0.2s, transform 0.2s; }
+.welcome-course:hover { border-color: var(--terra); transform: translateX(2px); }
+.welcome-course-date { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 56px; font-family: var(--sans); color: var(--white); background: var(--navy); padding: 8px 6px; text-align: center; line-height: 1.2; }
+.welcome-course-date .wcd-num { font-size: 15px; font-weight: 700; }
+.welcome-course-date .wcd-mo { font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.75; margin-top: 2px; }
+.welcome-course-info { flex: 1; min-width: 0; }
+.welcome-course-info h3 { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--navy); line-height: 1.25; margin-bottom: 3px; }
+.welcome-course-info p { font-size: 12px; color: var(--text-muted); }
+.welcome-course-arrow { flex-shrink: 0; color: var(--terra); font-size: 16px; }
+.welcome-explore { display: block; width: 100%; text-align: center; background: none; border: none; border-top: 1px solid rgba(139,90,60,0.15); padding-top: 16px; font-size: 12px; font-weight: 600; letter-spacing: 0.03em; color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.welcome-explore:hover { color: var(--navy); }
+body.modal-open { overflow: hidden; }
 </style>
 </head>
 <body>
+
+<!-- WELCOME MODAL -->
+<div class="welcome-modal" id="welcome-modal">
+  <div class="welcome-modal-backdrop" id="welcome-backdrop"></div>
+  <div class="welcome-modal-card">
+    <button class="welcome-close" id="welcome-close" type="button" aria-label="Cerrar">&times;</button>
+    <div class="welcome-tag">Noviembre 2026 · IFAO Ecuador</div>
+    <h2 class="welcome-title">Dos nuevas formaciones<br><em>llegan a IFAO</em></h2>
+    <div class="welcome-courses">
+      <a href="/curso-complicaciones" class="welcome-course" id="welcome-link-1">
+        <div class="welcome-course-date"><span class="wcd-num">19</span><span class="wcd-mo">Nov</span></div>
+        <div class="welcome-course-info">
+          <h3>Complicaciones en Rellenos Faciales</h3>
+          <p>1 día · Desde $420</p>
+        </div>
+        <div class="welcome-course-arrow">→</div>
+      </a>
+      <a href="/curso-bioestimuladores" class="welcome-course" id="welcome-link-2">
+        <div class="welcome-course-date"><span class="wcd-num">20-21</span><span class="wcd-mo">Nov</span></div>
+        <div class="welcome-course-info">
+          <h3>Bioestimuladores + Hilos Faciales</h3>
+          <p>2 días · Desde $1.050</p>
+        </div>
+        <div class="welcome-course-arrow">→</div>
+      </a>
+    </div>
+    <button class="welcome-explore" id="welcome-explore" type="button">Quiero explorar IFAO</button>
+  </div>
+</div>
 
 <!-- ANNOUNCEMENT BAR -->
 <a href="#cursos" class="bar">
@@ -713,6 +766,35 @@ document.querySelectorAll('.fade-up').forEach(function(el) {
   }
   tick();
   setInterval(tick, 30000);
+})();
+</script>
+
+<script>
+(function() {
+  var modal = document.getElementById('welcome-modal');
+  if (!modal) return;
+  var KEY = 'ifao_welcome_seen';
+  var seen = false;
+  try { seen = sessionStorage.getItem(KEY); } catch (e) {}
+  if (seen) return;
+
+  function openModal() {
+    modal.classList.add('open');
+    document.body.classList.add('modal-open');
+  }
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.classList.remove('modal-open');
+    try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+  }
+
+  setTimeout(openModal, 500);
+  document.getElementById('welcome-close').addEventListener('click', closeModal);
+  document.getElementById('welcome-backdrop').addEventListener('click', closeModal);
+  document.getElementById('welcome-explore').addEventListener('click', closeModal);
+  document.getElementById('welcome-link-1').addEventListener('click', closeModal);
+  document.getElementById('welcome-link-2').addEventListener('click', closeModal);
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
 })();
 </script>
 
