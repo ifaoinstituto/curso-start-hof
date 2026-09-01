@@ -85,18 +85,16 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .contenido .section-tag { color: var(--gold-light); }
 .contenido .section-title { color: var(--white); }
 .contenido .section-sub { color: rgba(255,255,255,0.45); }
-.modulos { display: flex; flex-direction: column; gap: 2px; }
-.modulo { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); padding: 24px 20px; }
-.modulo-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-.modulo-label { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); background: rgba(196,147,63,0.12); padding: 4px 10px; border: 1px solid rgba(196,147,63,0.25); white-space: nowrap; }
-.modulo-title { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--white); line-height: 1.2; }
-.modulo-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.modulo-items li { font-size: 14px; color: rgba(255,255,255,0.6); padding-left: 16px; position: relative; line-height: 1.4; }
-.modulo-items li::before { content: '·'; position: absolute; left: 2px; color: var(--gold); font-size: 18px; line-height: 1; }
-.fotos-practica { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 28px; }
-.foto-practica { aspect-ratio: 3 / 4; overflow: hidden; position: relative; border-radius: 0 0 18px 0; }
-.foto-practica img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.foto-practica-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(27,42,74,0.8), transparent); padding: 20px 12px 10px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.85); font-weight: 500; }
+.modulos { display: flex; flex-direction: column; gap: 14px; }
+.modulo { position: relative; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 0 0 20px 0; box-shadow: 0 16px 34px rgba(0,0,0,0.3); }
+.modulo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.modulo::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, rgba(10,17,33,0.95) 0%, rgba(10,17,33,0.85) 44%, rgba(10,17,33,0.25) 74%, rgba(10,17,33,0) 100%); }
+.modulo-overlay { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 22px 20px; }
+.modulo-label { display: inline-block; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); background: rgba(196,147,63,0.18); padding: 4px 10px; border: 1px solid rgba(196,147,63,0.4); white-space: nowrap; margin-bottom: 8px; }
+.modulo-title { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--white); line-height: 1.2; margin-bottom: 12px; }
+.modulo-items { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.modulo-items li { font-size: 13px; color: rgba(255,255,255,0.85); padding-left: 16px; position: relative; line-height: 1.4; }
+.modulo-items li::before { content: '·'; position: absolute; left: 2px; color: var(--gold-light); font-size: 18px; line-height: 1; }
 
 /* ─── 05 EXPERIENCIA ─── */
 .experiencia { padding: 60px var(--px); background: var(--off-white); }
@@ -216,7 +214,6 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   .hero-action { font-size: 17px; }
   .hero-visual { margin: 0; height: auto; align-self: center; aspect-ratio: 3 / 4; max-width: 440px; justify-self: end; }
   .logros-img { max-width: 440px; justify-self: end; }
-  .fotos-practica { max-width: 620px; margin-left: auto; margin-right: auto; }
   .hero-img { height: 100%; }
 
   .section-sub { font-size: 16px; margin-bottom: 40px; }
@@ -231,11 +228,10 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   .quote-support { font-size: 16px; padding-left: 31px; max-width: 62ch; }
 
   .contenido { padding: 88px var(--px); }
-  .modulos { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-  .modulo { padding: 36px 28px; }
-  .modulo-title { font-size: 24px; }
+  .modulos { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .modulo-overlay { padding: 32px 28px; }
+  .modulo-title { font-size: 25px; }
   .modulo-items li { font-size: 15px; }
-  .foto-practica-label { font-size: 12px; padding: 24px 16px 12px; }
 
   .experiencia { padding: 88px var(--px); }
   .dias-list { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 12px; }
@@ -349,42 +345,34 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   <p class="section-sub fade-up d2">Programa oficial de la inmersión, respaldado por el contenido de cada bloque.</p>
   <div class="modulos">
     <div class="modulo fade-up">
-      <div class="dif-icon"><svg style="width:22px;height:22px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 15 9"/><path d="m13 7 4 4"/><path d="m15.5 4.5 4 4"/><path d="m17 3 4 4"/><path d="m11 11 2 2"/></svg></div>
-      <div class="modulo-header">
+      <img src="/IFAO/practicas 2.png" alt="Aplicación de bioestimuladores inyectables">
+      <div class="modulo-overlay">
+        <div class="dif-icon"><svg style="width:22px;height:22px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 15 9"/><path d="m13 7 4 4"/><path d="m15.5 4.5 4 4"/><path d="m17 3 4 4"/><path d="m11 11 2 2"/></svg></div>
         <div class="modulo-label">Bloque 1</div>
         <h3 class="modulo-title">Bioestimuladores</h3>
+        <ul class="modulo-items">
+          <li>Anatomía aplicada</li>
+          <li>Evaluación clínica</li>
+          <li>CaHA vs PLLA</li>
+          <li>Técnicas y diluciones</li>
+          <li>Protocolos estratégicos</li>
+        </ul>
       </div>
-      <ul class="modulo-items">
-        <li>Anatomía aplicada</li>
-        <li>Evaluación clínica</li>
-        <li>CaHA vs PLLA</li>
-        <li>Técnicas y diluciones</li>
-        <li>Protocolos estratégicos</li>
-      </ul>
     </div>
     <div class="modulo fade-up d1">
-      <div class="dif-icon"><svg style="width:22px;height:22px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c3-4 6 4 9 0s6-4 9 0"/><circle cx="19.5" cy="6" r="1.6"/><path d="M19.5 7.6V9"/></svg></div>
-      <div class="modulo-header">
+      <img src="/IFAO/Senora hilos.jpg" alt="Marcación de vectores para hilos faciales">
+      <div class="modulo-overlay">
+        <div class="dif-icon"><svg style="width:22px;height:22px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c3-4 6 4 9 0s6-4 9 0"/><circle cx="19.5" cy="6" r="1.6"/><path d="M19.5 7.6V9"/></svg></div>
         <div class="modulo-label">Bloque 2</div>
         <h3 class="modulo-title">Hilos Faciales</h3>
+        <ul class="modulo-items">
+          <li>PDO x PLA/CL</li>
+          <li>Planos anatómicos</li>
+          <li>Vectores antigravitacionales</li>
+          <li>Técnicas de lifting</li>
+          <li>Protocolos integrados</li>
+        </ul>
       </div>
-      <ul class="modulo-items">
-        <li>PDO x PLA/CL</li>
-        <li>Planos anatómicos</li>
-        <li>Vectores antigravitacionales</li>
-        <li>Técnicas de lifting</li>
-        <li>Protocolos integrados</li>
-      </ul>
-    </div>
-  </div>
-  <div class="fotos-practica fade-up d2">
-    <div class="foto-practica">
-      <img src="/IFAO/Senora hilos.jpg" alt="Marcación de vectores faciales">
-      <div class="foto-practica-label">Marcación de vectores</div>
-    </div>
-    <div class="foto-practica">
-      <img src="/IFAO/practicas 2.png" alt="Alumnos practicando">
-      <div class="foto-practica-label">Alumnos practicando</div>
     </div>
   </div>
 </section>
