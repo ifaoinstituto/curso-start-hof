@@ -148,33 +148,22 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .cd-note { font-size: 12px; color: var(--text-muted); }
 
 /* ─── COMBO ─── */
-.combo-block { padding: 60px var(--px); background: var(--navy); text-align: center; }
-.combo-block .section-tag { color: var(--gold-light); }
-.combo-block .section-title { color: var(--white); }
-.combo-block .section-sub { color: rgba(255,255,255,0.5); }
+.combo-block { padding: 60px var(--px); background: var(--nude); text-align: center; }
+.combo-block .section-tag { color: var(--terra); }
+.combo-block .section-title { color: var(--navy); }
+.combo-block .section-sub { color: var(--text-muted); }
 .combo-items { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 28px 0; flex-wrap: wrap; }
-.combo-item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); padding: 14px 20px; font-size: 13px; font-weight: 600; color: var(--white); }
-.combo-plus { font-family: var(--serif); font-size: 22px; color: var(--gold-light); }
+.combo-item { background: var(--white); border: 1px solid rgba(139,90,60,0.18); padding: 14px 20px; font-size: 13px; font-weight: 600; color: var(--navy); }
+.combo-plus { font-family: var(--serif); font-size: 22px; color: var(--terra); }
 .combo-compare { display: flex; justify-content: center; align-items: center; gap: 28px; margin: 24px 0; flex-wrap: wrap; }
 .combo-old-block, .combo-new-block { text-align: center; }
 .combo-old-label, .combo-new-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
-.combo-old-label { color: rgba(255,255,255,0.4); }
-.combo-new-label { color: var(--gold-light); font-weight: 700; }
-.combo-old-price { font-family: var(--sans); font-size: 20px; font-weight: 500; color: rgba(255,255,255,0.5); text-decoration: line-through; }
-.combo-new-price { font-family: var(--sans); font-size: 38px; font-weight: 600; letter-spacing: -0.01em; color: var(--white); line-height: 1; }
-.combo-save { display: inline-block; margin-top: 4px; background: rgba(196,147,63,0.15); border: 1px solid rgba(196,147,63,0.4); color: var(--gold-light); font-size: 12px; font-weight: 700; padding: 8px 16px; }
+.combo-old-label { color: var(--text-muted); }
+.combo-new-label { color: var(--terra); font-weight: 700; }
+.combo-old-price { font-family: var(--sans); font-size: 20px; font-weight: 500; color: var(--text-muted); text-decoration: line-through; }
+.combo-new-price { font-family: var(--sans); font-size: 38px; font-weight: 600; letter-spacing: -0.01em; color: var(--navy); line-height: 1; }
+.combo-save { display: inline-block; margin-top: 4px; background: rgba(139,90,60,0.1); border: 1px solid rgba(139,90,60,0.35); color: var(--terra); font-size: 12px; font-weight: 700; padding: 8px 16px; }
 .combo-cta { margin-top: 28px; }
-
-/* ─── ESTE NOVIEMBRE ─── */
-.noviembre-block { padding: 60px var(--px); background: var(--navy); text-align: center; border-top: 1px solid rgba(255,255,255,0.06); }
-.noviembre-block .section-tag { color: var(--gold-light); }
-.noviembre-block .section-title { color: var(--white); }
-.noviembre-dates { display: flex; flex-direction: column; gap: 2px; margin: 32px 0 28px; }
-.noviembre-date { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 26px 20px; }
-.nov-day { font-family: var(--sans); font-size: 38px; font-weight: 600; color: var(--gold-light); letter-spacing: -0.01em; line-height: 1; }
-.nov-day span { font-size: 15px; font-weight: 700; margin-left: 5px; letter-spacing: 0.04em; }
-.nov-name { font-family: var(--serif); font-size: 18px; color: var(--white); margin-top: 10px; }
-.noviembre-tagline { font-family: var(--serif); font-size: clamp(17px, 4.5vw, 22px); font-style: italic; color: rgba(255,255,255,0.75); max-width: 40ch; margin: 0 auto; }
 
 /* ─── INSTRUCTOR ─── */
 .instructor { padding: 64px var(--px); background: var(--nude); }
@@ -196,14 +185,6 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .tray-item::before { content: '◦'; color: var(--gold); flex-shrink: 0; font-size: 14px; line-height: 1.2; }
 
 /* ─── VIDEOS ─── */
-.galeria { padding: 64px 0; background: var(--nude); text-align: center; overflow: hidden; }
-.galeria .section-tag, .galeria .section-title, .galeria .section-sub { padding: 0 var(--px); }
-.marquee-wrap { margin-top: 36px; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); }
-.marquee-track { display: flex; gap: 12px; width: max-content; animation: marquee-scroll 46s linear infinite; }
-.marquee-wrap:hover .marquee-track { animation-play-state: paused; }
-.marquee-track img { height: 210px; width: auto; border-radius: 0 0 16px 0; object-fit: cover; display: block; flex-shrink: 0; box-shadow: 0 10px 24px rgba(27,42,74,0.14); }
-@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
 .videos-seccion { padding: 64px var(--px); background: var(--off-white); }
 .videos-grid { display: flex; flex-direction: column; gap: 36px; margin-top: 8px; align-items: center; }
 .video-slider { position: relative; width: 100%; max-width: 320px; }
@@ -323,12 +304,6 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   .cd-note { font-size: 13px; }
   .combo-block { padding: 88px var(--px); }
   .combo-new-price { font-size: 46px; }
-  .noviembre-block { padding: 96px var(--px); }
-  .noviembre-dates { flex-direction: row; gap: 2px; max-width: 700px; margin: 44px auto 36px; }
-  .noviembre-date { flex: 1; padding: 40px 24px; }
-  .nov-day { font-size: 56px; }
-  .nov-day span { font-size: 19px; }
-  .nov-name { font-size: 21px; }
   .instructor { padding: 88px var(--px); display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: start; }
   .instructor-duo { margin-bottom: 0; }
   .instructor-stat-card { padding: 20px 26px; bottom: -32px; gap: 16px; }
@@ -473,23 +448,6 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
   <a href="https://wa.me/593997544471?text=Hola%2C%20quiero%20el%20combo%20de%20Bioestimuladores%20%2B%20Hilos%20y%20Complicaciones%20en%20Rellenos." class="btn-white combo-cta fade-up d3" target="_blank">Quiero el combo →</a>
 </div>
 
-<!-- ESTE NOVIEMBRE -->
-<section class="noviembre-block">
-  <div class="section-tag fade-up">Este Noviembre</div>
-  <h2 class="section-title fade-up d1">IFAO se viste<br><em>de formación</em></h2>
-  <div class="noviembre-dates fade-up d2">
-    <div class="noviembre-date">
-      <div class="nov-day">19<span>NOV</span></div>
-      <div class="nov-name">Complicaciones en Rellenos</div>
-    </div>
-    <div class="noviembre-date">
-      <div class="nov-day">20–21<span>NOV</span></div>
-      <div class="nov-name">Bioestimuladores + Hilos</div>
-    </div>
-  </div>
-  <p class="noviembre-tagline fade-up d3">Dos formaciones. Una misma intención: llevar tu práctica más allá.</p>
-</section>
-
 <!-- QUIÉNES SOMOS -->
 <section class="objetivo" id="quienes-somos">
   <div class="section-tag fade-up">Quiénes Somos</div>
@@ -595,16 +553,6 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
         <div class="tray-item">Speaker Pharmaesthetics</div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- GALERÍA -->
-<section class="galeria">
-  <div class="section-tag fade-up">Galería</div>
-  <h2 class="section-title fade-up d1">Momentos de<br><em>nuestros cursos</em></h2>
-  <p class="section-sub fade-up d2">Así se vive la formación en IFAO — clases, práctica clínica y certificaciones.</p>
-  <div class="marquee-wrap fade-up d3">
-    <div class="marquee-track" id="marquee-track"></div>
   </div>
 </section>
 
@@ -738,20 +686,6 @@ document.querySelectorAll('.fade-up').forEach(function(el) {
     }
     heroTrack.innerHTML = heroHtml;
   }
-})();
-
-(function() {
-  var track = document.getElementById('marquee-track');
-  if (!track) return;
-  var total = 10;
-  var html = '';
-  for (var pass = 0; pass < 2; pass++) {
-    for (var i = 1; i <= total; i++) {
-      var num = i < 10 ? '0' + i : '' + i;
-      html += '<img src="/IFAO/marquee/curso-' + num + '.jpg" alt="Momento del curso IFAO" loading="lazy">';
-    }
-  }
-  track.innerHTML = html;
 })();
 
 (function() {
