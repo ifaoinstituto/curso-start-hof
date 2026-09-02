@@ -313,8 +313,8 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; border-top: 1px 
 .enroll-label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); margin-bottom: 8px; }
 .enroll-radios { display: flex; flex-direction: column; gap: 8px; }
 .enroll-radios label { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--navy); cursor: pointer; }
-.enroll-amount { display: flex; gap: 8px; }
-.enroll-amount label { flex: 1; cursor: pointer; }
+.enroll-amount { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.enroll-amount label { cursor: pointer; }
 .enroll-amount input { position: absolute; opacity: 0; width: 0; height: 0; }
 .enroll-amount span { display: block; text-align: center; padding: 12px 6px; border: 1.5px solid rgba(27,42,74,0.2); border-radius: 2px; font-size: 14px; font-weight: 700; color: var(--navy); transition: all 0.15s; }
 .enroll-amount input:checked + span { border-color: var(--terra); background: var(--terra); color: var(--white); }
@@ -594,7 +594,7 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; border-top: 1px 
           <span class="enroll-label">¿Cuál es tu profesión? *</span>
           <div class="enroll-radios">
             <label><input type="radio" name="profesion" value="Odontólogo(a)" required> Odontólogo(a)</label>
-            <label><input type="radio" name="profesion" value="Médico(a)"> Médico(a)</label>
+            <label><input type="radio" name="profesion" value="Médico (a)"> Médico(a)</label>
             <label><input type="radio" name="profesion" value="Estudiante de Odontología o Medicina"> Estudiante de Odontología o Medicina</label>
             <label><input type="radio" name="profesion" value="Otro"> Otro</label>
           </div>
@@ -642,7 +642,7 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; border-top: 1px 
           <div class="enroll-field">
             <span class="enroll-label">Curso de interés *</span>
             <select class="enroll-select" name="curso" id="enrollCurso" required>
-              <option value="Bioestimuladores">Bioestimuladores + Hilos Faciales</option>
+              <option value="Bioestimuladores + Hilos">Bioestimuladores + Hilos Faciales</option>
               <option value="Complicaciones">Complicaciones en Rellenos Faciales</option>
               <option value="Ambos">Ambos (combo)</option>
             </select>
@@ -652,8 +652,9 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; border-top: 1px 
             <span class="enroll-label">¿Cuánto puedes abonar para separar tu cupo? *</span>
             <div class="enroll-amount">
               <label><input type="radio" name="monto" value="$100" required><span>$100</span></label>
+              <label><input type="radio" name="monto" value="$200"><span>$200</span></label>
               <label><input type="radio" name="monto" value="$300"><span>$300</span></label>
-              <label><input type="radio" name="monto" value="$500"><span>$500</span></label>
+              <label><input type="radio" name="monto" value="Más de $500"><span>Más de $500</span></label>
             </div>
           </div>
         </div>
