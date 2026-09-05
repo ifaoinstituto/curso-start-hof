@@ -84,9 +84,9 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 .gancho-lead { font-size: 17px; font-weight: 700; color: var(--gold-light); line-height: 1.5; margin-bottom: 10px; }
 .gancho-lead2 { font-size: 17px; font-weight: 500; color: rgba(255,255,255,0.85); line-height: 1.5; margin-bottom: 20px; }
 .gancho-support { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.75; margin-bottom: 28px; }
-.gancho-img { aspect-ratio: 3 / 4; overflow: hidden; border-radius: 0 0 20px 0; box-shadow: 0 16px 34px rgba(0,0,0,0.3); }
+.gancho-img { position: relative; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 0 0 20px 0; box-shadow: 0 16px 34px rgba(0,0,0,0.3); }
 .gancho-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.gancho-img iframe { width: 100%; height: 100%; border: 0; display: block; }
+.gancho-img iframe { position: absolute; top: 50%; left: 50%; width: auto; height: auto; min-width: 100%; min-height: 100%; aspect-ratio: 1080 / 1920; border: 0; transform: translate(-50%, -50%); }
 
 /* ─── 03 EJE HIALURONIDASA ─── */
 .eje { padding: 60px var(--px); background: var(--off-white); }
@@ -240,8 +240,8 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; border-top: 1px 
 
   .section-sub { font-size: 16px; margin-bottom: 40px; }
 
-  .gancho { padding: 88px var(--px); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-  .gancho-img { max-width: 440px; justify-self: end; }
+  .gancho { padding: 88px var(--px); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: stretch; }
+  .gancho-img { max-width: 480px; justify-self: end; align-self: stretch; aspect-ratio: auto; }
   .gancho-q { font-size: clamp(32px, 3.6vw, 48px); }
   .gancho-lead, .gancho-lead2 { font-size: 19px; }
   .gancho-support { font-size: 15px; }
