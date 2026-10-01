@@ -373,6 +373,7 @@ footer { background: var(--navy); padding: 48px var(--px) 28px; }
 .welcome-course-info h3 { font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--white); line-height: 1.22; margin-bottom: 3px; }
 .welcome-course-info p { font-size: 12px; color: rgba(255,255,255,0.85); }
 .welcome-course-arrow { position: absolute; right: 12px; bottom: 14px; z-index: 2; color: var(--white); font-size: 16px; }
+.welcome-fill-btn { display: block; width: 100%; text-align: center; font-size: 14px; padding: 18px 20px; margin-bottom: 14px; }
 .welcome-explore { display: block; width: 100%; text-align: center; background: none; border: none; border-top: 1px solid rgba(139,90,60,0.15); padding-top: 16px; font-size: 12px; font-weight: 600; letter-spacing: 0.03em; color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .welcome-explore:hover { color: var(--navy); }
 body.modal-open { overflow: hidden; }
@@ -432,6 +433,7 @@ body.modal-open { overflow: hidden; }
         <div class="welcome-course-arrow">→</div>
       </a>
     </div>
+    <button class="btn-primary welcome-fill-btn enroll-trigger" id="welcome-fill" type="button">Llenar formulario</button>
     <button class="welcome-explore" id="welcome-explore" type="button">Quiero explorar IFAO</button>
   </div>
 </div>
@@ -1000,6 +1002,7 @@ document.querySelectorAll('.fade-up').forEach(function(el) {
   document.getElementById('welcome-close').addEventListener('click', closeModal);
   document.getElementById('welcome-backdrop').addEventListener('click', closeModal);
   document.getElementById('welcome-explore').addEventListener('click', closeModal);
+  document.getElementById('welcome-fill').addEventListener('click', closeModal);
   document.getElementById('welcome-link-1').addEventListener('click', closeModal);
   document.getElementById('welcome-link-2').addEventListener('click', closeModal);
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
