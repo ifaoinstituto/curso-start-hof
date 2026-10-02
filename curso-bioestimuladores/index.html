@@ -752,22 +752,20 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
 
 <script>
 (function() {
-  var supportsWebm = false;
-  var rawResult = '';
-  try {
-    var t = document.createElement('video');
-    rawResult = t.canPlayType ? t.canPlayType('video/webm; codecs="vp9"') : '(no canPlayType)';
-    supportsWebm = !!rawResult;
-  } catch (e) { rawResult = 'error: ' + e.message; }
+  // WebKit (Safari, and every browser on iOS) reports VP9/WebM as playable
+  // but does not composite its alpha channel transparently — it paints black
+  // instead. canPlayType() can't detect this, so we gate on engine instead.
+  var isAppleEngine = !!(navigator.vendor && navigator.vendor.indexOf('Apple') !== -1);
+  var useVideo = !isAppleEngine;
 
   if (location.search.indexOf('debug=1') > -1) {
     var box = document.createElement('div');
     box.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#000;color:#0f0;font:12px monospace;padding:12px;white-space:pre-wrap;word-break:break-all;';
-    box.textContent = 'UA: ' + navigator.userAgent + '\ncanPlayType(webm/vp9): "' + rawResult + '"\nsupportsWebm: ' + supportsWebm + '\nwillReplaceWithImage: ' + !supportsWebm;
+    box.textContent = 'UA: ' + navigator.userAgent + '\nvendor: ' + navigator.vendor + '\nisAppleEngine: ' + isAppleEngine + '\nwillReplaceWithImage: ' + !useVideo;
     document.body.insertBefore(box, document.body.firstChild);
   }
 
-  if (supportsWebm) return;
+  if (useVideo) return;
   document.querySelectorAll('video[data-fallback]').forEach(function(v) {
     var img = document.createElement('img');
     img.src = v.getAttribute('data-fallback');
