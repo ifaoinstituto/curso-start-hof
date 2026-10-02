@@ -753,10 +753,20 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
 <script>
 (function() {
   var supportsWebm = false;
+  var rawResult = '';
   try {
     var t = document.createElement('video');
-    supportsWebm = !!(t.canPlayType && t.canPlayType('video/webm; codecs="vp9"').replace('no', ''));
-  } catch (e) {}
+    rawResult = t.canPlayType ? t.canPlayType('video/webm; codecs="vp9"') : '(no canPlayType)';
+    supportsWebm = !!rawResult;
+  } catch (e) { rawResult = 'error: ' + e.message; }
+
+  if (location.search.indexOf('debug=1') > -1) {
+    var box = document.createElement('div');
+    box.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#000;color:#0f0;font:12px monospace;padding:12px;white-space:pre-wrap;word-break:break-all;';
+    box.textContent = 'UA: ' + navigator.userAgent + '\ncanPlayType(webm/vp9): "' + rawResult + '"\nsupportsWebm: ' + supportsWebm + '\nwillReplaceWithImage: ' + !supportsWebm;
+    document.body.insertBefore(box, document.body.firstChild);
+  }
+
   if (supportsWebm) return;
   document.querySelectorAll('video[data-fallback]').forEach(function(v) {
     var img = document.createElement('img');
