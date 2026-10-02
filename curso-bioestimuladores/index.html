@@ -70,8 +70,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 
 .hero-visual { position: relative; margin: 32px calc(-1 * var(--px)) 0; aspect-ratio: 4 / 5; }
 .hero-img { width: 100%; height: 100%; }
-.hero-img img { width: 100%; height: 100%; overflow: hidden; box-shadow: 0 20px 44px rgba(27,42,74,0.16); border-radius: 0 0 0 32px; object-fit: cover; object-position: center top; display: block; }
-.hero-img video { width: 100%; height: 100%; object-fit: contain; display: block; }
+.hero-img img, .hero-img video { width: 100%; height: 100%; object-fit: contain; display: block; }
 
 /* ─── SECTION HELPERS ─── */
 .section-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
@@ -123,7 +122,7 @@ nav.scrolled { box-shadow: 0 10px 28px rgba(27,42,74,0.14); background: rgba(245
 @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .exp-tag { display: inline-block; font-family: var(--serif); font-size: 15px; font-style: italic; color: var(--terra); border: 1px solid rgba(139,90,60,0.35); padding: 6px 16px; margin-bottom: 18px; }
 .exp-visual { width: 100%; max-width: 260px; aspect-ratio: 4 / 5; margin: 28px auto; }
-.exp-visual video { width: 100%; height: 100%; object-fit: contain; display: block; }
+.exp-visual img, .exp-visual video { width: 100%; height: 100%; object-fit: contain; display: block; }
 .dias-list { display: flex; flex-direction: column; gap: 2px; margin-top: 8px; }
 .dia-card { background: var(--white); padding: 26px 22px; border-top: 3px solid var(--terra); }
 .dia-num { font-family: var(--serif); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra); margin-bottom: 8px; font-weight: 600; }
@@ -348,9 +347,8 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   </div>
   <div class="hero-visual fade-up d2">
     <div class="hero-img">
-      <video autoplay muted loop playsinline>
+      <video autoplay muted loop playsinline data-fallback="/IFAO/video/bioestimuladores-card-frame.webp" data-alt="Bioestimuladores + Hilos Faciales — marcación clínica">
         <source src="/IFAO/video/bioestimuladores-card.webm" type="video/webm">
-        <source src="/IFAO/video/bioestimuladores-card.mov" type="video/mp4; codecs=hvc1">
       </video>
     </div>
   </div>
@@ -429,9 +427,8 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
       <div class="exp-tag fade-up d2">16 horas de formación</div>
     </div>
     <div class="exp-visual fade-up d2">
-      <video autoplay muted loop playsinline>
+      <video autoplay muted loop playsinline data-fallback="/IFAO/video/card-pamela-frame.webp" data-alt="Marcación clínica con cinta BIOHYALUX">
         <source src="/IFAO/video/card-pamela.webm" type="video/webm">
-        <source src="/IFAO/video/card-pamela.mov" type="video/mp4; codecs=hvc1">
       </video>
     </div>
   </div>
@@ -754,6 +751,21 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
 </script>
 
 <script>
+(function() {
+  var supportsWebm = false;
+  try {
+    var t = document.createElement('video');
+    supportsWebm = !!(t.canPlayType && t.canPlayType('video/webm; codecs="vp9"').replace('no', ''));
+  } catch (e) {}
+  if (supportsWebm) return;
+  document.querySelectorAll('video[data-fallback]').forEach(function(v) {
+    var img = document.createElement('img');
+    img.src = v.getAttribute('data-fallback');
+    img.alt = v.getAttribute('data-alt') || '';
+    v.replaceWith(img);
+  });
+})();
+
 var io = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
