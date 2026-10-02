@@ -758,13 +758,6 @@ footer { background: var(--navy); padding: 44px var(--px) 26px; }
   var isAppleEngine = !!(navigator.vendor && navigator.vendor.indexOf('Apple') !== -1);
   var useVideo = !isAppleEngine;
 
-  if (location.search.indexOf('debug=1') > -1) {
-    var box = document.createElement('div');
-    box.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#000;color:#0f0;font:12px monospace;padding:12px;white-space:pre-wrap;word-break:break-all;';
-    box.textContent = 'UA: ' + navigator.userAgent + '\nvendor: ' + navigator.vendor + '\nisAppleEngine: ' + isAppleEngine + '\nwillReplaceWithImage: ' + !useVideo;
-    document.body.insertBefore(box, document.body.firstChild);
-  }
-
   if (useVideo) return;
   document.querySelectorAll('video[data-fallback]').forEach(function(v) {
     var img = document.createElement('img');
